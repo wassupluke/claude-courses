@@ -5,6 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Claude Cowork: A Complete Course</title>
 <style>
+  /* ── THEME VARIABLES ── */
+  /* Default: dark mode */
   :root {
     --bg: #0f1117;
     --surface: #1a1d27;
@@ -20,6 +22,112 @@
     --purple: #a78bfa;
     --yellow: #fbbf24;
     --red: #f87171;
+    /* Extended semantic tokens */
+    --text-body: #c8cad8;
+    --hero-g1: #1a1d27;
+    --hero-g2: #0f1117;
+    --hero-g3: #1a1020;
+    --hero-h1-start: #ffffff;
+    --code-text: #a8d5b0;
+    --inline-code-bg: rgba(255,255,255,0.06);
+    --toc-hover-bg: rgba(255,255,255,0.03);
+    --row-hover-bg: rgba(255,255,255,0.02);
+    --footer-sub: #5a5f78;
+    --toggle-bg: #22263a;
+    --toggle-border: #2e3350;
+    --toggle-icon: '☀️';
+  }
+
+  /* Light mode via system preference */
+  @media (prefers-color-scheme: light) {
+    :root {
+      --bg: #f5f7fc;
+      --surface: #ffffff;
+      --surface2: #edf0f8;
+      --border: #d0d5ea;
+      --accent: #d4521e;
+      --accent2: #b84010;
+      --text: #1a1d2e;
+      --muted: #5a6080;
+      --code-bg: #e8ecf5;
+      --green: #15803d;
+      --blue: #1d4ed8;
+      --purple: #6d28d9;
+      --yellow: #b45309;
+      --red: #b91c1c;
+      --text-body: #3a3d52;
+      --hero-g1: #dce3f5;
+      --hero-g2: #eef1fb;
+      --hero-g3: #e4d8f0;
+      --hero-h1-start: #1a1d2e;
+      --code-text: #1a5c38;
+      --inline-code-bg: rgba(0,0,0,0.07);
+      --toc-hover-bg: rgba(0,0,0,0.04);
+      --row-hover-bg: rgba(0,0,0,0.025);
+      --footer-sub: #6b7094;
+      --toggle-bg: #ffffff;
+      --toggle-border: #d0d5ea;
+      --toggle-icon: '🌙';
+    }
+  }
+
+  /* Manual overrides win over system preference */
+  [data-theme="dark"] {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --border: #2e3350;
+    --accent: #e8622a;
+    --accent2: #f0a060;
+    --text: #e8eaf0;
+    --muted: #8a8fa8;
+    --code-bg: #13161f;
+    --green: #4ade80;
+    --blue: #60a5fa;
+    --purple: #a78bfa;
+    --yellow: #fbbf24;
+    --red: #f87171;
+    --text-body: #c8cad8;
+    --hero-g1: #1a1d27;
+    --hero-g2: #0f1117;
+    --hero-g3: #1a1020;
+    --hero-h1-start: #ffffff;
+    --code-text: #a8d5b0;
+    --inline-code-bg: rgba(255,255,255,0.06);
+    --toc-hover-bg: rgba(255,255,255,0.03);
+    --row-hover-bg: rgba(255,255,255,0.02);
+    --footer-sub: #5a5f78;
+    --toggle-bg: #22263a;
+    --toggle-border: #2e3350;
+  }
+
+  [data-theme="light"] {
+    --bg: #f5f7fc;
+    --surface: #ffffff;
+    --surface2: #edf0f8;
+    --border: #d0d5ea;
+    --accent: #d4521e;
+    --accent2: #b84010;
+    --text: #1a1d2e;
+    --muted: #5a6080;
+    --code-bg: #e8ecf5;
+    --green: #15803d;
+    --blue: #1d4ed8;
+    --purple: #6d28d9;
+    --yellow: #b45309;
+    --red: #b91c1c;
+    --text-body: #3a3d52;
+    --hero-g1: #dce3f5;
+    --hero-g2: #eef1fb;
+    --hero-g3: #e4d8f0;
+    --hero-h1-start: #1a1d2e;
+    --code-text: #1a5c38;
+    --inline-code-bg: rgba(0,0,0,0.07);
+    --toc-hover-bg: rgba(0,0,0,0.04);
+    --row-hover-bg: rgba(0,0,0,0.025);
+    --footer-sub: #6b7094;
+    --toggle-bg: #ffffff;
+    --toggle-border: #d0d5ea;
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,7 +141,7 @@
 
   /* ── HEADER ── */
   .hero {
-    background: linear-gradient(135deg, #1a1d27 0%, #0f1117 40%, #1a1020 100%);
+    background: linear-gradient(135deg, var(--hero-g1) 0%, var(--hero-g2) 40%, var(--hero-g3) 100%);
     border-bottom: 1px solid var(--border);
     padding: 80px 40px 60px;
     text-align: center;
@@ -65,7 +173,7 @@
     font-weight: 800;
     line-height: 1.15;
     margin-bottom: 16px;
-    background: linear-gradient(135deg, #fff 30%, var(--accent2) 100%);
+    background: linear-gradient(135deg, var(--hero-h1-start) 30%, var(--accent2) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -129,7 +237,7 @@
   }
   .toc a:hover {
     color: var(--text);
-    background: rgba(255,255,255,0.03);
+    background: var(--toc-hover-bg);
     border-left-color: var(--accent);
   }
   .toc .toc-num {
@@ -187,12 +295,12 @@
   }
   .section p {
     margin-bottom: 16px;
-    color: #c8cad8;
+    color: var(--text-body);
   }
   .section ul, .section ol {
     padding-left: 24px;
     margin-bottom: 16px;
-    color: #c8cad8;
+    color: var(--text-body);
   }
   .section li { margin-bottom: 8px; }
 
@@ -227,10 +335,10 @@
   }
   code {
     font-family: 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
-    color: #a8d5b0;
+    color: var(--code-text);
   }
   p code, li code {
-    background: rgba(255,255,255,0.06);
+    background: var(--inline-code-bg);
     padding: 2px 7px;
     border-radius: 5px;
     font-size: 0.85em;
@@ -302,10 +410,10 @@
   td {
     padding: 12px 16px;
     border-bottom: 1px solid rgba(46,51,80,0.5);
-    color: #c8cad8;
+    color: var(--text-body);
   }
   tr:last-child td { border-bottom: none; }
-  tr:hover td { background: rgba(255,255,255,0.02); }
+  tr:hover td { background: var(--row-hover-bg); }
 
   /* ── BADGES ── */
   .tag {
@@ -369,7 +477,7 @@
     padding: 16px 20px;
     font-size: 0.9rem;
     line-height: 1.65;
-    color: #c8cad8;
+    color: var(--text-body);
   }
 
   /* ── PROGRESS BAR ── */
@@ -380,6 +488,41 @@
     margin: 12px 0 24px;
   }
   .progress-fill { height: 100%; border-radius: 2px; background: var(--accent); }
+
+  /* ── THEME TOGGLE ── */
+  .theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    background: var(--toggle-bg);
+    border: 1px solid var(--toggle-border);
+    border-radius: 50px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--muted);
+    transition: all 0.2s;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    user-select: none;
+  }
+  .theme-toggle:hover {
+    border-color: var(--accent);
+    color: var(--text);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  }
+  .theme-toggle .toggle-icon { font-size: 1rem; }
+  .theme-toggle .toggle-label { letter-spacing: 0.04em; }
+
+  /* Smooth theme transitions */
+  body, .hero, .toc, .content, .card, .callout,
+  .quiz, .quiz-opt, .prompt-example, pre, table, footer {
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  }
 
   /* ── FOOTER ── */
   footer {
@@ -399,6 +542,12 @@
 </style>
 </head>
 <body>
+
+<!-- THEME TOGGLE -->
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
+  <span class="toggle-icon" id="toggle-icon">☀️</span>
+  <span class="toggle-label" id="toggle-label">Light</span>
+</button>
 
 <!-- HERO -->
 <div class="hero">
@@ -1194,24 +1343,68 @@ When I ask you to "process inbox," read all new files in inbox/, extract key inf
 
 <footer>
   <p>Claude Cowork Course · Created February 2026 · Based on official Anthropic documentation and product announcements</p>
-  <p style="margin-top: 6px; color: #5a5f78;">Cowork is a research preview. Features and availability may change. Always consult <a href="https://support.claude.com" style="color: var(--accent2);">support.claude.com</a> for the latest information.</p>
+  <p style="margin-top: 6px; color: var(--footer-sub);">Cowork is a research preview. Features and availability may change. Always consult <a href="https://support.claude.com" style="color: var(--accent2);">support.claude.com</a> for the latest information.</p>
 </footer>
 
 <script>
+// ── THEME SYSTEM ──────────────────────────────────────────────────────────────
+// Priority: localStorage (manual choice) → prefers-color-scheme → dark default
+
+const STORAGE_KEY = 'claude-courses-theme';
+
+function getSystemTheme() {
+  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+}
+
+function applyTheme(theme) {
+  // Set data-theme on <html> so CSS [data-theme] selectors win over @media
+  document.documentElement.setAttribute('data-theme', theme);
+  const icon  = document.getElementById('toggle-icon');
+  const label = document.getElementById('toggle-label');
+  if (theme === 'light') {
+    if (icon)  icon.textContent  = '🌙';
+    if (label) label.textContent = 'Dark';
+  } else {
+    if (icon)  icon.textContent  = '☀️';
+    if (label) label.textContent = 'Light';
+  }
+}
+
+function toggleTheme() {
+  const current = document.documentElement.getAttribute('data-theme') || getSystemTheme();
+  const next = current === 'dark' ? 'light' : 'dark';
+  localStorage.setItem(STORAGE_KEY, next);  // persist manual choice
+  applyTheme(next);
+}
+
+// On load: honour saved preference, else follow system
+(function initTheme() {
+  const saved = localStorage.getItem(STORAGE_KEY);
+  applyTheme(saved || getSystemTheme());
+})();
+
+// If the user changes their OS theme mid-session AND hasn't made a manual choice,
+// automatically follow the new system preference.
+window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', (e) => {
+  if (!localStorage.getItem(STORAGE_KEY)) {
+    applyTheme(e.matches ? 'light' : 'dark');
+  }
+});
+
+// ── QUIZ ─────────────────────────────────────────────────────────────────────
 function quizAnswer(el, correct) {
   const container = el.closest('.quiz-options');
-  const feedback = el.closest('.quiz').querySelector('.quiz-feedback');
+  const feedback  = el.closest('.quiz').querySelector('.quiz-feedback');
   container.querySelectorAll('.quiz-opt').forEach(o => {
     o.style.pointerEvents = 'none';
     o.classList.remove('correct', 'wrong');
   });
   el.classList.add(correct ? 'correct' : 'wrong');
   feedback.style.display = 'block';
-  feedback.style.color = correct ? 'var(--green)' : 'var(--red)';
-  feedback.textContent = correct
+  feedback.style.color   = correct ? 'var(--green)' : 'var(--red)';
+  feedback.textContent   = correct
     ? '✅ Correct! Great understanding.'
     : '❌ Not quite — review the section above and try again next time.';
-
   if (!correct) {
     container.querySelectorAll('.quiz-opt').forEach(o => {
       if (o.getAttribute('onclick').includes('true')) o.classList.add('correct');
