@@ -1,0 +1,210 @@
+/*
+ * theme.css — Claude Courses Design System
+ * =========================================
+ * This file owns ALL color/theme custom properties.
+ * It is the single source of truth for dark and light mode.
+ *
+ * HOW TO ADD A NEW COURSE:
+ *   1. Create your-course.html
+ *   2. Add to <head>:
+ *        <link rel="stylesheet" href="assets/theme.css">
+ *        <link rel="stylesheet" href="assets/styles.css">
+ *        <script src="assets/theme.js"></script>
+ *   3. Add to <body> (right after <body> tag):
+ *        <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
+ *          <span class="toggle-icon" id="toggle-icon">☀️</span>
+ *          <span class="toggle-label" id="toggle-label">Light</span>
+ *        </button>
+ *   That's it. The full design system is available.
+ *
+ * HOW TO MODIFY A COLOR:
+ *   Change it in all three places it appears below:
+ *     1. :root          (dark mode defaults)
+ *     2. [data-theme="dark"]  (explicit dark override)
+ *     3. The corresponding light entry (either @media or [data-theme="light"])
+ *
+ * VARIABLE NAMING CONVENTION:
+ *   --bg, --surface, --surface2  → background layers (darkest → lightest)
+ *   --border                     → dividers, outlines
+ *   --text, --text-body, --muted → text hierarchy (bright → dim)
+ *   --accent, --accent2          → brand orange (primary, secondary)
+ *   --green/blue/purple/yellow/red → semantic status colors
+ *   --code-bg, --code-text       → code block specific
+ *   --hero-g1/g2/g3              → hero gradient stops
+ *   --hero-h1-start              → hero title gradient start color
+ *   --inline-code-bg             → inline <code> background
+ *   --toc-hover-bg               → sidebar link hover background
+ *   --row-hover-bg               → table row hover background
+ *   --footer-sub                 → footer secondary text
+ *   --toggle-bg, --toggle-border → theme toggle button
+ */
+
+/* ─────────────────────────────────────────────────────────────
+   DARK MODE DEFAULTS
+   Applied on first load. Overridden by @media (light) or
+   [data-theme] attribute set by theme.js.
+───────────────────────────────────────────────────────────── */
+:root {
+  /* Backgrounds */
+  --bg:       #0f1117;
+  --surface:  #1a1d27;
+  --surface2: #22263a;
+  --border:   #2e3350;
+
+  /* Brand */
+  --accent:   #e8622a;
+  --accent2:  #f0a060;
+
+  /* Text */
+  --text:      #e8eaf0;
+  --text-body: #c8cad8;
+  --muted:     #8a8fa8;
+
+  /* Code */
+  --code-bg:        #13161f;
+  --code-text:      #a8d5b0;
+  --inline-code-bg: rgba(255, 255, 255, 0.06);
+
+  /* Semantic colors */
+  --green:  #4ade80;
+  --blue:   #60a5fa;
+  --purple: #a78bfa;
+  --yellow: #fbbf24;
+  --red:    #f87171;
+
+  /* Hero gradient stops */
+  --hero-g1:       #1a1d27;
+  --hero-g2:       #0f1117;
+  --hero-g3:       #1a1020;
+  --hero-h1-start: #ffffff;
+
+  /* Interactive states */
+  --toc-hover-bg: rgba(255, 255, 255, 0.03);
+  --row-hover-bg: rgba(255, 255, 255, 0.02);
+
+  /* Component-specific */
+  --footer-sub:    #5a5f78;
+  --toggle-bg:     #22263a;
+  --toggle-border: #2e3350;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   LIGHT MODE — system preference
+   Applies when the OS is in light mode AND the user hasn't
+   made a manual choice (no data-theme attribute on <html>).
+───────────────────────────────────────────────────────────── */
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg:       #f5f7fc;
+    --surface:  #ffffff;
+    --surface2: #edf0f8;
+    --border:   #d0d5ea;
+
+    --accent:   #d4521e;
+    --accent2:  #b84010;
+
+    --text:      #1a1d2e;
+    --text-body: #3a3d52;
+    --muted:     #5a6080;
+
+    --code-bg:        #e8ecf5;
+    --code-text:      #1a5c38;
+    --inline-code-bg: rgba(0, 0, 0, 0.07);
+
+    --green:  #15803d;
+    --blue:   #1d4ed8;
+    --purple: #6d28d9;
+    --yellow: #b45309;
+    --red:    #b91c1c;
+
+    --hero-g1:       #dce3f5;
+    --hero-g2:       #eef1fb;
+    --hero-g3:       #e4d8f0;
+    --hero-h1-start: #1a1d2e;
+
+    --toc-hover-bg: rgba(0, 0, 0, 0.04);
+    --row-hover-bg: rgba(0, 0, 0, 0.025);
+
+    --footer-sub:    #6b7094;
+    --toggle-bg:     #ffffff;
+    --toggle-border: #d0d5ea;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   MANUAL OVERRIDES — these win over @media because
+   attribute selectors have higher specificity than :root
+   inside a @media block.
+   Set by theme.js via: document.documentElement.setAttribute('data-theme', ...)
+───────────────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --bg:       #0f1117;
+  --surface:  #1a1d27;
+  --surface2: #22263a;
+  --border:   #2e3350;
+
+  --accent:   #e8622a;
+  --accent2:  #f0a060;
+
+  --text:      #e8eaf0;
+  --text-body: #c8cad8;
+  --muted:     #8a8fa8;
+
+  --code-bg:        #13161f;
+  --code-text:      #a8d5b0;
+  --inline-code-bg: rgba(255, 255, 255, 0.06);
+
+  --green:  #4ade80;
+  --blue:   #60a5fa;
+  --purple: #a78bfa;
+  --yellow: #fbbf24;
+  --red:    #f87171;
+
+  --hero-g1:       #1a1d27;
+  --hero-g2:       #0f1117;
+  --hero-g3:       #1a1020;
+  --hero-h1-start: #ffffff;
+
+  --toc-hover-bg: rgba(255, 255, 255, 0.03);
+  --row-hover-bg: rgba(255, 255, 255, 0.02);
+
+  --footer-sub:    #5a5f78;
+  --toggle-bg:     #22263a;
+  --toggle-border: #2e3350;
+}
+
+[data-theme="light"] {
+  --bg:       #f5f7fc;
+  --surface:  #ffffff;
+  --surface2: #edf0f8;
+  --border:   #d0d5ea;
+
+  --accent:   #d4521e;
+  --accent2:  #b84010;
+
+  --text:      #1a1d2e;
+  --text-body: #3a3d52;
+  --muted:     #5a6080;
+
+  --code-bg:        #e8ecf5;
+  --code-text:      #1a5c38;
+  --inline-code-bg: rgba(0, 0, 0, 0.07);
+
+  --green:  #15803d;
+  --blue:   #1d4ed8;
+  --purple: #6d28d9;
+  --yellow: #b45309;
+  --red:    #b91c1c;
+
+  --hero-g1:       #dce3f5;
+  --hero-g2:       #eef1fb;
+  --hero-g3:       #e4d8f0;
+  --hero-h1-start: #1a1d2e;
+
+  --toc-hover-bg: rgba(0, 0, 0, 0.04);
+  --row-hover-bg: rgba(0, 0, 0, 0.025);
+
+  --footer-sub:    #6b7094;
+  --toggle-bg:     #ffffff;
+  --toggle-border: #d0d5ea;
+}
