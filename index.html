@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude Courses — Learn to use Claude effectively</title>
+<meta name="description" content="Hands-on courses for learning Claude — Cowork, token efficiency, Claude Code, and more. Each course is self-contained, interactive, and free.">
+<!-- Theme system loads before first paint to prevent flash of wrong theme -->
+<script src="assets/theme.js"></script>
+<link rel="stylesheet" href="assets/theme.css">
+<link rel="stylesheet" href="assets/styles.css">
+<style>
+  /* ── INDEX-PAGE LAYOUT ────────────────────────────────────────
+     The index page doesn't use the sidebar course layout.
+     It has its own single-column catalog layout defined in
+     styles.css (.catalog-section, .catalog-grid, .course-card).
+     Only truly unique overrides live here.
+  ──────────────────────────────────────────────────────────── */
+
+  /* Slightly tighter hero for the index page */
+  .hero { padding: 70px 40px 50px; }
+
+  /* Index-specific hero subtitle is a bit wider */
+  .hero .subtitle { max-width: 700px; }
+
+  /* Resource links row at the bottom of the page */
+  .resource-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .resource-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--muted);
+    border: 1px solid var(--border);
+    transition: all 0.15s;
+  }
+  .resource-link:hover { border-color: var(--accent); color: var(--text); }
+</style>
+</head>
+<body>
+
+<!-- THEME TOGGLE (shared component from styles.css + theme.js) -->
+<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
+  <span class="toggle-icon" id="toggle-icon">☀️</span>
+  <span class="toggle-label" id="toggle-label">Light</span>
+</button>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge">Open Curriculum · February 2026</div>
+  <h1>Claude Courses</h1>
+  <p class="subtitle">Hands-on, self-contained courses for learning how to use Claude products effectively — from your first Cowork task to advanced token efficiency techniques.</p>
+  <div class="hero-meta">
+    <span>📚 2 Courses</span>
+    <span>🎓 16 Modules</span>
+    <span>🌐 GitHub Pages</span>
+    <span>💡 Free &amp; Open</span>
+  </div>
+</div>
+
+<!-- MAIN CATALOG CONTENT -->
+<div class="catalog-section">
+
+  <!-- STATS ROW -->
+  <div class="stat-row">
+    <div class="stat">
+      <span class="stat-num">2</span>
+      <span class="stat-label">Courses</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">16</span>
+      <span class="stat-label">Modules</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">~4h</span>
+      <span class="stat-label">Total runtime</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">0</span>
+      <span class="stat-label">Prerequisites</span>
+    </div>
+  </div>
+
+  <!-- COURSE CATALOG -->
+  <h2>Available Courses</h2>
+  <p>Each course is a single HTML file — no install, no login, no server. Download and open locally, or read it right here on GitHub Pages with full styling and interactive quizzes.</p>
+
+  <div class="catalog-grid">
+
+    <!-- COURSE 1: Mastering Claude Cowork -->
+    <div class="course-card">
+      <div class="course-card-icon">🤖</div>
+      <div>
+        <div class="course-card-badge">🆕 Research Preview</div>
+        <h3>Mastering Claude Cowork</h3>
+      </div>
+      <p>Everything you need to go from curious beginner to confident power user of Claude's agentic desktop application. Covers setup, the GOAL prompt framework, plugins, MCP connectors, safety best practices, and advanced multi-agent workflows.</p>
+      <div class="course-meta">
+        <span>🎓 8 modules</span>
+        <span>⏱ ~2 hours</span>
+        <span>💻 macOS · Windows</span>
+      </div>
+      <div class="course-links">
+        <a class="btn btn-primary" href="claude-cowork-course.html">▶ Open Course</a>
+        <a class="btn btn-secondary" href="https://github.com/wassupluke/claude-courses/blob/main/claude-cowork-course.html">⬇ Download</a>
+      </div>
+    </div>
+
+    <!-- COURSE 2: Claude Efficiency Masterclass -->
+    <div class="course-card">
+      <div class="course-card-icon">⚡</div>
+      <div>
+        <div class="course-card-badge">💰 Token Efficiency</div>
+        <h3>Claude Efficiency Masterclass</h3>
+      </div>
+      <p>Learn how to get dramatically more out of every Claude session while spending less. Covers the token economy, prompt caching (90% cost savings), model selection, context window management, anti-patterns to avoid, and how to stack optimizations for maximum ROI.</p>
+      <div class="course-meta">
+        <span>🎓 8 modules</span>
+        <span>⏱ ~2 hours</span>
+        <span>🔌 API · Projects · Code · Cowork</span>
+      </div>
+      <div class="course-links">
+        <a class="btn btn-primary" href="claude-efficiency-course.html">▶ Open Course</a>
+        <a class="btn btn-secondary" href="https://github.com/wassupluke/claude-courses/blob/main/claude-efficiency-course.html">⬇ Download</a>
+      </div>
+    </div>
+
+  </div><!-- /.catalog-grid -->
+
+  <!-- CONTRIBUTING -->
+  <div class="contribute-section">
+    <h2>📬 Contribute a Course</h2>
+    <p>Contributions are welcome. Each course is a single self-contained HTML file that links to the shared <code>assets/</code> folder for theming and components. Adding a new course is as simple as creating one file.</p>
+    <pre><code># 1. Fork and clone
+git clone https://github.com/wassupluke/claude-courses.git
+cd claude-courses
+
+# 2. Create your course file
+cp claude-cowork-course.html my-new-course.html
+
+# 3. Edit and preview
+open my-new-course.html
+
+# 4. Update the catalog in index.html, then open a PR</code></pre>
+    <p>The full design system — hero, sidebar TOC, callout boxes, tables, cards, quiz components, and the light/dark theme — is already available the moment you link <code>assets/theme.css</code>, <code>assets/styles.css</code>, and <code>assets/theme.js</code>. See <code>assets/styles.css</code> for a complete component reference.</p>
+    <div class="resource-links">
+      <a class="resource-link" href="https://github.com/wassupluke/claude-courses">📁 GitHub Repo</a>
+      <a class="resource-link" href="https://docs.anthropic.com">📖 Anthropic Docs</a>
+      <a class="resource-link" href="https://support.claude.com">🆘 Claude Support</a>
+      <a class="resource-link" href="https://github.com/wassupluke/claude-courses/issues">🐛 Report an Issue</a>
+    </div>
+  </div>
+
+</div><!-- /.catalog-section -->
+
+<footer>
+  <p>Claude Courses · Built by <a href="https://github.com/wassupluke" style="color: var(--accent2); text-decoration: none;">wassupluke</a> · Open source on <a href="https://github.com/wassupluke/claude-courses" style="color: var(--accent2); text-decoration: none;">GitHub</a></p>
+  <p style="margin-top: 6px; color: var(--footer-sub);">Content based on official Anthropic documentation. Not affiliated with Anthropic.</p>
+</footer>
+
+</body>
+</html>
