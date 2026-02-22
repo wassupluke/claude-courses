@@ -23,7 +23,18 @@
  *
  * INDEX PAGE EXTRAS (used in index.html only):
  *   .catalog-grid, .course-card, .course-card-badge, .course-meta,
- *   .course-links, .stat-row, .contribute-section
+ *   .course-links, .stat-row, .contribute-section,
+ *   .resource-links, .resource-link
+ *
+ * EFFICIENCY COURSE COMPONENTS:
+ *   .savings-highlight, .compare-grid, .savings-col, .cost-col,
+ *   .roi-bar, .roi-fill
+ *
+ * CHOOSING YOUR CLAUDE (COURSE 3) COMPONENTS:
+ *   .surface-grid, .surface-card, .plan-table, .decision-table,
+ *   .badge, .badge-free/pro/max/team/enterprise/api/preview,
+ *   .workflow-row, .workflow-node, .workflow-arrow,
+ *   .preview-banner, .free-highlight
  */
 
 /* ── RESET & BASE ──────────────────────────────────────────── */
@@ -611,19 +622,400 @@ footer {
 .contribute-section pre { margin: 16px 0; }
 
 /* ── RESPONSIVE ────────────────────────────────────────────── */
+
+/* Prevent any element from blowing out the viewport width globally */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Tables and pre blocks scroll horizontally inside their container
+   rather than pushing the page wider */
+table, pre {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Restore table layout semantics after display:block */
+table { width: max-content; min-width: 100%; }
+
 @media (max-width: 900px) {
   /* Collapse the sidebar on narrow screens */
-  .layout { grid-template-columns: 1fr; }
-  .toc    { display: none; }
-  .content { padding: 32px 24px; }
+  .layout {
+    grid-template-columns: 1fr;
+    /* Prevent the grid itself from overflowing */
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .toc     { display: none; }
+  .content {
+    padding: 24px 16px;
+    /* Content area must never exceed the viewport */
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
 
   /* Stack catalog cards */
-  .catalog-grid { grid-template-columns: 1fr; }
-  .catalog-section { padding: 40px 24px; }
+  .catalog-grid    { grid-template-columns: 1fr; }
+  .catalog-section { padding: 32px 16px; }
 
   /* Tighten hero on mobile */
-  .hero { padding: 60px 24px 40px; }
+  .hero {
+    padding: 48px 16px 32px;
+    /* Long hero-meta items wrap rather than overflow */
+  }
+  .hero-meta {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
 
   /* Stat row wraps */
-  .stat-row { gap: 24px; justify-content: center; }
+  .stat-row { gap: 20px; justify-content: center; }
+
+  /* Course section headings: let long h2 wrap instead of overflow */
+  .section h2  { font-size: 1.35rem; word-break: break-word; }
+  .section h3  { font-size: 1rem; }
+
+  /* Section header flex row: don't let the number chip force overflow */
+  .section-header {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* Card grids defined per-course: force single column */
+  .card-grid { grid-template-columns: 1fr; }
+
+  /* Steps: keep the circle + content from overflowing narrow screens */
+  .step { gap: 12px; }
+
+  /* Callout boxes: reduce padding so they fit on small screens */
+  .callout { padding: 14px 14px; gap: 10px; }
+
+  /* Contribute section: reduce padding */
+  .contribute-section { padding: 24px 16px; }
+
+  /* Course cards: don't let badge text overflow */
+  .course-card-badge { white-space: normal; }
+
+  /* Theme toggle: make it smaller on mobile so it doesn't overlap content */
+  .theme-toggle {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    top: 12px;
+    right: 12px;
+  }
+  .theme-toggle .toggle-label { display: none; }
+
+  /* Quiz options: full width, readable on small screens */
+  .quiz { padding: 16px; }
+}
+
+/* ── INDEX PAGE — OVERRIDES & UNIQUE COMPONENTS ───────────────
+   These rules were previously in index.html's <style> block.
+   The index page uses a different hero padding and a wider
+   subtitle, plus resource link pills in the contributing section.
+────────────────────────────────────────────────────────────── */
+
+/* Slightly tighter hero padding on the catalog/index page */
+.index-page .hero { padding: 70px 40px 50px; }
+
+/* Wider subtitle on the index hero */
+.index-page .hero .subtitle { max-width: 700px; }
+
+/* Resource link pills at the bottom of the contribute section */
+.resource-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+.resource-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  transition: all 0.15s;
+}
+.resource-link:hover { border-color: var(--accent); color: var(--text); }
+
+/* ── EFFICIENCY COURSE COMPONENTS ─────────────────────────────
+   Previously in claude-efficiency-course.html <style> block.
+────────────────────────────────────────────────────────────── */
+
+/* Big green savings number callout */
+.savings-highlight {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--green);
+  line-height: 1;
+}
+
+/* Side-by-side bad vs good prompt comparison */
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0;
+}
+.compare-bad  .prompt-label { color: var(--red); }
+.compare-good .prompt-label { color: var(--green); }
+
+/* Token cost table column accents */
+.savings-col { color: var(--green); font-weight: 700; }
+.cost-col    { color: var(--yellow); }
+
+/* ROI tier indicator bar */
+.roi-bar {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--border);
+  margin: 6px 0 4px;
+  overflow: hidden;
+}
+.roi-fill {
+  height: 100%;
+  border-radius: 4px;
+  background: linear-gradient(90deg, var(--accent) 0%, var(--green) 100%);
+}
+
+/* ── CHOOSING YOUR CLAUDE — COURSE 3 COMPONENTS ───────────────
+   Previously in claude-choosing-course.html <style> block.
+────────────────────────────────────────────────────────────── */
+
+/* Five-surface overview grid */
+.surface-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0;
+}
+
+.surface-card {
+  background: var(--card-bg);
+  border: 1.5px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem 1.4rem;
+  position: relative;
+}
+.surface-card .surface-icon {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+.surface-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: 0 0 0.35rem 0;
+  color: var(--heading);
+}
+.surface-card p {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin: 0;
+  line-height: 1.55;
+}
+.surface-card .surface-tier {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 20px;
+  padding: 0.2rem 0.6rem;
+  margin-top: 0.75rem;
+  background: var(--accent-subtle);
+  color: var(--accent);
+}
+
+/* Plan comparison table (course 3 pricing grid) */
+.plan-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+.plan-table th {
+  background: var(--table-header-bg);
+  color: var(--heading);
+  font-weight: 700;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 2px solid var(--border);
+}
+.plan-table td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  color: var(--text);
+}
+.plan-table tr:last-child td { border-bottom: none; }
+.plan-table tr:hover td      { background: var(--hover-bg); }
+.plan-table .check   { color: var(--green);  font-weight: 700; }
+.plan-table .cross   { color: var(--text-muted); }
+.plan-table .partial { color: var(--yellow); font-weight: 700; }
+.plan-name  { font-weight: 700; color: var(--heading); }
+.plan-price { font-weight: 700; color: var(--accent); }
+
+/* Decision / when-to-use matrix */
+.decision-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  margin: 1.25rem 0;
+}
+.decision-table th {
+  background: var(--table-header-bg);
+  color: var(--heading);
+  font-weight: 700;
+  padding: 0.6rem 0.9rem;
+  text-align: left;
+  border-bottom: 2px solid var(--border);
+}
+.decision-table td {
+  padding: 0.55rem 0.9rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  vertical-align: top;
+}
+.decision-table tr:last-child td { border-bottom: none; }
+.decision-table tr:hover td      { background: var(--hover-bg); }
+
+/* Tier / plan badges (inline inline pill labels) */
+.badge {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  border-radius: 20px;
+  padding: 0.15rem 0.55rem;
+  vertical-align: middle;
+}
+.badge-free       { background: var(--badge-free-bg);       color: var(--badge-free-text); }
+.badge-pro        { background: var(--badge-pro-bg);        color: var(--badge-pro-text); }
+.badge-max        { background: var(--badge-max-bg);        color: var(--badge-max-text); }
+.badge-team       { background: var(--badge-team-bg);       color: var(--badge-team-text); }
+.badge-enterprise { background: var(--badge-enterprise-bg); color: var(--badge-enterprise-text); }
+.badge-api        { background: var(--badge-api-bg);        color: var(--badge-api-text); }
+.badge-preview    { background: var(--badge-preview-bg);    color: var(--badge-preview-text); }
+
+/* Hybrid workflow diagram row */
+.workflow-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin: 0.6rem 0;
+}
+.workflow-node {
+  background: var(--card-bg);
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 0.4rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--heading);
+  white-space: nowrap;
+}
+.workflow-arrow {
+  color: var(--accent);
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* Research preview warning banner */
+.preview-banner {
+  background: var(--preview-banner-bg);
+  border: 1.5px solid var(--preview-banner-border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.preview-banner .preview-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 0.05rem;
+}
+.preview-banner strong {
+  color: var(--preview-banner-title);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+.preview-banner p {
+  color: var(--preview-banner-body);
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Free-tier capability highlight box */
+.free-highlight {
+  background: var(--free-highlight-bg);
+  border: 1.5px solid var(--free-highlight-border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  margin: 1.25rem 0;
+}
+.free-highlight h4 {
+  color: var(--free-highlight-title);
+  margin: 0 0 0.5rem 0;
+  font-size: 0.95rem;
+}
+.free-highlight ul {
+  margin: 0;
+  padding-left: 1.25rem;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+.free-highlight ul li { margin-bottom: 0.3rem; }
+
+/* ── COURSE 3 — MOBILE OVERRIDES ──────────────────────────────
+   Breakpoints for course-3-specific components.
+   General mobile rules are in the @media block above.
+────────────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  /* Efficiency course: stack comparison grid */
+  .compare-grid { grid-template-columns: 1fr; }
+
+  /* Course 3: collapse surface overview grid */
+  .surface-grid { grid-template-columns: 1fr; }
+
+  /* Course 3: scrollable wide tables */
+  .plan-table,
+  .decision-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Course 3: tighten workflow diagrams */
+  .workflow-row  { gap: 0.3rem; }
+  .workflow-node { font-size: 0.78rem; padding: 0.35rem 0.6rem; white-space: normal; }
+  .workflow-arrow { font-size: 0.9rem; }
+
+  /* Course 3: stack preview banner */
+  .preview-banner { flex-direction: column; gap: 0.5rem; }
+
+  /* Course 3: tighter free-highlight on mobile */
+  .free-highlight         { padding: 0.85rem 1rem; }
+  .free-highlight ul      { padding-left: 1rem; }
+
+  /* Course 3: badges wrap instead of overflow */
+  .badge { white-space: normal; line-height: 1.4; }
 }

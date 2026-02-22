@@ -8,52 +8,6 @@
 <script src="assets/theme.js"></script>
 <link rel="stylesheet" href="assets/theme.css">
 <link rel="stylesheet" href="assets/styles.css">
-<style>
-  /* ── COURSE-SPECIFIC STYLES ─────────────────────────────────
-     All shared design system rules live in assets/.
-     Only truly unique styles for this course belong here.
-  ──────────────────────────────────────────────────────────── */
-
-  /* Savings callout — big green number highlight */
-  .savings-highlight {
-    display: inline-block;
-    font-size: 2rem;
-    font-weight: 800;
-    color: var(--green);
-    line-height: 1;
-  }
-
-  /* Comparison: bad vs good prompt side by side */
-  .compare-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin: 20px 0;
-  }
-  @media (max-width: 700px) {
-    .compare-grid { grid-template-columns: 1fr; }
-  }
-  .compare-bad  .prompt-label { color: var(--red); }
-  .compare-good .prompt-label { color: var(--green); }
-
-  /* Token cost table — accent the "savings" column */
-  .savings-col { color: var(--green); font-weight: 700; }
-  .cost-col    { color: var(--yellow); }
-
-  /* ROI tier indicator bar */
-  .roi-bar {
-    height: 8px;
-    border-radius: 4px;
-    background: var(--border);
-    margin: 6px 0 4px;
-    overflow: hidden;
-  }
-  .roi-fill {
-    height: 100%;
-    border-radius: 4px;
-    background: linear-gradient(90deg, var(--accent) 0%, var(--green) 100%);
-  }
-</style>
 </head>
 <body>
 
