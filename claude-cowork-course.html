@@ -179,10 +179,10 @@
         <h4>✍️ Quick Check</h4>
         <p>What is the primary architectural difference between Cowork and a regular Claude chat?</p>
         <div class="quiz-options">
-          <div class="quiz-opt" onclick="quizAnswer(this, false)">A. Cowork uses a different AI model</div>
-          <div class="quiz-opt" onclick="quizAnswer(this, false)">B. Cowork is only available on macOS</div>
-          <div class="quiz-opt" onclick="quizAnswer(this, true)">C. Cowork executes multi-step tasks autonomously with direct file system access</div>
-          <div class="quiz-opt" onclick="quizAnswer(this, false)">D. Cowork requires a terminal to operate</div>
+          <button class="quiz-opt" onclick="quizAnswer(this, false)">A. Cowork uses a different AI model</button>
+          <button class="quiz-opt" onclick="quizAnswer(this, false)">B. Cowork is only available on macOS</button>
+          <button class="quiz-opt" onclick="quizAnswer(this, true)">C. Cowork executes multi-step tasks autonomously with direct file system access</button>
+          <button class="quiz-opt" onclick="quizAnswer(this, false)">D. Cowork requires a terminal to operate</button>
         </div>
         <div class="quiz-feedback"></div>
       </div>
@@ -404,10 +404,10 @@
         <h4>✍️ Quick Check</h4>
         <p>Which prompt is most likely to produce the output you want with minimal mid-task corrections?</p>
         <div class="quiz-options">
-          <div class="quiz-opt" onclick="quizAnswer(this, false)">A. "Make a report from my files."</div>
-          <div class="quiz-opt" onclick="quizAnswer(this, true)">B. "Read all CSV files in /data/q4. Compute total revenue by region. Create a Word report called 'q4-summary.docx' with one section per region and a bar chart. Save to /reports/."</div>
-          <div class="quiz-opt" onclick="quizAnswer(this, false)">C. "Summarize everything."</div>
-          <div class="quiz-opt" onclick="quizAnswer(this, false)">D. "Do the Q4 thing I described earlier."</div>
+          <button class="quiz-opt" onclick="quizAnswer(this, false)">A. "Make a report from my files."</button>
+          <button class="quiz-opt" onclick="quizAnswer(this, true)">B. "Read all CSV files in /data/q4. Compute total revenue by region. Create a Word report called 'q4-summary.docx' with one section per region and a bar chart. Save to /reports/."</button>
+          <button class="quiz-opt" onclick="quizAnswer(this, false)">C. "Summarize everything."</button>
+          <button class="quiz-opt" onclick="quizAnswer(this, false)">D. "Do the Q4 thing I described earlier."</button>
         </div>
         <div class="quiz-feedback"></div>
       </div>
@@ -677,10 +677,10 @@
         <h4>✍️ Quick Check</h4>
         <p>Which of the following is the safest way to start a Cowork task that modifies existing files?</p>
         <div class="quiz-options">
-          <div class="quiz-opt" onclick="quizAnswer(this, false)">A. Give Claude access to your entire Documents folder for maximum flexibility</div>
-          <div class="quiz-opt" onclick="quizAnswer(this, true)">B. Create a dedicated working folder, copy files there, include "back up originals before editing" in instructions, and review Claude's plan before executing</div>
-          <div class="quiz-opt" onclick="quizAnswer(this, false)">C. Let Claude run and fix any mistakes afterward</div>
-          <div class="quiz-opt" onclick="quizAnswer(this, false)">D. Only use Cowork for creating new files, never for editing</div>
+          <button class="quiz-opt" onclick="quizAnswer(this, false)">A. Give Claude access to your entire Documents folder for maximum flexibility</button>
+          <button class="quiz-opt" onclick="quizAnswer(this, true)">B. Create a dedicated working folder, copy files there, include "back up originals before editing" in instructions, and review Claude's plan before executing</button>
+          <button class="quiz-opt" onclick="quizAnswer(this, false)">C. Let Claude run and fix any mistakes afterward</button>
+          <button class="quiz-opt" onclick="quizAnswer(this, false)">D. Only use Cowork for creating new files, never for editing</button>
         </div>
         <div class="quiz-feedback"></div>
       </div>
@@ -803,7 +803,7 @@ When I ask you to "process inbox," read all new files in inbox/, extract key inf
         <li><strong>Identify one recurring task</strong> in your job that Cowork could automate and build that workflow</li>
       </ol>
 
-      <p style="margin-top: 24px; color: var(--muted); font-size: 0.9rem;">For the latest updates, visit <a href="https://support.claude.com" style="color: var(--accent2);">support.claude.com</a> and <a href="https://claude.com/product/cowork" style="color: var(--accent2);">claude.com/product/cowork</a>. Cowork is a research preview and features are evolving rapidly.</p>
+      <p class="section-footer-note">For the latest updates, visit <a href="https://support.claude.com">support.claude.com</a> and <a href="https://claude.com/product/cowork">claude.com/product/cowork</a>. Cowork is a research preview and features are evolving rapidly.</p>
     </section>
 
   </main>
@@ -811,7 +811,7 @@ When I ask you to "process inbox," read all new files in inbox/, extract key inf
 
 <footer>
   <p>Claude Cowork Course · Created February 2026 · Based on official Anthropic documentation and product announcements</p>
-  <p style="margin-top: 6px; color: var(--footer-sub);">Cowork is a research preview. Features and availability may change. Always consult <a href="https://support.claude.com" style="color: var(--accent2);">support.claude.com</a> for the latest information.</p>
+  <p class="footer-sub">Cowork is a research preview. Features and availability may change. Always consult <a href="https://support.claude.com">support.claude.com</a> for the latest information.</p>
 </footer>
 
 <script>
