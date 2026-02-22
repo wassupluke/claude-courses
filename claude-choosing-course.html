@@ -280,12 +280,7 @@
       </div>
 
       <!-- Progress bar -->
-      <div class="progress-bar-wrap">
-        <div class="progress-bar-label">Course progress</div>
-        <div class="progress-track">
-          <div class="progress-fill" style="width:0%"></div>
-        </div>
-      </div>
+      <div class="progress-bar" style="margin: 24px 0 8px;"><div class="progress-fill" style="width:0%"></div></div>
 
       <!-- ── MODULE 1 ─────────────────────────────────────────── -->
       <section class="section" id="module-1">
@@ -436,13 +431,14 @@
         </div>
 
         <div class="quiz" id="quiz-1">
-          <div class="quiz-question">Which Claude surfaces require a paid subscription to access?</div>
+          <p>Which Claude surfaces require a paid subscription to access?</p>
           <div class="quiz-options">
-            <button class="quiz-option" onclick="quizAnswer(this, false)">Chat and Projects</button>
-            <button class="quiz-option" onclick="quizAnswer(this, true)">Claude Code and Cowork</button>
-            <button class="quiz-option" onclick="quizAnswer(this, false)">The API only</button>
-            <button class="quiz-option" onclick="quizAnswer(this, false)">All five surfaces</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">Chat and Projects</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, true)">Claude Code and Cowork</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">The API only</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">All five surfaces</button>
           </div>
+          <p class="quiz-feedback"></p>
         </div>
       </section>
 
@@ -512,13 +508,14 @@
         <p>Paid subscribers can switch between Haiku 4.5 (fastest, lightest), Sonnet 4.5 (default, best balance), and Opus 4.5/4.6 (most capable, highest cost against your usage quota). Free users are served Sonnet 4.5. The rule of thumb: use the least-capable model that gets the job done well. Haiku is excellent for extraction, reformatting, and routine writing. Opus is worth the quota spend for complex code, long reasoning chains, and nuanced analysis.</p>
 
         <div class="quiz" id="quiz-2">
-          <div class="quiz-question">A free user opens a brand-new chat session. Which Claude model powers it?</div>
+          <p>A free user opens a brand-new chat session. Which Claude model powers it?</p>
           <div class="quiz-options">
-            <button class="quiz-option" onclick="quizAnswer(this, false)">Claude Haiku 4.5 only</button>
-            <button class="quiz-option" onclick="quizAnswer(this, true)">Claude Sonnet 4.5</button>
-            <button class="quiz-option" onclick="quizAnswer(this, false)">Claude Opus 4.5</button>
-            <button class="quiz-option" onclick="quizAnswer(this, false)">A special free-tier model</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">Claude Haiku 4.5 only</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, true)">Claude Sonnet 4.5</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">Claude Opus 4.5</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">A special free-tier model</button>
           </div>
+          <p class="quiz-feedback"></p>
         </div>
       </section>
 
@@ -612,13 +609,14 @@
         </div>
 
         <div class="quiz" id="quiz-3">
-          <div class="quiz-question">What is the maximum number of Projects a free Claude user can create?</div>
+          <p>What is the maximum number of Projects a free Claude user can create?</p>
           <div class="quiz-options">
-            <button class="quiz-option" onclick="quizAnswer(this, false)">1</button>
-            <button class="quiz-option" onclick="quizAnswer(this, false)">3</button>
-            <button class="quiz-option" onclick="quizAnswer(this, true)">5</button>
-            <button class="quiz-option" onclick="quizAnswer(this, false)">Unlimited</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">1</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">3</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, true)">5</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">Unlimited</button>
           </div>
+          <p class="quiz-feedback"></p>
         </div>
       </section>
 
@@ -684,13 +682,14 @@
         </div>
 
         <div class="quiz" id="quiz-4">
-          <div class="quiz-question">Where does Claude Code write its output when it edits your code?</div>
+          <p>Where does Claude Code write its output when it edits your code?</p>
           <div class="quiz-options">
-            <button class="quiz-option" onclick="quizAnswer(this, false)">Into a chat window for you to copy</button>
-            <button class="quiz-option" onclick="quizAnswer(this, false)">Into an Artifact that you download</button>
-            <button class="quiz-option" onclick="quizAnswer(this, true)">Directly to files on your disk</button>
-            <button class="quiz-option" onclick="quizAnswer(this, false)">Into a cloud-hosted repository</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">Into a chat window for you to copy</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">Into an Artifact that you download</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, true)">Directly to files on your disk</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">Into a cloud-hosted repository</button>
           </div>
+          <p class="quiz-feedback"></p>
         </div>
       </section>
 
@@ -816,13 +815,14 @@
         </div>
 
         <div class="quiz" id="quiz-5">
-          <div class="quiz-question">Which of the following is a current limitation of Cowork as of February 2026?</div>
+          <p>Which of the following is a current limitation of Cowork as of February 2026?</p>
           <div class="quiz-options">
-            <button class="quiz-option" onclick="quizAnswer(this, false)">It cannot access the internet during tasks</button>
-            <button class="quiz-option" onclick="quizAnswer(this, true)">Claude Desktop must remain open throughout the task</button>
-            <button class="quiz-option" onclick="quizAnswer(this, false)">It can only work with one file at a time</button>
-            <button class="quiz-option" onclick="quizAnswer(this, false)">It is only available to Max subscribers</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">It cannot access the internet during tasks</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, true)">Claude Desktop must remain open throughout the task</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">It can only work with one file at a time</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">It is only available to Max subscribers</button>
           </div>
+          <p class="quiz-feedback"></p>
         </div>
       </section>
 
@@ -920,13 +920,14 @@
         </div>
 
         <div class="quiz" id="quiz-6">
-          <div class="quiz-question">Which API feature cuts costs by 50% for requests that don't need an immediate response?</div>
+          <p>Which API feature cuts costs by 50% for requests that don't need an immediate response?</p>
           <div class="quiz-options">
-            <button class="quiz-option" onclick="quizAnswer(this, false)">Prompt caching</button>
-            <button class="quiz-option" onclick="quizAnswer(this, true)">Batch API</button>
-            <button class="quiz-option" onclick="quizAnswer(this, false)">Fast mode</button>
-            <button class="quiz-option" onclick="quizAnswer(this, false)">Haiku model selection</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">Prompt caching</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, true)">Batch API</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">Fast mode</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">Haiku model selection</button>
           </div>
+          <p class="quiz-feedback"></p>
         </div>
       </section>
 
@@ -1042,13 +1043,14 @@
         </div>
 
         <div class="quiz" id="quiz-7">
-          <div class="quiz-question">A developer wants Claude to build a feature in their existing codebase, then deploy the product with Claude embedded as an AI assistant for their users. Which surfaces does this workflow use?</div>
+          <p>A developer wants Claude to build a feature in their existing codebase, then deploy the product with Claude embedded as an AI assistant for their users. Which surfaces does this workflow use?</p>
           <div class="quiz-options">
-            <button class="quiz-option" onclick="quizAnswer(this, false)">Chat and Projects</button>
-            <button class="quiz-option" onclick="quizAnswer(this, false)">Cowork and Projects</button>
-            <button class="quiz-option" onclick="quizAnswer(this, true)">Claude Code and the API</button>
-            <button class="quiz-option" onclick="quizAnswer(this, false)">The API alone</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">Chat and Projects</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">Cowork and Projects</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, true)">Claude Code and the API</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">The API alone</button>
           </div>
+          <p class="quiz-feedback"></p>
         </div>
       </section>
 
@@ -1166,24 +1168,20 @@
         </div>
 
         <div class="quiz" id="quiz-8">
-          <div class="quiz-question">A free user needs to analyze a 150-page research paper and wants Claude to remember the context across multiple sessions. What is the best approach?</div>
+          <p>A free user needs to analyze a 150-page research paper and wants Claude to remember the context across multiple sessions. What is the best approach?</p>
           <div class="quiz-options">
-            <button class="quiz-option" onclick="quizAnswer(this, false)">Paste the document into every new chat session</button>
-            <button class="quiz-option" onclick="quizAnswer(this, true)">Create a Project, upload the paper to the knowledge base, and chat within the project</button>
-            <button class="quiz-option" onclick="quizAnswer(this, false)">Upgrade to Pro before any analysis is possible</button>
-            <button class="quiz-option" onclick="quizAnswer(this, false)">Use the API with prompt caching</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">Paste the document into every new chat session</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, true)">Create a Project, upload the paper to the knowledge base, and chat within the project</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">Upgrade to Pro before any analysis is possible</button>
+            <button class="quiz-opt" onclick="quizAnswer(this, false)">Use the API with prompt caching</button>
           </div>
+          <p class="quiz-feedback"></p>
         </div>
       </section>
 
       <!-- Course completion -->
       <section class="section completion-section">
-        <div class="progress-bar-wrap">
-          <div class="progress-bar-label">Complete</div>
-          <div class="progress-track">
-            <div class="progress-fill" style="width:100%"></div>
-          </div>
-        </div>
+        <div class="progress-bar" style="margin: 0 0 32px;"><div class="progress-fill" style="width:100%"></div></div>
         <div class="completion-inner">
           <div class="completion-icon">🎓</div>
           <h2>Course Complete</h2>
@@ -1211,33 +1209,25 @@
 
   <script>
   function quizAnswer(el, correct) {
-    const container = el.closest('.quiz');
-    if (container.classList.contains('answered')) return;
-    container.classList.add('answered');
-
-    const options = container.querySelectorAll('.quiz-option');
-    options.forEach(opt => {
-      opt.disabled = true;
-      opt.classList.remove('selected');
+    const container = el.closest('.quiz-options');
+    const feedback  = el.closest('.quiz').querySelector('.quiz-feedback');
+    container.querySelectorAll('.quiz-opt').forEach(o => {
+      o.style.pointerEvents = 'none';
+      o.classList.remove('correct', 'wrong');
     });
-
-    el.classList.add('selected');
-
     if (correct) {
       el.classList.add('correct');
-      container.insertAdjacentHTML('beforeend',
-        '<div class="quiz-feedback correct-feedback">✓ Correct!</div>');
+      feedback.textContent = '✓ Correct!';
+      feedback.style.color = 'var(--green)';
     } else {
-      el.classList.add('incorrect');
-      // Reveal the correct answer
-      options.forEach(opt => {
-        if (opt.getAttribute('onclick').includes('true')) {
-          opt.classList.add('correct');
-        }
+      el.classList.add('wrong');
+      feedback.textContent = '✗ Not quite. Try re-reading the section above.';
+      feedback.style.color = 'var(--red)';
+      container.querySelectorAll('.quiz-opt').forEach(o => {
+        if (o.getAttribute('onclick').includes('true')) o.classList.add('correct');
       });
-      container.insertAdjacentHTML('beforeend',
-        '<div class="quiz-feedback incorrect-feedback">✗ Not quite — the correct answer is highlighted above.</div>');
     }
+    feedback.style.display = 'block';
   }
   </script>
 </body>
