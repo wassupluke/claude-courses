@@ -611,19 +611,94 @@ footer {
 .contribute-section pre { margin: 16px 0; }
 
 /* ── RESPONSIVE ────────────────────────────────────────────── */
+
+/* Prevent any element from blowing out the viewport width globally */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+/* Tables and pre blocks scroll horizontally inside their container
+   rather than pushing the page wider */
+table, pre {
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Restore table layout semantics after display:block */
+table { width: max-content; min-width: 100%; }
+
 @media (max-width: 900px) {
   /* Collapse the sidebar on narrow screens */
-  .layout { grid-template-columns: 1fr; }
-  .toc    { display: none; }
-  .content { padding: 32px 24px; }
+  .layout {
+    grid-template-columns: 1fr;
+    /* Prevent the grid itself from overflowing */
+    width: 100%;
+    overflow-x: hidden;
+  }
+  .toc     { display: none; }
+  .content {
+    padding: 24px 16px;
+    /* Content area must never exceed the viewport */
+    max-width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
 
   /* Stack catalog cards */
-  .catalog-grid { grid-template-columns: 1fr; }
-  .catalog-section { padding: 40px 24px; }
+  .catalog-grid    { grid-template-columns: 1fr; }
+  .catalog-section { padding: 32px 16px; }
 
   /* Tighten hero on mobile */
-  .hero { padding: 60px 24px 40px; }
+  .hero {
+    padding: 48px 16px 32px;
+    /* Long hero-meta items wrap rather than overflow */
+  }
+  .hero-meta {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
 
   /* Stat row wraps */
-  .stat-row { gap: 24px; justify-content: center; }
+  .stat-row { gap: 20px; justify-content: center; }
+
+  /* Course section headings: let long h2 wrap instead of overflow */
+  .section h2  { font-size: 1.35rem; word-break: break-word; }
+  .section h3  { font-size: 1rem; }
+
+  /* Section header flex row: don't let the number chip force overflow */
+  .section-header {
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  /* Card grids defined per-course: force single column */
+  .card-grid { grid-template-columns: 1fr; }
+
+  /* Steps: keep the circle + content from overflowing narrow screens */
+  .step { gap: 12px; }
+
+  /* Callout boxes: reduce padding so they fit on small screens */
+  .callout { padding: 14px 14px; gap: 10px; }
+
+  /* Contribute section: reduce padding */
+  .contribute-section { padding: 24px 16px; }
+
+  /* Course cards: don't let badge text overflow */
+  .course-card-badge { white-space: normal; }
+
+  /* Theme toggle: make it smaller on mobile so it doesn't overlap content */
+  .theme-toggle {
+    padding: 6px 12px;
+    font-size: 0.75rem;
+    top: 12px;
+    right: 12px;
+  }
+  .theme-toggle .toggle-label { display: none; }
+
+  /* Quiz options: full width, readable on small screens */
+  .quiz { padding: 16px; }
 }
