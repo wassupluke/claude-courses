@@ -31,7 +31,7 @@ done
 echo ""
 echo "--- No inline style= attributes (except data-driven bars) ---"
 for f in $HTML_FILES; do
-  violations=$(grep -n 'style=' "$f" | grep -v 'style="width:' | grep -v 'style="pointer-events' || true)
+  violations=$(grep -n 'style=' "$f" | grep -v 'style="width:' | grep -v 'style="pointer-events' | grep -v 'style="--w:' || true)
   if [ -n "$violations" ]; then
     fail "$f has inline styles:"
     echo "$violations" | sed 's/^/       /'
