@@ -1,841 +1,1401 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Claude Cowork: A Complete Course</title>
-<!-- Theme system must load before first paint to avoid flash of wrong theme -->
-<script src="assets/theme.js"></script>
-<link rel="stylesheet" href="assets/theme.css">
-<link rel="stylesheet" href="assets/styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Claude Cowork: A Complete Course</title>
+    <meta
+      name="description"
+      content="Learn how to use Claude Cowork effectively — real-time collaboration, shared artifacts, multi-turn workflows, and best practices for working alongside Claude."
+    />
+    <!-- Theme system must load before first paint to avoid flash of wrong theme -->
+    <script src="assets/theme.js"></script>
+    <link rel="stylesheet" href="assets/theme.css" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <!-- THEME TOGGLE -->
+    <button
+      class="theme-toggle"
+      onclick="toggleTheme()"
+      aria-label="Toggle light/dark mode"
+    >
+      <span class="toggle-icon" id="toggle-icon">☀️</span>
+      <span class="toggle-label" id="toggle-label">Light</span>
+    </button>
 
-<!-- THEME TOGGLE -->
-<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
-  <span class="toggle-icon" id="toggle-icon">☀️</span>
-  <span class="toggle-label" id="toggle-label">Light</span>
-</button>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="badge">Complete Course · February 2026</div>
-  <h1>Mastering Claude Cowork</h1>
-  <p class="subtitle">From zero to productive — everything you need to harness Claude's agentic desktop power for real knowledge work.</p>
-  <div class="hero-meta">
-    <span>🎓 8 Modules</span>
-    <span>⏱ ~2 hours</span>
-    <span>🧪 Research Preview</span>
-    <span>💻 macOS · Windows</span>
-  </div>
-</div>
-
-<div class="layout">
-
-  <!-- SIDEBAR TOC -->
-  <nav class="toc">
-    <h3>Course Modules</h3>
-    <a href="#m0"><span class="toc-num">00</span> Introduction</a>
-    <a href="#m1"><span class="toc-num">01</span> What Is Cowork?</a>
-    <a href="#m2"><span class="toc-num">02</span> Setup &amp; First Launch</a>
-    <a href="#m3"><span class="toc-num">03</span> Core Workflow</a>
-    <a href="#m4"><span class="toc-num">04</span> Writing Great Prompts</a>
-    <a href="#m5"><span class="toc-num">05</span> Plugins &amp; Connectors</a>
-    <a href="#m6"><span class="toc-num">06</span> Global &amp; Folder Instructions</a>
-    <a href="#m7"><span class="toc-num">07</span> Safety &amp; Best Practices</a>
-    <a href="#m8"><span class="toc-num">08</span> Advanced Techniques</a>
-  </nav>
-
-  <!-- MAIN -->
-  <main class="content">
-
-    <!-- MODULE 0 — INTRO -->
-    <section class="section" id="m0">
-      <div class="section-header">
-        <div class="section-num">0</div>
-        <h2>Welcome to the Course</h2>
+    <!-- HERO -->
+    <div class="hero">
+      <div class="badge">Complete Course · February 2026</div>
+      <h1>Mastering Claude Cowork</h1>
+      <p class="subtitle">
+        From zero to productive — everything you need to harness Claude's
+        agentic desktop power for real knowledge work.
+      </p>
+      <div class="hero-meta">
+        <span>🎓 8 Modules</span>
+        <span>⏱ ~2 hours</span>
+        <span>🧪 Research Preview</span>
+        <span>💻 macOS · Windows</span>
       </div>
+    </div>
 
-      <p>Claude Cowork launched in January 2026 and immediately triggered a <strong>$285 billion software stocks selloff</strong>. The reason? It's the first AI tool that doesn't just answer questions — it finishes work. This course teaches you everything you need to move from curious beginner to confident power user.</p>
+    <div class="layout">
+      <!-- SIDEBAR TOC -->
+      <nav class="toc">
+        <h3>Course Modules</h3>
+        <a href="#m0"><span class="toc-num">00</span> Introduction</a>
+        <a href="#m1"><span class="toc-num">01</span> What Is Cowork?</a>
+        <a href="#m2"
+          ><span class="toc-num">02</span> Setup &amp; First Launch</a
+        >
+        <a href="#m3"><span class="toc-num">03</span> Core Workflow</a>
+        <a href="#m4"><span class="toc-num">04</span> Writing Great Prompts</a>
+        <a href="#m5"
+          ><span class="toc-num">05</span> Plugins &amp; Connectors</a
+        >
+        <a href="#m6"
+          ><span class="toc-num">06</span> Global &amp; Folder Instructions</a
+        >
+        <a href="#m7"
+          ><span class="toc-num">07</span> Safety &amp; Best Practices</a
+        >
+        <a href="#m8"><span class="toc-num">08</span> Advanced Techniques</a>
+      </nav>
 
-      <div class="callout info">
-        <div class="callout-icon">ℹ️</div>
-        <div class="callout-body">
-          <strong>What you'll need</strong>
-          <p>A paid Claude subscription (Pro, Max, Team, or Enterprise), the Claude Desktop app for macOS or Windows (x64), and an active internet connection. Cowork is <em>not</em> available on web or mobile.</p>
-        </div>
-      </div>
-
-      <h3>Learning Objectives</h3>
-      <p>By the end of this course you will:</p>
-      <ul>
-        <li>Understand how Cowork differs from standard Claude chat</li>
-        <li>Set up and launch Cowork on your machine</li>
-        <li>Write effective, safe prompts for multi-step tasks</li>
-        <li>Use plugins and connectors to extend Claude's capabilities</li>
-        <li>Configure global and folder-level instructions for persistent context</li>
-        <li>Apply safety practices to prevent data loss or unintended actions</li>
-        <li>Build advanced workflows combining Cowork, Claude in Chrome, and MCP connectors</li>
-      </ul>
-    </section>
-
-    <!-- MODULE 1 — WHAT IS COWORK -->
-    <section class="section" id="m1">
-      <div class="section-header">
-        <div class="section-num">1</div>
-        <h2>What Is Claude Cowork?</h2>
-      </div>
-
-      <p>Cowork is Anthropic's answer to a simple observation: people were using <strong>Claude Code</strong> — a developer terminal tool — for everything from sorting vacation photos to building slide decks. Rather than force non-technical users into a command line, Anthropic wrapped Claude's agentic architecture in a friendly desktop interface.</p>
-
-      <p>The result is a tool that, in Anthropic's own words, transforms Claude from a chatbot into a <em>digital coworker</em>.</p>
-
-      <h3>Chat vs. Cowork: The Core Difference</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Dimension</th>
-            <th>Standard Chat</th>
-            <th>Cowork</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Execution model</td>
-            <td>One prompt → one response</td>
-            <td>One goal → multi-step autonomous execution</td>
-          </tr>
-          <tr>
-            <td>File access</td>
-            <td>Manual upload/paste</td>
-            <td>Direct read/write to your local folders</td>
-          </tr>
-          <tr>
-            <td>Output</td>
-            <td>Text in chat window</td>
-            <td>Real files saved to your computer</td>
-          </tr>
-          <tr>
-            <td>Duration</td>
-            <td>Single conversation turn</td>
-            <td>Long-running tasks (minutes to hours)</td>
-          </tr>
-          <tr>
-            <td>Parallelism</td>
-            <td>None</td>
-            <td>Sub-agents work concurrently on sub-tasks</td>
-          </tr>
-          <tr>
-            <td>Best for</td>
-            <td>Questions, drafts, quick analysis</td>
-            <td>Completing complete deliverables</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h3>Key Capabilities</h3>
-      <div class="card-grid">
-        <div class="card">
-          <div class="card-icon">📂</div>
-          <h4>Direct File Access</h4>
-          <p>Read, write, edit, rename, and organize files in folders you choose — no uploads required.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🤖</div>
-          <h4>Sub-agent Coordination</h4>
-          <p>Claude spawns parallel sub-agents for complex tasks, coordinating multiple workstreams simultaneously.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📄</div>
-          <h4>Professional Outputs</h4>
-          <p>Generates real .xlsx, .docx, .pptx, and .pdf files — not just text descriptions of them.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🔌</div>
-          <h4>Plugins &amp; Connectors</h4>
-          <p>Connect to external services, CRMs, calendars, and databases through MCP connectors.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🌐</div>
-          <h4>Browser Integration</h4>
-          <p>Pair with Claude in Chrome to complete tasks requiring web browsing or form submission.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">⏳</div>
-          <h4>Long-running Tasks</h4>
-          <p>No session timeouts. Describe a goal, step away, and return to finished work.</p>
-        </div>
-      </div>
-
-      <h3>Under the Hood</h3>
-      <p>Cowork is built on the same <strong>Claude Agent SDK</strong> that powers Claude Code. When you give it a folder, your files are mounted into an isolated <strong>Linux virtual machine</strong> (using Apple's Virtualization Framework on macOS). Code runs in that sandbox — real file changes are then written back out to your machine. This architecture means:</p>
-      <ul>
-        <li>Claude cannot access files outside folders you explicitly grant</li>
-        <li>Python scripts, shell commands, and other tools run in a controlled environment</li>
-        <li>The underlying model is <strong>Claude Opus 4.6</strong> with a 1 million token context window</li>
-      </ul>
-
-      <div class="quiz">
-        <h4>✍️ Quick Check</h4>
-        <p>What is the primary architectural difference between Cowork and a regular Claude chat?</p>
-        <div class="quiz-options">
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">A. Cowork uses a different AI model</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">B. Cowork is only available on macOS</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, true)">C. Cowork executes multi-step tasks autonomously with direct file system access</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">D. Cowork requires a terminal to operate</button>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-    </section>
-
-    <!-- MODULE 2 — SETUP -->
-    <section class="section" id="m2">
-      <div class="section-header">
-        <div class="section-num">2</div>
-        <h2>Setup &amp; First Launch</h2>
-      </div>
-
-      <h3>Requirements Checklist</h3>
-      <table>
-        <thead><tr><th>Requirement</th><th>Details</th><th>Status Check</th></tr></thead>
-        <tbody>
-          <tr><td>Paid Claude subscription</td><td>Pro, Max, Team, or Enterprise</td><td><span class="tag green">Required</span></td></tr>
-          <tr><td>Claude Desktop (macOS)</td><td>Any supported macOS version; download at claude.com/download</td><td><span class="tag green">Required</span></td></tr>
-          <tr><td>Claude Desktop (Windows)</td><td>Windows x64 only — arm64 is <em>not</em> supported</td><td><span class="tag yellow">x64 Only</span></td></tr>
-          <tr><td>Active internet connection</td><td>Must remain connected throughout each session</td><td><span class="tag green">Required</span></td></tr>
-          <tr><td>Desktop app stays open</td><td>Closing the app ends the current session</td><td><span class="tag yellow">Important</span></td></tr>
-        </tbody>
-      </table>
-
-      <h3>Installation Steps</h3>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-body">
-            <h4>Download Claude Desktop</h4>
-            <p>Visit <code>claude.com/download</code> and download the latest version for your OS. If you already have it installed, make sure it's fully updated — especially on Windows where older versions may lack Cowork.</p>
+      <!-- MAIN -->
+      <main class="content">
+        <!-- MODULE 0 — INTRO -->
+        <section class="section" id="m0">
+          <div class="section-header">
+            <div class="section-num">0</div>
+            <h2>Welcome to the Course</h2>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-body">
-            <h4>Sign In with Your Paid Account</h4>
-            <p>Open the app and sign in. Cowork will only appear for Pro, Max, Team, or Enterprise accounts. Free accounts do not have access.</p>
+
+          <p>
+            Claude Cowork launched in January 2026 and immediately triggered a
+            <strong>$285 billion software stocks selloff</strong>. The reason?
+            It's the first AI tool that doesn't just answer questions — it
+            finishes work. This course teaches you everything you need to move
+            from curious beginner to confident power user.
+          </p>
+
+          <div class="callout info">
+            <div class="callout-icon">ℹ️</div>
+            <div class="callout-body">
+              <strong>What you'll need</strong>
+              <p>
+                A paid Claude subscription (Pro, Max, Team, or Enterprise), the
+                Claude Desktop app for macOS or Windows (x64), and an active
+                internet connection. Cowork is <em>not</em> available on web or
+                mobile.
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <h4>Locate the Cowork Tab</h4>
-            <p>In the Claude Desktop interface, look for the mode selector at the top. You'll see "Chat" and a "Cowork" (or "Tasks") tab. Click Cowork to enter agent mode.</p>
+
+          <h3>Learning Objectives</h3>
+          <p>By the end of this course you will:</p>
+          <ul>
+            <li>Understand how Cowork differs from standard Claude chat</li>
+            <li>Set up and launch Cowork on your machine</li>
+            <li>Write effective, safe prompts for multi-step tasks</li>
+            <li>Use plugins and connectors to extend Claude's capabilities</li>
+            <li>
+              Configure global and folder-level instructions for persistent
+              context
+            </li>
+            <li>
+              Apply safety practices to prevent data loss or unintended actions
+            </li>
+            <li>
+              Build advanced workflows combining Cowork, Claude in Chrome, and
+              MCP connectors
+            </li>
+          </ul>
+        </section>
+
+        <!-- MODULE 1 — WHAT IS COWORK -->
+        <section class="section" id="m1">
+          <div class="section-header">
+            <div class="section-num">1</div>
+            <h2>What Is Claude Cowork?</h2>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div class="step-body">
-            <h4>Grant Folder Access (Optional but Recommended)</h4>
-            <p>Click the folder icon or attachment button to select a working folder. This is the directory Claude can read and write. Choose a dedicated project folder rather than your entire home directory for safety.</p>
+
+          <p>
+            Cowork is Anthropic's answer to a simple observation: people were
+            using <strong>Claude Code</strong> — a developer terminal tool — for
+            everything from sorting vacation photos to building slide decks.
+            Rather than force non-technical users into a command line, Anthropic
+            wrapped Claude's agentic architecture in a friendly desktop
+            interface.
+          </p>
+
+          <p>
+            The result is a tool that, in Anthropic's own words, transforms
+            Claude from a chatbot into a <em>digital coworker</em>.
+          </p>
+
+          <h3>Chat vs. Cowork: The Core Difference</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Dimension</th>
+                <th>Standard Chat</th>
+                <th>Cowork</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Execution model</td>
+                <td>One prompt → one response</td>
+                <td>One goal → multi-step autonomous execution</td>
+              </tr>
+              <tr>
+                <td>File access</td>
+                <td>Manual upload/paste</td>
+                <td>Direct read/write to your local folders</td>
+              </tr>
+              <tr>
+                <td>Output</td>
+                <td>Text in chat window</td>
+                <td>Real files saved to your computer</td>
+              </tr>
+              <tr>
+                <td>Duration</td>
+                <td>Single conversation turn</td>
+                <td>Long-running tasks (minutes to hours)</td>
+              </tr>
+              <tr>
+                <td>Parallelism</td>
+                <td>None</td>
+                <td>Sub-agents work concurrently on sub-tasks</td>
+              </tr>
+              <tr>
+                <td>Best for</td>
+                <td>Questions, drafts, quick analysis</td>
+                <td>Completing complete deliverables</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Key Capabilities</h3>
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-icon">📂</div>
+              <h4>Direct File Access</h4>
+              <p>
+                Read, write, edit, rename, and organize files in folders you
+                choose — no uploads required.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🤖</div>
+              <h4>Sub-agent Coordination</h4>
+              <p>
+                Claude spawns parallel sub-agents for complex tasks,
+                coordinating multiple workstreams simultaneously.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-icon">📄</div>
+              <h4>Professional Outputs</h4>
+              <p>
+                Generates real .xlsx, .docx, .pptx, and .pdf files — not just
+                text descriptions of them.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🔌</div>
+              <h4>Plugins &amp; Connectors</h4>
+              <p>
+                Connect to external services, CRMs, calendars, and databases
+                through MCP connectors.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🌐</div>
+              <h4>Browser Integration</h4>
+              <p>
+                Pair with Claude in Chrome to complete tasks requiring web
+                browsing or form submission.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-icon">⏳</div>
+              <h4>Long-running Tasks</h4>
+              <p>
+                No session timeouts. Describe a goal, step away, and return to
+                finished work.
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">5</div>
-          <div class="step-body">
-            <h4>Run Your First Task</h4>
-            <p>Type a clear task in the prompt area and click send. Claude will plan, then begin executing. You'll see live progress indicators as it works.</p>
+
+          <h3>Under the Hood</h3>
+          <p>
+            Cowork is built on the same <strong>Claude Agent SDK</strong> that
+            powers Claude Code. When you give it a folder, your files are
+            mounted into an isolated
+            <strong>Linux virtual machine</strong> (using Apple's Virtualization
+            Framework on macOS). Code runs in that sandbox — real file changes
+            are then written back out to your machine. This architecture means:
+          </p>
+          <ul>
+            <li>
+              Claude cannot access files outside folders you explicitly grant
+            </li>
+            <li>
+              Python scripts, shell commands, and other tools run in a
+              controlled environment
+            </li>
+            <li>
+              The underlying model is <strong>Claude Opus 4.6</strong> with a 1
+              million token context window
+            </li>
+          </ul>
+
+          <div class="quiz">
+            <h4>✍️ Quick Check</h4>
+            <p>
+              What is the primary architectural difference between Cowork and a
+              regular Claude chat?
+            </p>
+            <div class="quiz-options">
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                A. Cowork uses a different AI model
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                B. Cowork is only available on macOS
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, true)">
+                C. Cowork executes multi-step tasks autonomously with direct
+                file system access
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                D. Cowork requires a terminal to operate
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      <div class="callout tip">
-        <div class="callout-icon">💡</div>
-        <div class="callout-body">
-          <strong>First Task Suggestion</strong>
-          <p>For your very first run, try something safe and reversible: <em>"List all files in this folder and create a summary.md file describing what each one contains."</em> This shows you what Cowork can do without any risk of data loss.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- MODULE 3 — CORE WORKFLOW -->
-    <section class="section" id="m3">
-      <div class="section-header">
-        <div class="section-num">3</div>
-        <h2>Core Workflow: How Cowork Thinks</h2>
-      </div>
-
-      <p>Understanding Cowork's internal execution model makes you a dramatically better user. Here's exactly what happens after you press send:</p>
-
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-body">
-            <h4>Analysis &amp; Planning</h4>
-            <p>Claude reads your goal, inspects any files you've given access to, and forms a detailed plan. It breaks large work into concrete sub-tasks. You'll see this plan before execution begins — this is your chance to redirect.</p>
+        <!-- MODULE 2 — SETUP -->
+        <section class="section" id="m2">
+          <div class="section-header">
+            <div class="section-num">2</div>
+            <h2>Setup &amp; First Launch</h2>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-body">
-            <h4>Sub-agent Spawning</h4>
-            <p>For complex tasks, Claude spins up multiple sub-agents that work in parallel. One might be summarizing documents while another is building a spreadsheet structure. This dramatically reduces total execution time.</p>
+
+          <h3>Requirements Checklist</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Requirement</th>
+                <th>Details</th>
+                <th>Status Check</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Paid Claude subscription</td>
+                <td>Pro, Max, Team, or Enterprise</td>
+                <td><span class="tag green">Required</span></td>
+              </tr>
+              <tr>
+                <td>Claude Desktop (macOS)</td>
+                <td>
+                  Any supported macOS version; download at claude.com/download
+                </td>
+                <td><span class="tag green">Required</span></td>
+              </tr>
+              <tr>
+                <td>Claude Desktop (Windows)</td>
+                <td>Windows x64 only — arm64 is <em>not</em> supported</td>
+                <td><span class="tag yellow">x64 Only</span></td>
+              </tr>
+              <tr>
+                <td>Active internet connection</td>
+                <td>Must remain connected throughout each session</td>
+                <td><span class="tag green">Required</span></td>
+              </tr>
+              <tr>
+                <td>Desktop app stays open</td>
+                <td>Closing the app ends the current session</td>
+                <td><span class="tag yellow">Important</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Installation Steps</h3>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h4>Download Claude Desktop</h4>
+                <p>
+                  Visit <code>claude.com/download</code> and download the latest
+                  version for your OS. If you already have it installed, make
+                  sure it's fully updated — especially on Windows where older
+                  versions may lack Cowork.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h4>Sign In with Your Paid Account</h4>
+                <p>
+                  Open the app and sign in. Cowork will only appear for Pro,
+                  Max, Team, or Enterprise accounts. Free accounts do not have
+                  access.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h4>Locate the Cowork Tab</h4>
+                <p>
+                  In the Claude Desktop interface, look for the mode selector at
+                  the top. You'll see "Chat" and a "Cowork" (or "Tasks") tab.
+                  Click Cowork to enter agent mode.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <h4>Grant Folder Access (Optional but Recommended)</h4>
+                <p>
+                  Click the folder icon or attachment button to select a working
+                  folder. This is the directory Claude can read and write.
+                  Choose a dedicated project folder rather than your entire home
+                  directory for safety.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div class="step-body">
+                <h4>Run Your First Task</h4>
+                <p>
+                  Type a clear task in the prompt area and click send. Claude
+                  will plan, then begin executing. You'll see live progress
+                  indicators as it works.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <h4>Execution in the VM</h4>
-            <p>Code, shell commands, and file operations run in the isolated virtual machine. Live progress indicators appear in the interface — you can see exactly what Claude is doing at each step.</p>
+
+          <div class="callout tip">
+            <div class="callout-icon">💡</div>
+            <div class="callout-body">
+              <strong>First Task Suggestion</strong>
+              <p>
+                For your very first run, try something safe and reversible:
+                <em
+                  >"List all files in this folder and create a summary.md file
+                  describing what each one contains."</em
+                >
+                This shows you what Cowork can do without any risk of data loss.
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div class="step-body">
-            <h4>Check-ins &amp; Permission Requests</h4>
-            <p>For significant or potentially destructive actions — like deleting files — Claude pauses and asks for your explicit permission. You'll see a prompt and must click "Allow" to proceed.</p>
+        </section>
+
+        <!-- MODULE 3 — CORE WORKFLOW -->
+        <section class="section" id="m3">
+          <div class="section-header">
+            <div class="section-num">3</div>
+            <h2>Core Workflow: How Cowork Thinks</h2>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">5</div>
-          <div class="step-body">
-            <h4>Output Delivery</h4>
-            <p>Finished files are written directly to your file system in the working folder. Claude summarizes what was done and highlights any decisions it made during execution.</p>
+
+          <p>
+            Understanding Cowork's internal execution model makes you a
+            dramatically better user. Here's exactly what happens after you
+            press send:
+          </p>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h4>Analysis &amp; Planning</h4>
+                <p>
+                  Claude reads your goal, inspects any files you've given access
+                  to, and forms a detailed plan. It breaks large work into
+                  concrete sub-tasks. You'll see this plan before execution
+                  begins — this is your chance to redirect.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h4>Sub-agent Spawning</h4>
+                <p>
+                  For complex tasks, Claude spins up multiple sub-agents that
+                  work in parallel. One might be summarizing documents while
+                  another is building a spreadsheet structure. This dramatically
+                  reduces total execution time.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h4>Execution in the VM</h4>
+                <p>
+                  Code, shell commands, and file operations run in the isolated
+                  virtual machine. Live progress indicators appear in the
+                  interface — you can see exactly what Claude is doing at each
+                  step.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <h4>Check-ins &amp; Permission Requests</h4>
+                <p>
+                  For significant or potentially destructive actions — like
+                  deleting files — Claude pauses and asks for your explicit
+                  permission. You'll see a prompt and must click "Allow" to
+                  proceed.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div class="step-body">
+                <h4>Output Delivery</h4>
+                <p>
+                  Finished files are written directly to your file system in the
+                  working folder. Claude summarizes what was done and highlights
+                  any decisions it made during execution.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <h3>Monitoring &amp; Steering Mid-Task</h3>
-      <p>You don't have to watch. But you can — and sometimes should. If Claude's plan looks wrong, type a correction at any point. The agent will incorporate your feedback into its remaining work. Think of it like leaving a voicemail for a colleague; they'll hear it and adjust.</p>
+          <h3>Monitoring &amp; Steering Mid-Task</h3>
+          <p>
+            You don't have to watch. But you can — and sometimes should. If
+            Claude's plan looks wrong, type a correction at any point. The agent
+            will incorporate your feedback into its remaining work. Think of it
+            like leaving a voicemail for a colleague; they'll hear it and
+            adjust.
+          </p>
 
-      <h3>Queuing Tasks</h3>
-      <p>You can queue up tasks before Claude finishes the current one. Type your next request in the input area and send it. Claude will add it to its work queue and tackle it after completing the current task (or in parallel, if appropriate).</p>
+          <h3>Queuing Tasks</h3>
+          <p>
+            You can queue up tasks before Claude finishes the current one. Type
+            your next request in the input area and send it. Claude will add it
+            to its work queue and tackle it after completing the current task
+            (or in parallel, if appropriate).
+          </p>
 
-      <div class="callout warning">
-        <div class="callout-icon">⚠️</div>
-        <div class="callout-body">
-          <strong>Keep the app open</strong>
-          <p>Closing Claude Desktop ends your Cowork session immediately. Long tasks require an open app. If you need to run multi-hour jobs, adjust your system's sleep/screen-lock settings accordingly.</p>
-        </div>
-      </div>
-
-      <h3>Usage Allocation</h3>
-      <p>Cowork tasks consume significantly more of your usage allocation than regular chat because each task involves many more model calls, code executions, and tool uses. To get the most from your plan:</p>
-      <ul>
-        <li><strong>Batch related work</strong> into single sessions rather than starting a new session per sub-task</li>
-        <li><strong>Use standard chat</strong> for simple questions that don't need file access</li>
-        <li><strong>Monitor usage</strong> at Settings → Usage in the Claude interface</li>
-      </ul>
-    </section>
-
-    <!-- MODULE 4 — PROMPTS -->
-    <section class="section" id="m4">
-      <div class="section-header">
-        <div class="section-num">4</div>
-        <h2>Writing Great Cowork Prompts</h2>
-      </div>
-
-      <p>Unlike chat prompts where Claude can ask clarifying questions easily, Cowork prompts should be <strong>goals, not commands</strong>. The better you describe the outcome, the less mid-task steering you'll need.</p>
-
-      <h3>The GOAL Framework</h3>
-      <ul>
-        <li><strong>G — Goal:</strong> What finished state do you want?</li>
-        <li><strong>O — Output:</strong> What format/file type should the result be in?</li>
-        <li><strong>A — Approach/Constraints:</strong> Any rules, style, or limitations?</li>
-        <li><strong>L — Location:</strong> Where should outputs go? What folders to use?</li>
-      </ul>
-
-      <h3>Prompt Examples: Weak vs. Strong</h3>
-
-      <div class="prompt-example">
-        <div class="prompt-label">❌ Weak Prompt</div>
-        <div class="prompt-text">Summarize my documents.</div>
-      </div>
-
-      <div class="prompt-example">
-        <div class="prompt-label">✅ Strong Prompt</div>
-        <div class="prompt-text">Read all .md and .txt files in the /notes folder. For each file, write a 2–3 sentence summary. Compile all summaries into a single Word document called "notes-overview.docx" saved in the same folder. Use a clean heading for each source file name.</div>
-      </div>
-
-      <div class="prompt-example">
-        <div class="prompt-label">❌ Weak Prompt</div>
-        <div class="prompt-text">Make a spreadsheet from my receipts.</div>
-      </div>
-
-      <div class="prompt-example">
-        <div class="prompt-label">✅ Strong Prompt</div>
-        <div class="prompt-text">I have a folder of receipt photos (JPEGs) in /receipts/2025. Read each image and extract: merchant name, date, amount, and category (Food, Travel, Office, Other). Create expenses.xlsx with one row per receipt, a SUM formula at the bottom, and a second sheet with a pivot table by category. Save to /receipts/.</div>
-      </div>
-
-      <div class="prompt-example">
-        <div class="prompt-label">❌ Weak Prompt</div>
-        <div class="prompt-text">Clean up my downloads folder.</div>
-      </div>
-
-      <div class="prompt-example">
-        <div class="prompt-label">✅ Strong Prompt</div>
-        <div class="prompt-text">Look at my /Downloads folder. Sort files into subfolders by type: Images/, Documents/, Installers/, Archives/, Other/. Rename files with creation dates prepended (YYYY-MM-DD_filename). Do NOT delete anything. Show me a plan first before making any changes.</div>
-      </div>
-
-      <h3>Prompting Patterns by Use Case</h3>
-
-      <h4>Research &amp; Synthesis</h4>
-      <div class="prompt-example">
-        <div class="prompt-label">Template</div>
-        <div class="prompt-text">Read all files in [folder]. Extract [specific data points]. Synthesize into [output format] at [location]. Highlight any [contradictions / gaps / key themes].</div>
-      </div>
-
-      <h4>File Organization</h4>
-      <div class="prompt-example">
-        <div class="prompt-label">Template</div>
-        <div class="prompt-text">Review files in [folder]. Sort into [categories] based on [criteria]. Rename using [naming convention]. Do NOT delete anything. Show me a plan before executing.</div>
-      </div>
-
-      <h4>Report Generation</h4>
-      <div class="prompt-example">
-        <div class="prompt-label">Template</div>
-        <div class="prompt-text">Using data from [source files], generate a [type] report in [format]. Include: [sections]. Apply [style guidelines]. Save as [filename] to [location].</div>
-      </div>
-
-      <h4>Data Processing</h4>
-      <div class="prompt-example">
-        <div class="prompt-label">Template</div>
-        <div class="prompt-text">Load [file]. Clean it by [rules]. Compute [metrics/formulas]. Output as [xlsx/csv] with [specific sheets/columns]. Flag any rows that [condition].</div>
-      </div>
-
-      <div class="quiz">
-        <h4>✍️ Quick Check</h4>
-        <p>Which prompt is most likely to produce the output you want with minimal mid-task corrections?</p>
-        <div class="quiz-options">
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">A. "Make a report from my files."</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, true)">B. "Read all CSV files in /data/q4. Compute total revenue by region. Create a Word report called 'q4-summary.docx' with one section per region and a bar chart. Save to /reports/."</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">C. "Summarize everything."</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">D. "Do the Q4 thing I described earlier."</button>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-    </section>
-
-    <!-- MODULE 5 — PLUGINS & CONNECTORS -->
-    <section class="section" id="m5">
-      <div class="section-header">
-        <div class="section-num">5</div>
-        <h2>Plugins &amp; Connectors</h2>
-      </div>
-
-      <p>Plugins and connectors are how you supercharge Cowork beyond local file tasks. Together they let Claude reach into external services, specialize for your industry, and automate across your entire digital stack.</p>
-
-      <h3>What Are Plugins?</h3>
-      <p>Plugins are pre-packaged bundles that combine <strong>skills, connectors, slash commands, and sub-agents</strong> into a cohesive specialty. Think of them as turning Claude into a domain expert on demand.</p>
-
-      <p>Anthropic has released 11 official open-source plugins on GitHub:</p>
-
-      <div class="card-grid">
-        <div class="card">
-          <div class="card-icon">📅</div>
-          <h4>Productivity</h4>
-          <p>Manage tasks, calendars, and daily workflows</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🔍</div>
-          <h4>Enterprise Search</h4>
-          <p>Find info across company tools and docs</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">💼</div>
-          <h4>Sales</h4>
-          <p>Research prospects, prep deals, follow sales process</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">💰</div>
-          <h4>Finance</h4>
-          <p>Analyze financials, build models, track metrics</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📊</div>
-          <h4>Data</h4>
-          <p>Query, visualize, and interpret datasets</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">⚖️</div>
-          <h4>Legal</h4>
-          <p>Review documents, flag risks, track compliance</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📣</div>
-          <h4>Marketing</h4>
-          <p>Draft content, plan campaigns, manage launches</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🎧</div>
-          <h4>Customer Support</h4>
-          <p>Triage issues, draft responses, surface solutions</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🗺️</div>
-          <h4>Product Management</h4>
-          <p>Write specs, prioritize roadmaps, track progress</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🔬</div>
-          <h4>Biology Research</h4>
-          <p>Search literature, analyze results, plan experiments</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🛠️</div>
-          <h4>Plugin Create</h4>
-          <p>Build your own custom plugins from scratch</p>
-        </div>
-      </div>
-
-      <h3>Installing a Plugin</h3>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-body">
-            <h4>Open Cowork in Claude Desktop</h4>
-            <p>Click the Cowork tab in the mode selector.</p>
+          <div class="callout warning">
+            <div class="callout-icon">⚠️</div>
+            <div class="callout-body">
+              <strong>Keep the app open</strong>
+              <p>
+                Closing Claude Desktop ends your Cowork session immediately.
+                Long tasks require an open app. If you need to run multi-hour
+                jobs, adjust your system's sleep/screen-lock settings
+                accordingly.
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-body">
-            <h4>Click "Plugins" in the Left Sidebar</h4>
-            <p>This opens the plugin browser.</p>
+
+          <h3>Usage Allocation</h3>
+          <p>
+            Cowork tasks consume significantly more of your usage allocation
+            than regular chat because each task involves many more model calls,
+            code executions, and tool uses. To get the most from your plan:
+          </p>
+          <ul>
+            <li>
+              <strong>Batch related work</strong> into single sessions rather
+              than starting a new session per sub-task
+            </li>
+            <li>
+              <strong>Use standard chat</strong> for simple questions that don't
+              need file access
+            </li>
+            <li>
+              <strong>Monitor usage</strong> at Settings → Usage in the Claude
+              interface
+            </li>
+          </ul>
+        </section>
+
+        <!-- MODULE 4 — PROMPTS -->
+        <section class="section" id="m4">
+          <div class="section-header">
+            <div class="section-num">4</div>
+            <h2>Writing Great Cowork Prompts</h2>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <h4>Browse and Install</h4>
-            <p>Click any plugin to read about it, then click Install. Plugins are saved locally to your machine.</p>
+
+          <p>
+            Unlike chat prompts where Claude can ask clarifying questions
+            easily, Cowork prompts should be
+            <strong>goals, not commands</strong>. The better you describe the
+            outcome, the less mid-task steering you'll need.
+          </p>
+
+          <h3>The GOAL Framework</h3>
+          <ul>
+            <li><strong>G — Goal:</strong> What finished state do you want?</li>
+            <li>
+              <strong>O — Output:</strong> What format/file type should the
+              result be in?
+            </li>
+            <li>
+              <strong>A — Approach/Constraints:</strong> Any rules, style, or
+              limitations?
+            </li>
+            <li>
+              <strong>L — Location:</strong> Where should outputs go? What
+              folders to use?
+            </li>
+          </ul>
+
+          <h3>Prompt Examples: Weak vs. Strong</h3>
+
+          <div class="prompt-example">
+            <div class="prompt-label">❌ Weak Prompt</div>
+            <div class="prompt-text">Summarize my documents.</div>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div class="step-body">
-            <h4>Invoke via Slash Commands</h4>
-            <p>Type <code>/</code> in the Cowork input to see available commands from your installed plugins.</p>
+
+          <div class="prompt-example">
+            <div class="prompt-label">✅ Strong Prompt</div>
+            <div class="prompt-text">
+              Read all .md and .txt files in the /notes folder. For each file,
+              write a 2–3 sentence summary. Compile all summaries into a single
+              Word document called "notes-overview.docx" saved in the same
+              folder. Use a clean heading for each source file name.
+            </div>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">5</div>
-          <div class="step-body">
-            <h4>Customize (Optional)</h4>
-            <p>Click "Customize" on any installed plugin to tell Claude how to tailor it to your workflow — e.g., specific CRM fields, preferred output formats, company style guides.</p>
+
+          <div class="prompt-example">
+            <div class="prompt-label">❌ Weak Prompt</div>
+            <div class="prompt-text">Make a spreadsheet from my receipts.</div>
           </div>
-        </div>
-      </div>
 
-      <h3>Connectors: Linking External Services</h3>
-      <p>Connectors are integrations to external services available through Settings → Connectors → Browse Connectors. There are two types:</p>
+          <div class="prompt-example">
+            <div class="prompt-label">✅ Strong Prompt</div>
+            <div class="prompt-text">
+              I have a folder of receipt photos (JPEGs) in /receipts/2025. Read
+              each image and extract: merchant name, date, amount, and category
+              (Food, Travel, Office, Other). Create expenses.xlsx with one row
+              per receipt, a SUM formula at the bottom, and a second sheet with
+              a pivot table by category. Save to /receipts/.
+            </div>
+          </div>
 
-      <table>
-        <thead><tr><th>Type</th><th>How They Run</th><th>Examples</th></tr></thead>
-        <tbody>
-          <tr>
-            <td><span class="tag blue">Web Connectors</span></td>
-            <td>Browser-based APIs</td>
-            <td>Google Drive, Notion, GitHub, Slack</td>
-          </tr>
-          <tr>
-            <td><span class="tag purple">Desktop Extensions</span></td>
-            <td>Run locally; deeper system access</td>
-            <td>AWS CLI, local databases, native apps</td>
-          </tr>
-        </tbody>
-      </table>
+          <div class="prompt-example">
+            <div class="prompt-label">❌ Weak Prompt</div>
+            <div class="prompt-text">Clean up my downloads folder.</div>
+          </div>
 
-      <p>In Cowork, connectors gain a powerful new dimension: <strong>filesystem integration</strong>. A connector pulling from your CRM can now save that data directly to a local file, or use local files as input for actions in external services.</p>
+          <div class="prompt-example">
+            <div class="prompt-label">✅ Strong Prompt</div>
+            <div class="prompt-text">
+              Look at my /Downloads folder. Sort files into subfolders by type:
+              Images/, Documents/, Installers/, Archives/, Other/. Rename files
+              with creation dates prepended (YYYY-MM-DD_filename). Do NOT delete
+              anything. Show me a plan first before making any changes.
+            </div>
+          </div>
 
-      <h3>Building Custom Plugins</h3>
-      <p>Plugins are file-based and available on GitHub. To build one:</p>
-      <ul>
-        <li>Use the <strong>Plugin Create</strong> plugin for a guided experience (Claude will build it with you)</li>
-        <li>Or fork an existing plugin from Anthropic's GitHub and edit it</li>
-        <li>Upload your custom plugin via the "Upload Plugin" button in the Plugins sidebar</li>
-      </ul>
+          <h3>Prompting Patterns by Use Case</h3>
 
-      <div class="callout info">
-        <div class="callout-icon">ℹ️</div>
-        <div class="callout-body">
-          <strong>Coming Soon</strong>
-          <p>Org-wide plugin sharing and a private marketplace are in development. Currently, plugins are saved locally per machine.</p>
-        </div>
-      </div>
-    </section>
+          <h4>Research &amp; Synthesis</h4>
+          <div class="prompt-example">
+            <div class="prompt-label">Template</div>
+            <div class="prompt-text">
+              Read all files in [folder]. Extract [specific data points].
+              Synthesize into [output format] at [location]. Highlight any
+              [contradictions / gaps / key themes].
+            </div>
+          </div>
 
-    <!-- MODULE 6 — INSTRUCTIONS -->
-    <section class="section" id="m6">
-      <div class="section-header">
-        <div class="section-num">6</div>
-        <h2>Global &amp; Folder Instructions</h2>
-      </div>
+          <h4>File Organization</h4>
+          <div class="prompt-example">
+            <div class="prompt-label">Template</div>
+            <div class="prompt-text">
+              Review files in [folder]. Sort into [categories] based on
+              [criteria]. Rename using [naming convention]. Do NOT delete
+              anything. Show me a plan before executing.
+            </div>
+          </div>
 
-      <p>One of Cowork's most powerful features is the ability to give Claude persistent standing instructions so you never have to repeat context. There are two levels: <strong>global</strong> (applies to every session) and <strong>folder-specific</strong> (applies when working in a particular directory).</p>
+          <h4>Report Generation</h4>
+          <div class="prompt-example">
+            <div class="prompt-label">Template</div>
+            <div class="prompt-text">
+              Using data from [source files], generate a [type] report in
+              [format]. Include: [sections]. Apply [style guidelines]. Save as
+              [filename] to [location].
+            </div>
+          </div>
 
-      <h3>Global Instructions</h3>
-      <p>Use global instructions for things that are always true about you, your role, and your preferences:</p>
+          <h4>Data Processing</h4>
+          <div class="prompt-example">
+            <div class="prompt-label">Template</div>
+            <div class="prompt-text">
+              Load [file]. Clean it by [rules]. Compute [metrics/formulas].
+              Output as [xlsx/csv] with [specific sheets/columns]. Flag any rows
+              that [condition].
+            </div>
+          </div>
 
-      <div class="prompt-example">
-        <div class="prompt-label">Example Global Instructions</div>
-        <div class="prompt-text">I'm a clinical research nurse. When writing reports or summaries, use clear, professional language suitable for study sponsors. Avoid medical jargon when writing for non-clinician audiences. Always save backup copies of original files before modifying them. Prefer .docx for documents and .xlsx for data tables. My working timezone is US Central.</div>
-      </div>
+          <div class="quiz">
+            <h4>✍️ Quick Check</h4>
+            <p>
+              Which prompt is most likely to produce the output you want with
+              minimal mid-task corrections?
+            </p>
+            <div class="quiz-options">
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                A. "Make a report from my files."
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, true)">
+                B. "Read all CSV files in /data/q4. Compute total revenue by
+                region. Create a Word report called 'q4-summary.docx' with one
+                section per region and a bar chart. Save to /reports/."
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                C. "Summarize everything."
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                D. "Do the Q4 thing I described earlier."
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+        </section>
 
-      <p>To set global instructions:</p>
-      <ol>
-        <li>Go to <strong>Settings → Cowork</strong> inside Claude Desktop</li>
-        <li>Click "Edit" next to Global instructions</li>
-        <li>Type your instructions and click Save</li>
-      </ol>
+        <!-- MODULE 5 — PLUGINS & CONNECTORS -->
+        <section class="section" id="m5">
+          <div class="section-header">
+            <div class="section-num">5</div>
+            <h2>Plugins &amp; Connectors</h2>
+          </div>
 
-      <h3>Folder Instructions</h3>
-      <p>Folder instructions add project-specific context that activates whenever Claude is working in that folder. This is ideal for:</p>
-      <ul>
-        <li>Project codenames and background</li>
-        <li>Specific output naming conventions</li>
-        <li>Files Claude should always consult first</li>
-        <li>Stakeholder names and preferences</li>
-      </ul>
+          <p>
+            Plugins and connectors are how you supercharge Cowork beyond local
+            file tasks. Together they let Claude reach into external services,
+            specialize for your industry, and automate across your entire
+            digital stack.
+          </p>
 
-      <div class="prompt-example">
-        <div class="prompt-label">Example Folder Instructions (in a clinical trial folder)</div>
-        <div class="prompt-text">This folder contains documents for Study ABC-2024-001, a Phase II oncology trial sponsored by Pharma Corp. PI is Dr. Jane Smith. Always reference the protocol (protocol-v3.pdf) when making any eligibility assessments. Output any participant data tables with de-identified IDs only (format: SUBJ-XXXX). Never include full names in any output file.</div>
-      </div>
+          <h3>What Are Plugins?</h3>
+          <p>
+            Plugins are pre-packaged bundles that combine
+            <strong>skills, connectors, slash commands, and sub-agents</strong>
+            into a cohesive specialty. Think of them as turning Claude into a
+            domain expert on demand.
+          </p>
 
-      <h3>Tips for Effective Instructions</h3>
-      <ul>
-        <li><strong>Be specific, not vague.</strong> "Use professional tone" is less useful than "Write at a 10th-grade reading level suitable for patient-facing materials."</li>
-        <li><strong>Set guardrails.</strong> Explicitly state what Claude should NOT do (e.g., "Do not delete any file without asking first").</li>
-        <li><strong>Update often.</strong> You can update instructions mid-session by typing a new preference in chat. Cowork will incorporate it.</li>
-        <li><strong>Layer them thoughtfully.</strong> Global = who you are; Folder = what this project is.</li>
-      </ul>
-    </section>
+          <p>
+            Anthropic has released 11 official open-source plugins on GitHub:
+          </p>
 
-    <!-- MODULE 7 — SAFETY -->
-    <section class="section" id="m7">
-      <div class="section-header">
-        <div class="section-num">7</div>
-        <h2>Safety &amp; Best Practices</h2>
-      </div>
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-icon">📅</div>
+              <h4>Productivity</h4>
+              <p>Manage tasks, calendars, and daily workflows</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🔍</div>
+              <h4>Enterprise Search</h4>
+              <p>Find info across company tools and docs</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">💼</div>
+              <h4>Sales</h4>
+              <p>Research prospects, prep deals, follow sales process</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">💰</div>
+              <h4>Finance</h4>
+              <p>Analyze financials, build models, track metrics</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">📊</div>
+              <h4>Data</h4>
+              <p>Query, visualize, and interpret datasets</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">⚖️</div>
+              <h4>Legal</h4>
+              <p>Review documents, flag risks, track compliance</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">📣</div>
+              <h4>Marketing</h4>
+              <p>Draft content, plan campaigns, manage launches</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🎧</div>
+              <h4>Customer Support</h4>
+              <p>Triage issues, draft responses, surface solutions</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🗺️</div>
+              <h4>Product Management</h4>
+              <p>Write specs, prioritize roadmaps, track progress</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🔬</div>
+              <h4>Biology Research</h4>
+              <p>Search literature, analyze results, plan experiments</p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🛠️</div>
+              <h4>Plugin Create</h4>
+              <p>Build your own custom plugins from scratch</p>
+            </div>
+          </div>
 
-      <p>Cowork has real power — which means real consequences when things go wrong. Anthropic is transparent about the risks. This module teaches you how to use Cowork safely.</p>
+          <h3>Installing a Plugin</h3>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h4>Open Cowork in Claude Desktop</h4>
+                <p>Click the Cowork tab in the mode selector.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h4>Click "Plugins" in the Left Sidebar</h4>
+                <p>This opens the plugin browser.</p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h4>Browse and Install</h4>
+                <p>
+                  Click any plugin to read about it, then click Install. Plugins
+                  are saved locally to your machine.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <h4>Invoke via Slash Commands</h4>
+                <p>
+                  Type <code>/</code> in the Cowork input to see available
+                  commands from your installed plugins.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div class="step-body">
+                <h4>Customize (Optional)</h4>
+                <p>
+                  Click "Customize" on any installed plugin to tell Claude how
+                  to tailor it to your workflow — e.g., specific CRM fields,
+                  preferred output formats, company style guides.
+                </p>
+              </div>
+            </div>
+          </div>
 
-      <div class="callout danger">
-        <div class="callout-icon">🚨</div>
-        <div class="callout-body">
-          <strong>Cowork Can Modify and Delete Files</strong>
-          <p>By default, Claude will ask for explicit permission before permanently deleting files. However, it can edit, rename, overwrite, and reorganize files without a separate confirmation for each action. Always work in a dedicated folder — not your entire Documents or Downloads directory.</p>
-        </div>
-      </div>
+          <h3>Connectors: Linking External Services</h3>
+          <p>
+            Connectors are integrations to external services available through
+            Settings → Connectors → Browse Connectors. There are two types:
+          </p>
 
-      <h3>The 5 Golden Rules of Cowork Safety</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Type</th>
+                <th>How They Run</th>
+                <th>Examples</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="tag blue">Web Connectors</span></td>
+                <td>Browser-based APIs</td>
+                <td>Google Drive, Notion, GitHub, Slack</td>
+              </tr>
+              <tr>
+                <td><span class="tag purple">Desktop Extensions</span></td>
+                <td>Run locally; deeper system access</td>
+                <td>AWS CLI, local databases, native apps</td>
+              </tr>
+            </tbody>
+          </table>
 
-      <div class="card-grid">
-        <div class="card">
-          <div class="card-icon">📁</div>
-          <h4>1. Use Dedicated Folders</h4>
-          <p>Never point Cowork at your root directory or a folder containing irreplaceable files without backups. Create a /cowork-projects/ or /claude/ directory as your working space.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">💾</div>
-          <h4>2. Backup First</h4>
-          <p>Before any task that modifies existing files, back them up. Include "back up originals before editing" in your global or folder instructions to automate this.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">📋</div>
-          <h4>3. Review the Plan</h4>
-          <p>Before saying "go ahead," read Claude's plan carefully. If anything looks off — wrong files, unexpected scope — redirect it immediately. Plans are your best defense against surprises.</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🎯</div>
-          <h4>4. Be Specific About Destructive Operations</h4>
-          <p>Explicitly forbid deletion or renaming in your prompts unless you want it: "Do NOT delete, rename, or move any file — only create new ones."</p>
-        </div>
-        <div class="card">
-          <div class="card-icon">🔒</div>
-          <h4>5. Watch for Prompt Injection</h4>
-          <p>If Claude is processing files from untrusted sources (downloaded docs, emails, web pages), be aware that malicious content could attempt to hijack Claude's instructions. Don't process untrusted files with sensitive system access.</p>
-        </div>
-      </div>
+          <p>
+            In Cowork, connectors gain a powerful new dimension:
+            <strong>filesystem integration</strong>. A connector pulling from
+            your CRM can now save that data directly to a local file, or use
+            local files as input for actions in external services.
+          </p>
 
-      <h3>What Cowork CANNOT Do</h3>
-      <ul>
-        <li>Access files or folders you haven't explicitly granted</li>
-        <li>Permanently delete files without your confirmation (a permission dialog will appear)</li>
-        <li>Access the internet beyond your plan's network egress permissions</li>
-        <li>Store conversation history in Anthropic's cloud (it's saved locally)</li>
-      </ul>
+          <h3>Building Custom Plugins</h3>
+          <p>Plugins are file-based and available on GitHub. To build one:</p>
+          <ul>
+            <li>
+              Use the <strong>Plugin Create</strong> plugin for a guided
+              experience (Claude will build it with you)
+            </li>
+            <li>
+              Or fork an existing plugin from Anthropic's GitHub and edit it
+            </li>
+            <li>
+              Upload your custom plugin via the "Upload Plugin" button in the
+              Plugins sidebar
+            </li>
+          </ul>
 
-      <h3>Enterprise &amp; Compliance Notes</h3>
-      <div class="callout warning">
-        <div class="callout-icon">⚠️</div>
-        <div class="callout-body">
-          <strong>Not for Regulated Workloads</strong>
-          <p>Cowork activity is NOT captured in Audit Logs, Compliance API, or Data Exports. Do not use Cowork for HIPAA-regulated patient data, financial records requiring audit trails, or other regulated workloads without first consulting your compliance team.</p>
-        </div>
-      </div>
+          <div class="callout info">
+            <div class="callout-icon">ℹ️</div>
+            <div class="callout-body">
+              <strong>Coming Soon</strong>
+              <p>
+                Org-wide plugin sharing and a private marketplace are in
+                development. Currently, plugins are saved locally per machine.
+              </p>
+            </div>
+          </div>
+        </section>
 
-      <div class="quiz">
-        <h4>✍️ Quick Check</h4>
-        <p>Which of the following is the safest way to start a Cowork task that modifies existing files?</p>
-        <div class="quiz-options">
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">A. Give Claude access to your entire Documents folder for maximum flexibility</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, true)">B. Create a dedicated working folder, copy files there, include "back up originals before editing" in instructions, and review Claude's plan before executing</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">C. Let Claude run and fix any mistakes afterward</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">D. Only use Cowork for creating new files, never for editing</button>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-    </section>
+        <!-- MODULE 6 — INSTRUCTIONS -->
+        <section class="section" id="m6">
+          <div class="section-header">
+            <div class="section-num">6</div>
+            <h2>Global &amp; Folder Instructions</h2>
+          </div>
 
-    <!-- MODULE 8 — ADVANCED -->
-    <section class="section" id="m8">
-      <div class="section-header">
-        <div class="section-num">8</div>
-        <h2>Advanced Techniques</h2>
-      </div>
+          <p>
+            One of Cowork's most powerful features is the ability to give Claude
+            persistent standing instructions so you never have to repeat
+            context. There are two levels: <strong>global</strong> (applies to
+            every session) and <strong>folder-specific</strong> (applies when
+            working in a particular directory).
+          </p>
 
-      <p>Once you've mastered the basics, these advanced techniques will multiply your productivity and unlock use cases most users haven't discovered yet.</p>
+          <h3>Global Instructions</h3>
+          <p>
+            Use global instructions for things that are always true about you,
+            your role, and your preferences:
+          </p>
 
-      <h3>Cowork + Claude in Chrome</h3>
-      <p>Claude in Chrome is a separate browser agent. When you pair both tools:</p>
-      <ul>
-        <li>Claude can browse websites, extract data, and submit forms</li>
-        <li>Web-scraped data can be saved to your local Cowork working folder automatically</li>
-        <li>Great for: competitive research, price monitoring, gathering info from portals without APIs</li>
-      </ul>
+          <div class="prompt-example">
+            <div class="prompt-label">Example Global Instructions</div>
+            <div class="prompt-text">
+              I'm a clinical research nurse. When writing reports or summaries,
+              use clear, professional language suitable for study sponsors.
+              Avoid medical jargon when writing for non-clinician audiences.
+              Always save backup copies of original files before modifying them.
+              Prefer .docx for documents and .xlsx for data tables. My working
+              timezone is US Central.
+            </div>
+          </div>
 
-      <div class="prompt-example">
-        <div class="prompt-label">Example: Cowork + Chrome Combined Task</div>
-        <div class="prompt-text">Using Claude in Chrome, search PubMed for the 10 most recent clinical trials on GLP-1 agonists for type 2 diabetes published in 2025. Save each abstract and key metadata (NCT ID, phase, enrollment, primary endpoint) to a file called pubmed-glp1-2025.csv in my /research/ folder. Then create a summary report in Word format.</div>
-      </div>
+          <p>To set global instructions:</p>
+          <ol>
+            <li>
+              Go to <strong>Settings → Cowork</strong> inside Claude Desktop
+            </li>
+            <li>Click "Edit" next to Global instructions</li>
+            <li>Type your instructions and click Save</li>
+          </ol>
 
-      <h3>MCP Connectors for Power Workflows</h3>
-      <p>Model Context Protocol (MCP) connectors are the backbone of Cowork's external integrations. Here are high-value workflows by domain:</p>
+          <h3>Folder Instructions</h3>
+          <p>
+            Folder instructions add project-specific context that activates
+            whenever Claude is working in that folder. This is ideal for:
+          </p>
+          <ul>
+            <li>Project codenames and background</li>
+            <li>Specific output naming conventions</li>
+            <li>Files Claude should always consult first</li>
+            <li>Stakeholder names and preferences</li>
+          </ul>
 
-      <table>
-        <thead><tr><th>Domain</th><th>MCP Connector</th><th>What You Can Automate</th></tr></thead>
-        <tbody>
-          <tr><td>Project Management</td><td>Asana, Linear</td><td>Create tasks from meeting notes, update statuses, generate reports</td></tr>
-          <tr><td>CRM</td><td>Salesforce, HubSpot</td><td>Research leads, draft outreach, update records</td></tr>
-          <tr><td>Cloud Storage</td><td>Google Drive, Dropbox</td><td>Sync files, batch rename, generate indexes</td></tr>
-          <tr><td>Data &amp; Analytics</td><td>Honeycomb, n8n</td><td>Query observability data, trigger automated workflows</td></tr>
-          <tr><td>Developer Tools</td><td>GitHub, AWS</td><td>Analyze repos, manage resources, generate documentation</td></tr>
-          <tr><td>Meeting Intel</td><td>Fellow.ai</td><td>Extract action items, build agendas from notes</td></tr>
-        </tbody>
-      </table>
+          <div class="prompt-example">
+            <div class="prompt-label">
+              Example Folder Instructions (in a clinical trial folder)
+            </div>
+            <div class="prompt-text">
+              This folder contains documents for Study ABC-2024-001, a Phase II
+              oncology trial sponsored by Pharma Corp. PI is Dr. Jane Smith.
+              Always reference the protocol (protocol-v3.pdf) when making any
+              eligibility assessments. Output any participant data tables with
+              de-identified IDs only (format: SUBJ-XXXX). Never include full
+              names in any output file.
+            </div>
+          </div>
 
-      <h3>Skills: Office File Superpowers</h3>
-      <p>Cowork includes built-in <strong>Skills</strong> that give it native handling for common file formats:</p>
-      <ul>
-        <li><code>.xlsx</code> — Read, write, create formulas, build pivot tables, format cells</li>
-        <li><code>.docx</code> — Generate structured Word documents with headers, tables, and styles</li>
-        <li><code>.pptx</code> — Create full slide decks with layouts, images, and speaker notes</li>
-        <li><code>.pdf</code> — Read, merge, split, fill forms, and convert PDFs</li>
-      </ul>
+          <h3>Tips for Effective Instructions</h3>
+          <ul>
+            <li>
+              <strong>Be specific, not vague.</strong> "Use professional tone"
+              is less useful than "Write at a 10th-grade reading level suitable
+              for patient-facing materials."
+            </li>
+            <li>
+              <strong>Set guardrails.</strong> Explicitly state what Claude
+              should NOT do (e.g., "Do not delete any file without asking
+              first").
+            </li>
+            <li>
+              <strong>Update often.</strong> You can update instructions
+              mid-session by typing a new preference in chat. Cowork will
+              incorporate it.
+            </li>
+            <li>
+              <strong>Layer them thoughtfully.</strong> Global = who you are;
+              Folder = what this project is.
+            </li>
+          </ul>
+        </section>
 
-      <p>You can also build <strong>custom Skills</strong> using the skill-creator plugin to teach Claude specialized behaviors for your workflow.</p>
+        <!-- MODULE 7 — SAFETY -->
+        <section class="section" id="m7">
+          <div class="section-header">
+            <div class="section-num">7</div>
+            <h2>Safety &amp; Best Practices</h2>
+          </div>
 
-      <h3>Parallel Task Queuing</h3>
-      <p>While Claude is working, you can keep sending tasks. Cowork handles them as a queue (and sometimes in parallel). This pattern is powerful for batch work:</p>
+          <p>
+            Cowork has real power — which means real consequences when things go
+            wrong. Anthropic is transparent about the risks. This module teaches
+            you how to use Cowork safely.
+          </p>
 
-      <div class="prompt-example">
-        <div class="prompt-label">Batch Queue Pattern</div>
-        <div class="prompt-text">[Task 1 — send first]
-Process all files in /raw-data/ and clean them (remove blank rows, standardize date formats, save to /clean-data/).
+          <div class="callout danger">
+            <div class="callout-icon">🚨</div>
+            <div class="callout-body">
+              <strong>Cowork Can Modify and Delete Files</strong>
+              <p>
+                By default, Claude will ask for explicit permission before
+                permanently deleting files. However, it can edit, rename,
+                overwrite, and reorganize files without a separate confirmation
+                for each action. Always work in a dedicated folder — not your
+                entire Documents or Downloads directory.
+              </p>
+            </div>
+          </div>
 
-[Task 2 — send immediately after, without waiting]
-Once the /clean-data/ folder is populated, create a master summary.xlsx that consolidates all files into a single table with a source column.
+          <h3>The 5 Golden Rules of Cowork Safety</h3>
 
-[Task 3 — queue behind]
-Using the master summary.xlsx, generate a 5-slide executive PowerPoint called exec-summary.pptx.</div>
-      </div>
+          <div class="card-grid">
+            <div class="card">
+              <div class="card-icon">📁</div>
+              <h4>1. Use Dedicated Folders</h4>
+              <p>
+                Never point Cowork at your root directory or a folder containing
+                irreplaceable files without backups. Create a /cowork-projects/
+                or /claude/ directory as your working space.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-icon">💾</div>
+              <h4>2. Backup First</h4>
+              <p>
+                Before any task that modifies existing files, back them up.
+                Include "back up originals before editing" in your global or
+                folder instructions to automate this.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-icon">📋</div>
+              <h4>3. Review the Plan</h4>
+              <p>
+                Before saying "go ahead," read Claude's plan carefully. If
+                anything looks off — wrong files, unexpected scope — redirect it
+                immediately. Plans are your best defense against surprises.
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🎯</div>
+              <h4>4. Be Specific About Destructive Operations</h4>
+              <p>
+                Explicitly forbid deletion or renaming in your prompts unless
+                you want it: "Do NOT delete, rename, or move any file — only
+                create new ones."
+              </p>
+            </div>
+            <div class="card">
+              <div class="card-icon">🔒</div>
+              <h4>5. Watch for Prompt Injection</h4>
+              <p>
+                If Claude is processing files from untrusted sources (downloaded
+                docs, emails, web pages), be aware that malicious content could
+                attempt to hijack Claude's instructions. Don't process untrusted
+                files with sensitive system access.
+              </p>
+            </div>
+          </div>
 
-      <h3>Self-Maintaining Workspaces</h3>
-      <p>One of the most powerful Cowork use patterns is setting up <strong>living workspaces</strong> that Claude can update on demand:</p>
+          <h3>What Cowork CANNOT Do</h3>
+          <ul>
+            <li>Access files or folders you haven't explicitly granted</li>
+            <li>
+              Permanently delete files without your confirmation (a permission
+              dialog will appear)
+            </li>
+            <li>
+              Access the internet beyond your plan's network egress permissions
+            </li>
+            <li>
+              Store conversation history in Anthropic's cloud (it's saved
+              locally)
+            </li>
+          </ul>
 
-      <div class="prompt-example">
-        <div class="prompt-label">Workspace Setup Prompt</div>
-        <div class="prompt-text">This /project-tracker/ folder is my ongoing project workspace. It contains:
-- inbox/ — raw files I drop in
-- processed/ — files you've worked on
-- reports/ — output reports
-- README.md — always keep this updated with a summary of what's in the folder
+          <h3>Enterprise &amp; Compliance Notes</h3>
+          <div class="callout warning">
+            <div class="callout-icon">⚠️</div>
+            <div class="callout-body">
+              <strong>Not for Regulated Workloads</strong>
+              <p>
+                Cowork activity is NOT captured in Audit Logs, Compliance API,
+                or Data Exports. Do not use Cowork for HIPAA-regulated patient
+                data, financial records requiring audit trails, or other
+                regulated workloads without first consulting your compliance
+                team.
+              </p>
+            </div>
+          </div>
 
-When I ask you to "process inbox," read all new files in inbox/, extract key info, move them to processed/, and update README.md with what you found and any action items.</div>
-      </div>
+          <div class="quiz">
+            <h4>✍️ Quick Check</h4>
+            <p>
+              Which of the following is the safest way to start a Cowork task
+              that modifies existing files?
+            </p>
+            <div class="quiz-options">
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                A. Give Claude access to your entire Documents folder for
+                maximum flexibility
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, true)">
+                B. Create a dedicated working folder, copy files there, include
+                "back up originals before editing" in instructions, and review
+                Claude's plan before executing
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                C. Let Claude run and fix any mistakes afterward
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                D. Only use Cowork for creating new files, never for editing
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+        </section>
 
-      <h3>Context Window Maximization</h3>
-      <p>Claude Opus 4.6 has a 1-million-token context window. In Cowork, this means you can feed it enormous amounts of data in a single session. Tips for large-context tasks:</p>
-      <ul>
-        <li>Give Claude access to large corpora up front rather than feeding in pieces</li>
-        <li>Ask Claude to build an index or map of your files before starting work — this helps it reference materials efficiently</li>
-        <li>For analysis of large datasets, ask Claude to summarize incrementally into a running notes file it updates as it reads</li>
-      </ul>
+        <!-- MODULE 8 — ADVANCED -->
+        <section class="section" id="m8">
+          <div class="section-header">
+            <div class="section-num">8</div>
+            <h2>Advanced Techniques</h2>
+          </div>
 
-      <h3>Prompt Chaining with Files</h3>
-      <p>Use files as communication between tasks. Have one Cowork session output a <code>plan.md</code>, then in a subsequent session, reference that plan:</p>
+          <p>
+            Once you've mastered the basics, these advanced techniques will
+            multiply your productivity and unlock use cases most users haven't
+            discovered yet.
+          </p>
 
-      <div class="prompt-example">
-        <div class="prompt-label">Session 1</div>
-        <div class="prompt-text">Analyze all files in /research/ and create a plan.md with a step-by-step outline for a comprehensive literature review report. Include what data to pull from each file and what sections the final report should contain.</div>
-      </div>
+          <h3>Cowork + Claude in Chrome</h3>
+          <p>
+            Claude in Chrome is a separate browser agent. When you pair both
+            tools:
+          </p>
+          <ul>
+            <li>Claude can browse websites, extract data, and submit forms</li>
+            <li>
+              Web-scraped data can be saved to your local Cowork working folder
+              automatically
+            </li>
+            <li>
+              Great for: competitive research, price monitoring, gathering info
+              from portals without APIs
+            </li>
+          </ul>
 
-      <div class="prompt-example">
-        <div class="prompt-label">Session 2</div>
-        <div class="prompt-text">Follow the instructions in plan.md to build the complete literature review report. Save as literature-review.docx in /output/.</div>
-      </div>
+          <div class="prompt-example">
+            <div class="prompt-label">
+              Example: Cowork + Chrome Combined Task
+            </div>
+            <div class="prompt-text">
+              Using Claude in Chrome, search PubMed for the 10 most recent
+              clinical trials on GLP-1 agonists for type 2 diabetes published in
+              2025. Save each abstract and key metadata (NCT ID, phase,
+              enrollment, primary endpoint) to a file called
+              pubmed-glp1-2025.csv in my /research/ folder. Then create a
+              summary report in Word format.
+            </div>
+          </div>
 
-      <h3>Course Wrap-Up: What You've Learned</h3>
+          <h3>MCP Connectors for Power Workflows</h3>
+          <p>
+            Model Context Protocol (MCP) connectors are the backbone of Cowork's
+            external integrations. Here are high-value workflows by domain:
+          </p>
 
-      <div class="callout tip">
-        <div class="callout-icon">🎓</div>
-        <div class="callout-body">
-          <strong>Congratulations!</strong>
-          <p>You've completed the Claude Cowork course. You now understand the agentic architecture, setup process, prompt engineering, plugins, connectors, safety practices, and advanced techniques that turn Cowork into a genuine productivity multiplier.</p>
-        </div>
-      </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Domain</th>
+                <th>MCP Connector</th>
+                <th>What You Can Automate</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Project Management</td>
+                <td>Asana, Linear</td>
+                <td>
+                  Create tasks from meeting notes, update statuses, generate
+                  reports
+                </td>
+              </tr>
+              <tr>
+                <td>CRM</td>
+                <td>Salesforce, HubSpot</td>
+                <td>Research leads, draft outreach, update records</td>
+              </tr>
+              <tr>
+                <td>Cloud Storage</td>
+                <td>Google Drive, Dropbox</td>
+                <td>Sync files, batch rename, generate indexes</td>
+              </tr>
+              <tr>
+                <td>Data &amp; Analytics</td>
+                <td>Honeycomb, n8n</td>
+                <td>Query observability data, trigger automated workflows</td>
+              </tr>
+              <tr>
+                <td>Developer Tools</td>
+                <td>GitHub, AWS</td>
+                <td>Analyze repos, manage resources, generate documentation</td>
+              </tr>
+              <tr>
+                <td>Meeting Intel</td>
+                <td>Fellow.ai</td>
+                <td>Extract action items, build agendas from notes</td>
+              </tr>
+            </tbody>
+          </table>
 
-      <p>Your next steps:</p>
-      <ol>
-        <li><strong>Install Claude Desktop</strong> and enable Cowork if you haven't already</li>
-        <li><strong>Set your global instructions</strong> with your role, preferences, and safety guardrails</li>
-        <li><strong>Run a safe test task</strong> on a non-critical folder to get comfortable with the workflow</li>
-        <li><strong>Install 2–3 relevant plugins</strong> for your work domain</li>
-        <li><strong>Identify one recurring task</strong> in your job that Cowork could automate and build that workflow</li>
-      </ol>
+          <h3>Skills: Office File Superpowers</h3>
+          <p>
+            Cowork includes built-in <strong>Skills</strong> that give it native
+            handling for common file formats:
+          </p>
+          <ul>
+            <li>
+              <code>.xlsx</code> — Read, write, create formulas, build pivot
+              tables, format cells
+            </li>
+            <li>
+              <code>.docx</code> — Generate structured Word documents with
+              headers, tables, and styles
+            </li>
+            <li>
+              <code>.pptx</code> — Create full slide decks with layouts, images,
+              and speaker notes
+            </li>
+            <li>
+              <code>.pdf</code> — Read, merge, split, fill forms, and convert
+              PDFs
+            </li>
+          </ul>
 
-      <p class="section-footer-note">For the latest updates, visit <a href="https://support.claude.com">support.claude.com</a> and <a href="https://claude.com/product/cowork">claude.com/product/cowork</a>. Cowork is a research preview and features are evolving rapidly.</p>
-    </section>
+          <p>
+            You can also build <strong>custom Skills</strong> using the
+            skill-creator plugin to teach Claude specialized behaviors for your
+            workflow.
+          </p>
 
-  </main>
-</div>
+          <h3>Parallel Task Queuing</h3>
+          <p>
+            While Claude is working, you can keep sending tasks. Cowork handles
+            them as a queue (and sometimes in parallel). This pattern is
+            powerful for batch work:
+          </p>
 
-<footer>
-  <p>Claude Cowork Course · Created February 2026 · Based on official Anthropic documentation and product announcements</p>
-  <p class="footer-sub">Cowork is a research preview. Features and availability may change. Always consult <a href="https://support.claude.com">support.claude.com</a> for the latest information.</p>
-</footer>
+          <div class="prompt-example">
+            <div class="prompt-label">Batch Queue Pattern</div>
+            <div class="prompt-text">
+              [Task 1 — send first] Process all files in /raw-data/ and clean
+              them (remove blank rows, standardize date formats, save to
+              /clean-data/). [Task 2 — send immediately after, without waiting]
+              Once the /clean-data/ folder is populated, create a master
+              summary.xlsx that consolidates all files into a single table with
+              a source column. [Task 3 — queue behind] Using the master
+              summary.xlsx, generate a 5-slide executive PowerPoint called
+              exec-summary.pptx.
+            </div>
+          </div>
 
-<script>
-/* quizAnswer is course-specific — theme management is in assets/theme.js */
-function quizAnswer(el, correct) {
-  const container = el.closest('.quiz-options');
-  const feedback  = el.closest('.quiz').querySelector('.quiz-feedback');
-  container.querySelectorAll('.quiz-opt').forEach(o => {
-    o.style.pointerEvents = 'none';
-    o.classList.remove('correct', 'wrong');
-  });
-  el.classList.add(correct ? 'correct' : 'wrong');
-  feedback.style.display = 'block';
-  feedback.style.color   = correct ? 'var(--green)' : 'var(--red)';
-  feedback.textContent   = correct
-    ? '✅ Correct! Great understanding.'
-    : '❌ Not quite — review the section above and try again next time.';
-  if (!correct) {
-    container.querySelectorAll('.quiz-opt').forEach(o => {
-      if (o.getAttribute('onclick').includes('true')) o.classList.add('correct');
-    });
-  }
-}
-</script>
+          <h3>Self-Maintaining Workspaces</h3>
+          <p>
+            One of the most powerful Cowork use patterns is setting up
+            <strong>living workspaces</strong> that Claude can update on demand:
+          </p>
 
-</body>
+          <div class="prompt-example">
+            <div class="prompt-label">Workspace Setup Prompt</div>
+            <div class="prompt-text">
+              This /project-tracker/ folder is my ongoing project workspace. It
+              contains: - inbox/ — raw files I drop in - processed/ — files
+              you've worked on - reports/ — output reports - README.md — always
+              keep this updated with a summary of what's in the folder When I
+              ask you to "process inbox," read all new files in inbox/, extract
+              key info, move them to processed/, and update README.md with what
+              you found and any action items.
+            </div>
+          </div>
+
+          <h3>Context Window Maximization</h3>
+          <p>
+            Claude Opus 4.6 has a 1-million-token context window. In Cowork,
+            this means you can feed it enormous amounts of data in a single
+            session. Tips for large-context tasks:
+          </p>
+          <ul>
+            <li>
+              Give Claude access to large corpora up front rather than feeding
+              in pieces
+            </li>
+            <li>
+              Ask Claude to build an index or map of your files before starting
+              work — this helps it reference materials efficiently
+            </li>
+            <li>
+              For analysis of large datasets, ask Claude to summarize
+              incrementally into a running notes file it updates as it reads
+            </li>
+          </ul>
+
+          <h3>Prompt Chaining with Files</h3>
+          <p>
+            Use files as communication between tasks. Have one Cowork session
+            output a <code>plan.md</code>, then in a subsequent session,
+            reference that plan:
+          </p>
+
+          <div class="prompt-example">
+            <div class="prompt-label">Session 1</div>
+            <div class="prompt-text">
+              Analyze all files in /research/ and create a plan.md with a
+              step-by-step outline for a comprehensive literature review report.
+              Include what data to pull from each file and what sections the
+              final report should contain.
+            </div>
+          </div>
+
+          <div class="prompt-example">
+            <div class="prompt-label">Session 2</div>
+            <div class="prompt-text">
+              Follow the instructions in plan.md to build the complete
+              literature review report. Save as literature-review.docx in
+              /output/.
+            </div>
+          </div>
+
+          <h3>Course Wrap-Up: What You've Learned</h3>
+
+          <div class="callout tip">
+            <div class="callout-icon">🎓</div>
+            <div class="callout-body">
+              <strong>Congratulations!</strong>
+              <p>
+                You've completed the Claude Cowork course. You now understand
+                the agentic architecture, setup process, prompt engineering,
+                plugins, connectors, safety practices, and advanced techniques
+                that turn Cowork into a genuine productivity multiplier.
+              </p>
+            </div>
+          </div>
+
+          <p>Your next steps:</p>
+          <ol>
+            <li>
+              <strong>Install Claude Desktop</strong> and enable Cowork if you
+              haven't already
+            </li>
+            <li>
+              <strong>Set your global instructions</strong> with your role,
+              preferences, and safety guardrails
+            </li>
+            <li>
+              <strong>Run a safe test task</strong> on a non-critical folder to
+              get comfortable with the workflow
+            </li>
+            <li>
+              <strong>Install 2–3 relevant plugins</strong> for your work domain
+            </li>
+            <li>
+              <strong>Identify one recurring task</strong> in your job that
+              Cowork could automate and build that workflow
+            </li>
+          </ol>
+
+          <p class="section-footer-note">
+            For the latest updates, visit
+            <a href="https://support.claude.com">support.claude.com</a> and
+            <a href="https://claude.com/product/cowork"
+              >claude.com/product/cowork</a
+            >. Cowork is a research preview and features are evolving rapidly.
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <p>
+        Claude Cowork Course · Created February 2026 · Based on official
+        Anthropic documentation and product announcements
+      </p>
+      <p class="footer-sub">
+        Cowork is a research preview. Features and availability may change.
+        Always consult
+        <a href="https://support.claude.com">support.claude.com</a> for the
+        latest information.
+      </p>
+    </footer>
+
+    <script>
+      /* quizAnswer is course-specific — theme management is in assets/theme.js */
+      function quizAnswer(el, correct) {
+        const container = el.closest(".quiz-options");
+        const feedback = el.closest(".quiz").querySelector(".quiz-feedback");
+        container.querySelectorAll(".quiz-opt").forEach((o) => {
+          o.style.pointerEvents = "none";
+          o.classList.remove("correct", "wrong");
+        });
+        el.classList.add(correct ? "correct" : "wrong");
+        feedback.style.display = "block";
+        feedback.style.color = correct ? "var(--green)" : "var(--red)";
+        feedback.textContent = correct
+          ? "✅ Correct! Great understanding."
+          : "❌ Not quite — review the section above and try again next time.";
+        if (!correct) {
+          container.querySelectorAll(".quiz-opt").forEach((o) => {
+            if (o.getAttribute("onclick").includes("true"))
+              o.classList.add("correct");
+          });
+        }
+      }
+    </script>
+  </body>
 </html>
