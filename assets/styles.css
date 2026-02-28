@@ -31,7 +31,7 @@
  *   .roi-bar, .roi-fill
  *
  * CHOOSING YOUR CLAUDE (COURSE 3) COMPONENTS:
- *   .surface-grid, .surface-card, .plan-table, .decision-table,
+ *   .plan-table, .decision-table,
  *   .badge, .badge-free/pro/max/team/enterprise/api/preview,
  *   .workflow-row, .workflow-node, .workflow-arrow,
  *   .preview-banner, .free-highlight
@@ -394,7 +394,8 @@ li code {
   font-size: 1.6rem;
   margin-bottom: 10px;
 }
-.card h4 {
+.card h4,
+.card h3 {
   font-size: 0.95rem;
   font-weight: 700;
   margin-bottom: 6px;
@@ -405,6 +406,23 @@ li code {
   color: var(--muted);
   margin: 0;
   line-height: 1.5;
+}
+.card .surface-icon {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+.card .surface-tier {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 20px;
+  padding: 0.2rem 0.6rem;
+  margin-top: 0.75rem;
+  background: var(--accent-subtle);
+  color: var(--accent);
 }
 
 /* ── NUMBERED STEPS ────────────────────────────────────────── */
@@ -1115,51 +1133,6 @@ table {
    Previously in claude-choosing-course.html <style> block.
 ────────────────────────────────────────────────────────────── */
 
-/* Five-surface overview grid */
-.surface-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.25rem;
-  margin: 1.5rem 0;
-}
-
-.surface-card {
-  background: var(--card-bg);
-  border: 1.5px solid var(--border);
-  border-radius: 12px;
-  padding: 1.25rem 1.4rem;
-  position: relative;
-}
-.surface-card .surface-icon {
-  font-size: 2rem;
-  margin-bottom: 0.6rem;
-  display: block;
-}
-.surface-card h3 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin: 0 0 0.35rem 0;
-  color: var(--heading);
-}
-.surface-card p {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  margin: 0;
-  line-height: 1.55;
-}
-.surface-card .surface-tier {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  border-radius: 20px;
-  padding: 0.2rem 0.6rem;
-  margin-top: 0.75rem;
-  background: var(--accent-subtle);
-  color: var(--accent);
-}
-
 /* Plan comparison table (course 3 pricing grid) */
 .plan-table {
   width: 100%;
@@ -1357,11 +1330,6 @@ table {
 @media (max-width: 900px) {
   /* Efficiency course: stack comparison grid */
   .compare-grid {
-    grid-template-columns: 1fr;
-  }
-
-  /* Course 3: collapse surface overview grid */
-  .surface-grid {
     grid-template-columns: 1fr;
   }
 
