@@ -46,36 +46,36 @@
 ───────────────────────────────────────────────────────────── */
 :root {
   /* Backgrounds */
-  --bg:       #0f1117;
-  --surface:  #1a1d27;
+  --bg: #0f1117;
+  --surface: #1a1d27;
   --surface2: #22263a;
-  --border:   #2e3350;
+  --border: #2e3350;
 
   /* Brand */
-  --accent:   #e8622a;
-  --accent2:  #f0a060;
+  --accent: #e8622a;
+  --accent2: #f0a060;
 
   /* Text */
-  --text:      #e8eaf0;
+  --text: #e8eaf0;
   --text-body: #c8cad8;
-  --muted:     #8a8fa8;
+  --muted: #8a8fa8;
 
   /* Code */
-  --code-bg:        #13161f;
-  --code-text:      #a8d5b0;
+  --code-bg: #13161f;
+  --code-text: #a8d5b0;
   --inline-code-bg: rgba(255, 255, 255, 0.06);
 
   /* Semantic colors */
-  --green:  #4ade80;
-  --blue:   #60a5fa;
+  --green: #4ade80;
+  --blue: #60a5fa;
   --purple: #a78bfa;
   --yellow: #fbbf24;
-  --red:    #f87171;
+  --red: #f87171;
 
   /* Hero gradient stops */
-  --hero-g1:       #1a1d27;
-  --hero-g2:       #0f1117;
-  --hero-g3:       #1a1020;
+  --hero-g1: #1a1d27;
+  --hero-g2: #0f1117;
+  --hero-g3: #1a1020;
   --hero-h1-start: #ffffff;
 
   /* Interactive states */
@@ -83,44 +83,44 @@
   --row-hover-bg: rgba(255, 255, 255, 0.02);
 
   /* Component-specific */
-  --footer-sub:    #5a5f78;
-  --toggle-bg:     #22263a;
+  --footer-sub: #5a5f78;
+  --toggle-bg: #22263a;
   --toggle-border: #2e3350;
 
   /* Aliases used by course components */
-  --heading:         #e8eaf0;   /* same as --text in dark mode */
-  --text-muted:      #8a8fa8;   /* same as --muted */
-  --card-bg:         #1a1d27;   /* same as --surface */
-  --hover-bg:        rgba(255, 255, 255, 0.02);  /* same as --row-hover-bg */
-  --table-header-bg: #22263a;   /* same as --surface2 */
-  --accent-subtle:   rgba(232, 98, 42, 0.12);
+  --heading: #e8eaf0; /* same as --text in dark mode */
+  --text-muted: #8a8fa8; /* same as --muted */
+  --card-bg: #1a1d27; /* same as --surface */
+  --hover-bg: rgba(255, 255, 255, 0.02); /* same as --row-hover-bg */
+  --table-header-bg: #22263a; /* same as --surface2 */
+  --accent-subtle: rgba(232, 98, 42, 0.12);
 
   /* Badge color tokens (tier badges in course 3) */
-  --badge-free-bg:       #1a3a1a;
-  --badge-free-text:     #4ade80;
-  --badge-pro-bg:        #1a2a3a;
-  --badge-pro-text:      #60a5fa;
-  --badge-max-bg:        #2a1a3a;
-  --badge-max-text:      #a78bfa;
-  --badge-team-bg:       #2a2a1a;
-  --badge-team-text:     #fbbf24;
+  --badge-free-bg: #1a3a1a;
+  --badge-free-text: #4ade80;
+  --badge-pro-bg: #1a2a3a;
+  --badge-pro-text: #60a5fa;
+  --badge-max-bg: #2a1a3a;
+  --badge-max-text: #a78bfa;
+  --badge-team-bg: #2a2a1a;
+  --badge-team-text: #fbbf24;
   --badge-enterprise-bg: #3a1a1a;
   --badge-enterprise-text: #f87171;
-  --badge-api-bg:        #1a2a2a;
-  --badge-api-text:      #34d399;
-  --badge-preview-bg:    #2a1e0a;
-  --badge-preview-text:  #fb923c;
+  --badge-api-bg: #1a2a2a;
+  --badge-api-text: #34d399;
+  --badge-preview-bg: #2a1e0a;
+  --badge-preview-text: #fb923c;
 
   /* Preview banner */
-  --preview-banner-bg:     linear-gradient(135deg, #2a1e0a 0%, #1a1500 100%);
+  --preview-banner-bg: linear-gradient(135deg, #2a1e0a 0%, #1a1500 100%);
   --preview-banner-border: #92400e;
-  --preview-banner-title:  #fb923c;
-  --preview-banner-body:   #d97706;
+  --preview-banner-title: #fb923c;
+  --preview-banner-body: #d97706;
 
   /* Free-tier highlight box */
-  --free-highlight-bg:     linear-gradient(135deg, #1a1d27 0%, #0d1a0d 100%);
+  --free-highlight-bg: linear-gradient(135deg, #1a1d27 0%, #0d1a0d 100%);
   --free-highlight-border: #166534;
-  --free-highlight-title:  #4ade80;
+  --free-highlight-title: #4ade80;
 }
 
 /* ─────────────────────────────────────────────────────────────
@@ -130,74 +130,74 @@
 ───────────────────────────────────────────────────────────── */
 @media (prefers-color-scheme: light) {
   :root {
-    --bg:       #f5f7fc;
-    --surface:  #ffffff;
+    --bg: #f5f7fc;
+    --surface: #ffffff;
     --surface2: #edf0f8;
-    --border:   #d0d5ea;
+    --border: #d0d5ea;
 
-    --accent:   #d4521e;
-    --accent2:  #b84010;
+    --accent: #d4521e;
+    --accent2: #b84010;
 
-    --text:      #1a1d2e;
+    --text: #1a1d2e;
     --text-body: #3a3d52;
-    --muted:     #5a6080;
+    --muted: #5a6080;
 
-    --code-bg:        #e8ecf5;
-    --code-text:      #1a5c38;
+    --code-bg: #e8ecf5;
+    --code-text: #1a5c38;
     --inline-code-bg: rgba(0, 0, 0, 0.07);
 
-    --green:  #15803d;
-    --blue:   #1d4ed8;
+    --green: #15803d;
+    --blue: #1d4ed8;
     --purple: #6d28d9;
     --yellow: #b45309;
-    --red:    #b91c1c;
+    --red: #b91c1c;
 
-    --hero-g1:       #dce3f5;
-    --hero-g2:       #eef1fb;
-    --hero-g3:       #e4d8f0;
+    --hero-g1: #dce3f5;
+    --hero-g2: #eef1fb;
+    --hero-g3: #e4d8f0;
     --hero-h1-start: #1a1d2e;
 
     --toc-hover-bg: rgba(0, 0, 0, 0.04);
     --row-hover-bg: rgba(0, 0, 0, 0.025);
 
-    --footer-sub:    #6b7094;
-    --toggle-bg:     #ffffff;
+    --footer-sub: #6b7094;
+    --toggle-bg: #ffffff;
     --toggle-border: #d0d5ea;
 
     /* Aliases */
-    --heading:         #1a1d2e;
-    --text-muted:      #5a6080;
-    --card-bg:         #ffffff;
-    --hover-bg:        rgba(0, 0, 0, 0.025);
+    --heading: #1a1d2e;
+    --text-muted: #5a6080;
+    --card-bg: #ffffff;
+    --hover-bg: rgba(0, 0, 0, 0.025);
     --table-header-bg: #edf0f8;
-    --accent-subtle:   rgba(212, 82, 30, 0.10);
+    --accent-subtle: rgba(212, 82, 30, 0.1);
 
     /* Badge tokens — light mode uses same hues, slightly adjusted */
-    --badge-free-bg:          #d1fae5;
-    --badge-free-text:        #15803d;
-    --badge-pro-bg:           #dbeafe;
-    --badge-pro-text:         #1d4ed8;
-    --badge-max-bg:           #ede9fe;
-    --badge-max-text:         #6d28d9;
-    --badge-team-bg:          #fef3c7;
-    --badge-team-text:        #b45309;
-    --badge-enterprise-bg:    #fee2e2;
-    --badge-enterprise-text:  #b91c1c;
-    --badge-api-bg:           #d1fae5;
-    --badge-api-text:         #065f46;
-    --badge-preview-bg:       #fff7ed;
-    --badge-preview-text:     #c2410c;
+    --badge-free-bg: #d1fae5;
+    --badge-free-text: #15803d;
+    --badge-pro-bg: #dbeafe;
+    --badge-pro-text: #1d4ed8;
+    --badge-max-bg: #ede9fe;
+    --badge-max-text: #6d28d9;
+    --badge-team-bg: #fef3c7;
+    --badge-team-text: #b45309;
+    --badge-enterprise-bg: #fee2e2;
+    --badge-enterprise-text: #b91c1c;
+    --badge-api-bg: #d1fae5;
+    --badge-api-text: #065f46;
+    --badge-preview-bg: #fff7ed;
+    --badge-preview-text: #c2410c;
 
     /* Preview banner — light mode */
-    --preview-banner-bg:     linear-gradient(135deg, #fff7ed 0%, #fffbeb 100%);
+    --preview-banner-bg: linear-gradient(135deg, #fff7ed 0%, #fffbeb 100%);
     --preview-banner-border: #fb923c;
-    --preview-banner-title:  #c2410c;
-    --preview-banner-body:   #92400e;
+    --preview-banner-title: #c2410c;
+    --preview-banner-body: #92400e;
 
     /* Free-tier highlight box — light mode */
-    --free-highlight-bg:     linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+    --free-highlight-bg: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
     --free-highlight-border: #16a34a;
-    --free-highlight-title:  #15803d;
+    --free-highlight-title: #15803d;
   }
 }
 
@@ -208,133 +208,135 @@
    Set by theme.js via: document.documentElement.setAttribute('data-theme', ...)
 ───────────────────────────────────────────────────────────── */
 [data-theme="dark"] {
-  --bg:       #0f1117;
-  --surface:  #1a1d27;
+  --bg: #0f1117;
+  --surface: #1a1d27;
   --surface2: #22263a;
-  --border:   #2e3350;
+  --border: #2e3350;
 
-  --accent:   #e8622a;
-  --accent2:  #f0a060;
+  --accent: #e8622a;
+  --accent2: #f0a060;
 
-  --text:      #e8eaf0;
+  --text: #e8eaf0;
   --text-body: #c8cad8;
-  --muted:     #8a8fa8;
+  --muted: #8a8fa8;
 
-  --code-bg:        #13161f;
-  --code-text:      #a8d5b0;
+  --code-bg: #13161f;
+  --code-text: #a8d5b0;
   --inline-code-bg: rgba(255, 255, 255, 0.06);
 
-  --green:  #4ade80;
-  --blue:   #60a5fa;
+  --green: #4ade80;
+  --blue: #60a5fa;
   --purple: #a78bfa;
   --yellow: #fbbf24;
-  --red:    #f87171;
+  --red: #f87171;
 
-  --hero-g1:       #1a1d27;
-  --hero-g2:       #0f1117;
-  --hero-g3:       #1a1020;
+  --hero-g1: #1a1d27;
+  --hero-g2: #0f1117;
+  --hero-g3: #1a1020;
   --hero-h1-start: #ffffff;
 
   --toc-hover-bg: rgba(255, 255, 255, 0.03);
   --row-hover-bg: rgba(255, 255, 255, 0.02);
 
-  --footer-sub:    #5a5f78;
-  --toggle-bg:     #22263a;
+  --footer-sub: #5a5f78;
+  --toggle-bg: #22263a;
   --toggle-border: #2e3350;
 
-  --heading:         #e8eaf0;
-  --text-muted:      #8a8fa8;
-  --card-bg:         #1a1d27;
-  --hover-bg:        rgba(255, 255, 255, 0.02);
+  --heading: #e8eaf0;
+  --text-muted: #8a8fa8;
+  --card-bg: #1a1d27;
+  --hover-bg: rgba(255, 255, 255, 0.02);
   --table-header-bg: #22263a;
-  --accent-subtle:   rgba(232, 98, 42, 0.12);
+  --accent-subtle: rgba(232, 98, 42, 0.12);
 
-  --badge-free-bg:          #1a3a1a;
-  --badge-free-text:        #4ade80;
-  --badge-pro-bg:           #1a2a3a;
-  --badge-pro-text:         #60a5fa;
-  --badge-max-bg:           #2a1a3a;
-  --badge-max-text:         #a78bfa;
-  --badge-team-bg:          #2a2a1a;
-  --badge-team-text:        #fbbf24;
-  --badge-enterprise-bg:    #3a1a1a;
-  --badge-enterprise-text:  #f87171;
-  --badge-api-bg:           #1a2a2a;
-  --badge-api-text:         #34d399;
-  --badge-preview-bg:       #2a1e0a;
-  --badge-preview-text:     #fb923c;
+  --badge-free-bg: #1a3a1a;
+  --badge-free-text: #4ade80;
+  --badge-pro-bg: #1a2a3a;
+  --badge-pro-text: #60a5fa;
+  --badge-max-bg: #2a1a3a;
+  --badge-max-text: #a78bfa;
+  --badge-team-bg: #2a2a1a;
+  --badge-team-text: #fbbf24;
+  --badge-enterprise-bg: #3a1a1a;
+  --badge-enterprise-text: #f87171;
+  --badge-api-bg: #1a2a2a;
+  --badge-api-text: #34d399;
+  --badge-preview-bg: #2a1e0a;
+  --badge-preview-text: #fb923c;
 
-  --preview-banner-bg:     linear-gradient(135deg, #2a1e0a 0%, #1a1500 100%);
+  --preview-banner-bg: linear-gradient(135deg, #2a1e0a 0%, #1a1500 100%);
   --preview-banner-border: #92400e;
-  --preview-banner-title:  #fb923c;
-  --preview-banner-body:   #d97706;
+  --preview-banner-title: #fb923c;
+  --preview-banner-body: #d97706;
 
-  --free-highlight-bg:     linear-gradient(135deg, #1a1d27 0%, #0d1a0d 100%);
+  --free-highlight-bg: linear-gradient(135deg, #1a1d27 0%, #0d1a0d 100%);
   --free-highlight-border: #166534;
-  --free-highlight-title:  #4ade80;
+  --free-highlight-title: #4ade80;
 }
-  --bg:       #f5f7fc;
-  --surface:  #ffffff;
+
+[data-theme="light"] {
+  --bg: #f5f7fc;
+  --surface: #ffffff;
   --surface2: #edf0f8;
-  --border:   #d0d5ea;
+  --border: #d0d5ea;
 
-  --accent:   #d4521e;
-  --accent2:  #b84010;
+  --accent: #d4521e;
+  --accent2: #b84010;
 
-  --text:      #1a1d2e;
+  --text: #1a1d2e;
   --text-body: #3a3d52;
-  --muted:     #5a6080;
+  --muted: #5a6080;
 
-  --code-bg:        #e8ecf5;
-  --code-text:      #1a5c38;
+  --code-bg: #e8ecf5;
+  --code-text: #1a5c38;
   --inline-code-bg: rgba(0, 0, 0, 0.07);
 
-  --green:  #15803d;
-  --blue:   #1d4ed8;
+  --green: #15803d;
+  --blue: #1d4ed8;
   --purple: #6d28d9;
   --yellow: #b45309;
-  --red:    #b91c1c;
+  --red: #b91c1c;
 
-  --hero-g1:       #dce3f5;
-  --hero-g2:       #eef1fb;
-  --hero-g3:       #e4d8f0;
+  --hero-g1: #dce3f5;
+  --hero-g2: #eef1fb;
+  --hero-g3: #e4d8f0;
   --hero-h1-start: #1a1d2e;
 
   --toc-hover-bg: rgba(0, 0, 0, 0.04);
   --row-hover-bg: rgba(0, 0, 0, 0.025);
 
-  --footer-sub:    #6b7094;
-  --toggle-bg:     #ffffff;
+  --footer-sub: #6b7094;
+  --toggle-bg: #ffffff;
   --toggle-border: #d0d5ea;
 
-  --heading:         #1a1d2e;
-  --text-muted:      #5a6080;
-  --card-bg:         #ffffff;
-  --hover-bg:        rgba(0, 0, 0, 0.025);
+  --heading: #1a1d2e;
+  --text-muted: #5a6080;
+  --card-bg: #ffffff;
+  --hover-bg: rgba(0, 0, 0, 0.025);
   --table-header-bg: #edf0f8;
-  --accent-subtle:   rgba(212, 82, 30, 0.10);
+  --accent-subtle: rgba(212, 82, 30, 0.1);
 
-  --badge-free-bg:          #d1fae5;
-  --badge-free-text:        #15803d;
-  --badge-pro-bg:           #dbeafe;
-  --badge-pro-text:         #1d4ed8;
-  --badge-max-bg:           #ede9fe;
-  --badge-max-text:         #6d28d9;
-  --badge-team-bg:          #fef3c7;
-  --badge-team-text:        #b45309;
-  --badge-enterprise-bg:    #fee2e2;
-  --badge-enterprise-text:  #b91c1c;
-  --badge-api-bg:           #d1fae5;
-  --badge-api-text:         #065f46;
-  --badge-preview-bg:       #fff7ed;
-  --badge-preview-text:     #c2410c;
+  --badge-free-bg: #d1fae5;
+  --badge-free-text: #15803d;
+  --badge-pro-bg: #dbeafe;
+  --badge-pro-text: #1d4ed8;
+  --badge-max-bg: #ede9fe;
+  --badge-max-text: #6d28d9;
+  --badge-team-bg: #fef3c7;
+  --badge-team-text: #b45309;
+  --badge-enterprise-bg: #fee2e2;
+  --badge-enterprise-text: #b91c1c;
+  --badge-api-bg: #d1fae5;
+  --badge-api-text: #065f46;
+  --badge-preview-bg: #fff7ed;
+  --badge-preview-text: #c2410c;
 
-  --preview-banner-bg:     linear-gradient(135deg, #fff7ed 0%, #fffbeb 100%);
+  --preview-banner-bg: linear-gradient(135deg, #fff7ed 0%, #fffbeb 100%);
   --preview-banner-border: #fb923c;
-  --preview-banner-title:  #c2410c;
-  --preview-banner-body:   #92400e;
+  --preview-banner-title: #c2410c;
+  --preview-banner-body: #92400e;
 
-  --free-highlight-bg:     linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  --free-highlight-bg: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
   --free-highlight-border: #16a34a;
-  --free-highlight-title:  #15803d;
+  --free-highlight-title: #15803d;
 }
