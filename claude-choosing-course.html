@@ -1,951 +1,1752 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Choosing Your Claude — Claude Courses</title>
-<meta name="description" content="Choosing Your Claude — A complete guide to Claude.ai chat, Projects, Claude Code, Cowork, and the API. Learn which surface fits every task, and how to maximize value at every subscription tier.">
-<!-- Theme system must load before first paint to avoid flash of wrong theme -->
-<script src="assets/theme.js"></script>
-<link rel="stylesheet" href="assets/theme.css">
-<link rel="stylesheet" href="assets/styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Choosing Your Claude — Claude Courses</title>
+    <meta
+      name="description"
+      content="Choosing Your Claude — A complete guide to Claude.ai chat, Projects, Claude Code, Cowork, and the API. Learn which surface fits every task, and how to maximize value at every subscription tier."
+    />
+    <!-- Theme system must load before first paint to avoid flash of wrong theme -->
+    <script src="assets/theme.js"></script>
+    <link rel="stylesheet" href="assets/theme.css" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <!-- THEME TOGGLE -->
+    <button
+      class="theme-toggle"
+      onclick="toggleTheme()"
+      aria-label="Toggle light/dark mode"
+    >
+      <span class="toggle-icon" id="toggle-icon">☀️</span>
+      <span class="toggle-label" id="toggle-label">Light</span>
+    </button>
 
-<!-- THEME TOGGLE -->
-<button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle light/dark mode">
-  <span class="toggle-icon" id="toggle-icon">☀️</span>
-  <span class="toggle-label" id="toggle-label">Light</span>
-</button>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="badge">Complete Course · February 2026</div>
-  <h1>Choosing Your Claude</h1>
-  <p class="subtitle">Five surfaces. One AI. Know exactly which to reach for — and how to get the most from every subscription level.</p>
-  <div class="hero-meta">
-    <span>🎓 8 Modules</span>
-    <span>⏱ ~2 hours</span>
-    <span>🆓 Free · Pro · Max · Team · Enterprise · API</span>
-    <span>🔬 Research Preview content labeled</span>
-  </div>
-</div>
-
-<div class="layout">
-
-  <!-- SIDEBAR TOC -->
-  <nav class="toc">
-    <h3>Course Modules</h3>
-    <a href="#m1"><span class="toc-num">01</span> The Claude Ecosystem</a>
-    <a href="#m2"><span class="toc-num">02</span> Claude.ai Chat</a>
-    <a href="#m3"><span class="toc-num">03</span> Claude Projects</a>
-    <a href="#m4"><span class="toc-num">04</span> Claude Code</a>
-    <a href="#m5"><span class="toc-num">05</span> Claude Cowork</a>
-    <a href="#m6"><span class="toc-num">06</span> The Claude API</a>
-    <a href="#m7"><span class="toc-num">07</span> Choosing &amp; Combining</a>
-    <a href="#m8"><span class="toc-num">08</span> Maximizing Every Tier</a>
-  </nav>
-
-  <!-- MAIN -->
-  <main class="content">
-
-    <!-- MODULE 1 -->
-    <section class="section" id="m1">
-      <div class="section-header">
-        <div class="section-num">1</div>
-        <h2>The Claude Ecosystem</h2>
+    <!-- HERO -->
+    <div class="hero">
+      <div class="badge">Complete Course · February 2026</div>
+      <h1>Choosing Your Claude</h1>
+      <p class="subtitle">
+        Five surfaces. One AI. Know exactly which to reach for — and how to get
+        the most from every subscription level.
+      </p>
+      <div class="hero-meta">
+        <span>🎓 8 Modules</span>
+        <span>⏱ ~2 hours</span>
+        <span>🆓 Free · Pro · Max · Team · Enterprise · API</span>
+        <span>🔬 Research Preview content labeled</span>
       </div>
+    </div>
 
-      <p>Anthropic offers Claude through five distinct surfaces, each designed for a specific mode of work. They share the same underlying models but differ in how you interact, what you can do, and who they're built for. Understanding the shape of the ecosystem is the first step to using it well.</p>
+    <div class="layout">
+      <!-- SIDEBAR TOC -->
+      <nav class="toc">
+        <h3>Course Modules</h3>
+        <a href="#m1"><span class="toc-num">01</span> The Claude Ecosystem</a>
+        <a href="#m2"><span class="toc-num">02</span> Claude.ai Chat</a>
+        <a href="#m3"><span class="toc-num">03</span> Claude Projects</a>
+        <a href="#m4"><span class="toc-num">04</span> Claude Code</a>
+        <a href="#m5"><span class="toc-num">05</span> Claude Cowork</a>
+        <a href="#m6"><span class="toc-num">06</span> The Claude API</a>
+        <a href="#m7"
+          ><span class="toc-num">07</span> Choosing &amp; Combining</a
+        >
+        <a href="#m8"><span class="toc-num">08</span> Maximizing Every Tier</a>
+      </nav>
 
-      <div class="surface-grid">
-        <div class="surface-card">
-          <span class="surface-icon">💬</span>
-          <h3>Claude.ai Chat</h3>
-          <p>Conversational back-and-forth in a browser or mobile app. The entry point for everyone.</p>
-          <span class="surface-tier">Free → Max</span>
-        </div>
-        <div class="surface-card">
-          <span class="surface-icon">📁</span>
-          <h3>Projects</h3>
-          <p>Persistent workspaces with a shared knowledge base and custom instructions. Chat, organized.</p>
-          <span class="surface-tier">Free → Enterprise</span>
-        </div>
-        <div class="surface-card">
-          <span class="surface-icon">⌨️</span>
-          <h3>Claude Code</h3>
-          <p>An agentic CLI tool that reads, writes, and executes code directly in your terminal.</p>
-          <span class="surface-tier">Pro → Enterprise</span>
-        </div>
-        <div class="surface-card">
-          <span class="surface-icon">🖥️</span>
-          <h3>Cowork</h3>
-          <p>Agentic desktop tasks on your file system, without the terminal. Built on the same engine as Claude Code.</p>
-          <span class="surface-tier">Pro → Enterprise <span class="badge badge-preview">Research Preview</span></span>
-        </div>
-        <div class="surface-card">
-          <span class="surface-icon">🔌</span>
-          <h3>The API</h3>
-          <p>Programmatic access to Claude models. Build your own products, agents, and pipelines.</p>
-          <span class="surface-tier">Pay-per-token</span>
-        </div>
-      </div>
-
-      <div class="callout info">
-        <div class="callout-icon">ℹ️</div>
-        <div class="callout-body">
-          <strong>One model, many doorways.</strong>
-          <p>All five surfaces give you access to the same Claude models (Haiku 4.5, Sonnet 4.5, Opus 4.5/4.6). The surface determines the interface, context model, cost structure, and what actions Claude can take — not which intelligence is doing the work.</p>
-        </div>
-      </div>
-
-      <h3>Why Five Surfaces?</h3>
-      <p>Each surface emerged from a specific user need. Chat began as an accessible general assistant. Projects were added when users needed persistent context across conversations. Claude Code was built for developers who wanted Claude inside their terminal and codebase. Cowork grew out of the observation that non-developers were using Claude Code for everything from file organization to writing — so Anthropic packaged the same power in a desktop UI. And the API has always existed for builders who want to embed Claude in their own products.</p>
-
-      <div class="callout tip">
-        <div class="callout-icon">💡</div>
-        <div class="callout-body">
-          <strong>The surfaces are complementary, not competitive.</strong>
-          <p>A developer might use the API to build a product, Claude Code to write that product, Projects to organize research about it, and standard Chat for quick one-off questions during the day. You're not choosing one — you're choosing the right one for each task.</p>
-        </div>
-      </div>
-
-      <h3>The Subscription Tiers at a Glance</h3>
-      <p>Before diving into individual surfaces, here's the full pricing picture from Anthropic's official pricing page as of February 2026. Exact limits reset on a five-hour session window and may vary by model and message length — always check <a href="https://claude.com/pricing" target="_blank" rel="noopener">claude.com/pricing</a> for the latest numbers.</p>
-
-      <table class="plan-table">
-        <thead>
-          <tr>
-            <th>Plan</th>
-            <th>Price</th>
-            <th>Chat</th>
-            <th>Projects</th>
-            <th>Code &amp; Cowork</th>
-            <th>API Access</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="plan-name">Free</span></td>
-            <td><span class="plan-price">$0</span></td>
-            <td class="check">✓</td>
-            <td class="partial">✓ (5 projects)</td>
-            <td class="cross">✗</td>
-            <td class="cross">✗</td>
-          </tr>
-          <tr>
-            <td><span class="plan-name">Pro</span></td>
-            <td><span class="plan-price">$17–$20/mo</span></td>
-            <td class="check">✓ 5× more</td>
-            <td class="check">✓ Unlimited</td>
-            <td class="check">✓</td>
-            <td class="cross">✗</td>
-          </tr>
-          <tr>
-            <td><span class="plan-name">Max 5×</span></td>
-            <td><span class="plan-price">$100/mo</span></td>
-            <td class="check">✓ 25× Free</td>
-            <td class="check">✓</td>
-            <td class="check">✓</td>
-            <td class="cross">✗</td>
-          </tr>
-          <tr>
-            <td><span class="plan-name">Max 20×</span></td>
-            <td><span class="plan-price">$200/mo</span></td>
-            <td class="check">✓ 100× Free</td>
-            <td class="check">✓</td>
-            <td class="check">✓ Priority</td>
-            <td class="cross">✗</td>
-          </tr>
-          <tr>
-            <td><span class="plan-name">Team (standard)</span></td>
-            <td><span class="plan-price">$20–$25/seat</span></td>
-            <td class="check">✓ &gt;Pro</td>
-            <td class="check">✓ Shared</td>
-            <td class="check">✓</td>
-            <td class="cross">✗</td>
-          </tr>
-          <tr>
-            <td><span class="plan-name">Team (premium)</span></td>
-            <td><span class="plan-price">$100–$125/seat</span></td>
-            <td class="check">✓ 5× standard</td>
-            <td class="check">✓ Shared</td>
-            <td class="check">✓ Full Code</td>
-            <td class="cross">✗</td>
-          </tr>
-          <tr>
-            <td><span class="plan-name">Enterprise</span></td>
-            <td><span class="plan-price">Custom</span></td>
-            <td class="check">✓ Extended ctx</td>
-            <td class="check">✓ Org-wide</td>
-            <td class="check">✓</td>
-            <td class="cross">✗</td>
-          </tr>
-          <tr>
-            <td><span class="plan-name">API</span></td>
-            <td><span class="plan-price">Per token</span></td>
-            <td class="cross">N/A</td>
-            <td class="cross">N/A</td>
-            <td class="cross">N/A</td>
-            <td class="check">✓ Full</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="callout warning">
-        <div class="callout-icon">⚠️</div>
-        <div class="callout-body">
-          <strong>Prices and limits change frequently.</strong>
-          <p>The numbers above were verified against <a href="https://claude.com/pricing" target="_blank" rel="noopener">claude.com/pricing</a> in February 2026. Check the official pricing page before making a purchasing decision. Annual billing saves ~15% on Pro.</p>
-        </div>
-      </div>
-
-      <div class="quiz">
-        <h4>✍️ Quick Check</h4>
-        <p>Which Claude surfaces require a paid subscription to access?</p>
-        <div class="quiz-options">
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">A. Chat and Projects</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, true)">B. Claude Code and Cowork</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">C. The API only</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">D. All five surfaces</button>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-    </section>
-
-    <!-- MODULE 2 -->
-    <section class="section" id="m2">
-      <div class="section-header">
-        <div class="section-num">2</div>
-        <h2>Claude.ai Chat — The Universal Starting Point</h2>
-      </div>
-      <div class="progress-bar"><div class="progress-fill" style="width:12.5%"></div></div>
-
-      <p>Claude.ai Chat is the conversational interface available on web, iOS, Android, and desktop. It's the surface most people encounter first and the one that handles the broadest range of everyday tasks. Understanding its strengths — and its limits — tells you when to stay here and when to reach for something else.</p>
-
-      <div class="free-highlight">
-        <h4>🟢 What Free users can do in Chat</h4>
-        <ul>
-          <li>Full access to Claude Sonnet 4.5 (the same model as most paid interactions)</li>
-          <li>200K-token context window per conversation</li>
-          <li>Image analysis, file uploads, and web search</li>
-          <li>Artifacts — create code, documents, and visualizations inline</li>
-          <li>Basic app connectors (Notion, Slack, Google Workspace, and more)</li>
-          <li>Up to five Projects with shared knowledge bases</li>
-        </ul>
-      </div>
-
-      <h3>What Chat Does Best</h3>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-body">
-            <h4>One-off questions and quick tasks</h4>
-            <p>Chat is optimized for short-to-medium interactions where you want an immediate response. Drafting an email, explaining a concept, translating a paragraph, or debugging a single function — Chat handles all of these without any setup overhead.</p>
+      <!-- MAIN -->
+      <main class="content">
+        <!-- MODULE 1 -->
+        <section class="section" id="m1">
+          <div class="section-header">
+            <div class="section-num">1</div>
+            <h2>The Claude Ecosystem</h2>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-body">
-            <h4>Exploratory and creative work</h4>
-            <p>When you don't know exactly what you need yet, Chat's conversational format lets you iterate freely. You can change direction mid-conversation, ask follow-up questions, and refine as you go.</p>
+
+          <p>
+            Anthropic offers Claude through five distinct surfaces, each
+            designed for a specific mode of work. They share the same underlying
+            models but differ in how you interact, what you can do, and who
+            they're built for. Understanding the shape of the ecosystem is the
+            first step to using it well.
+          </p>
+
+          <div class="card-grid">
+            <div class="card">
+              <span class="surface-icon">💬</span>
+              <h3>Claude.ai Chat</h3>
+              <p>
+                Conversational back-and-forth in a browser or mobile app. The
+                entry point for everyone.
+              </p>
+              <span class="surface-tier">Free → Max</span>
+            </div>
+            <div class="card">
+              <span class="surface-icon">📁</span>
+              <h3>Projects</h3>
+              <p>
+                Persistent workspaces with a shared knowledge base and custom
+                instructions. Chat, organized.
+              </p>
+              <span class="surface-tier">Free → Enterprise</span>
+            </div>
+            <div class="card">
+              <span class="surface-icon">⌨️</span>
+              <h3>Claude Code</h3>
+              <p>
+                An agentic CLI tool that reads, writes, and executes code
+                directly in your terminal.
+              </p>
+              <span class="surface-tier">Pro → Enterprise</span>
+            </div>
+            <div class="card">
+              <span class="surface-icon">🖥️</span>
+              <h3>Cowork</h3>
+              <p>
+                Agentic desktop tasks on your file system, without the terminal.
+                Built on the same engine as Claude Code.
+              </p>
+              <span class="surface-tier">Pro → Enterprise</span>
+              <span class="badge badge-preview">Research Preview</span>
+            </div>
+            <div class="card">
+              <span class="surface-icon">🔌</span>
+              <h3>The API</h3>
+              <p>
+                Programmatic access to Claude models. Build your own products,
+                agents, and pipelines.
+              </p>
+              <span class="surface-tier">Pay-per-token</span>
+            </div>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <h4>Long-document analysis</h4>
-            <p>Upload PDFs, code files, or large text documents and ask Claude to summarize, extract, critique, or transform them. The 200K-token context window means you can work with very long source material in a single conversation.</p>
+
+          <div class="callout info">
+            <div class="callout-icon">ℹ️</div>
+            <div class="callout-body">
+              <strong>One model, many doorways.</strong>
+              <p>
+                All five surfaces give you access to the same Claude models
+                (Haiku 4.5, Sonnet 4.5, Opus 4.5/4.6). The surface determines
+                the interface, context model, cost structure, and what actions
+                Claude can take — not which intelligence is doing the work.
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div class="step-body">
-            <h4>Mobile and on-the-go use</h4>
-            <p>The iOS and Android apps bring Claude into your daily workflow without requiring a desktop. Voice input, quick lookups, and drafting content are all natural mobile use cases.</p>
+
+          <h3>Why Five Surfaces?</h3>
+          <p>
+            Each surface emerged from a specific user need. Chat began as an
+            accessible general assistant. Projects were added when users needed
+            persistent context across conversations. Claude Code was built for
+            developers who wanted Claude inside their terminal and codebase.
+            Cowork grew out of the observation that non-developers were using
+            Claude Code for everything from file organization to writing — so
+            Anthropic packaged the same power in a desktop UI. And the API has
+            always existed for builders who want to embed Claude in their own
+            products.
+          </p>
+
+          <div class="callout tip">
+            <div class="callout-icon">💡</div>
+            <div class="callout-body">
+              <strong>The surfaces are complementary, not competitive.</strong>
+              <p>
+                A developer might use the API to build a product, Claude Code to
+                write that product, Projects to organize research about it, and
+                standard Chat for quick one-off questions during the day. You're
+                not choosing one — you're choosing the right one for each task.
+              </p>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <h3>Where Chat Falls Short</h3>
-      <p>Chat is stateless across conversations. Each new chat starts fresh — Claude has no memory of your previous sessions unless you use Projects, Memory (where available), or manually paste in prior context. This is the biggest practical limitation for ongoing work.</p>
+          <h3>The Subscription Tiers at a Glance</h3>
+          <p>
+            Before diving into individual surfaces, here's the full pricing
+            picture from Anthropic's official pricing page as of February 2026.
+            Exact limits reset on a five-hour session window and may vary by
+            model and message length — always check
+            <a href="https://claude.com/pricing" target="_blank" rel="noopener"
+              >claude.com/pricing</a
+            >
+            for the latest numbers.
+          </p>
 
-      <p>Chat also can't act on your computer or file system. Everything Claude produces lives inside the chat window as text or an artifact; you copy it out. For work that requires editing real files, running code, or managing a folder of documents, you need Claude Code or Cowork.</p>
+          <table class="plan-table">
+            <thead>
+              <tr>
+                <th>Plan</th>
+                <th>Price</th>
+                <th>Chat</th>
+                <th>Projects</th>
+                <th>Code &amp; Cowork</th>
+                <th>API Access</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="plan-name">Free</span></td>
+                <td><span class="plan-price">$0</span></td>
+                <td class="check">✓</td>
+                <td class="partial">✓ (5 projects)</td>
+                <td class="cross">✗</td>
+                <td class="cross">✗</td>
+              </tr>
+              <tr>
+                <td><span class="plan-name">Pro</span></td>
+                <td><span class="plan-price">$17–$20/mo</span></td>
+                <td class="check">✓ 5× more</td>
+                <td class="check">✓ Unlimited</td>
+                <td class="check">✓</td>
+                <td class="cross">✗</td>
+              </tr>
+              <tr>
+                <td><span class="plan-name">Max 5×</span></td>
+                <td><span class="plan-price">$100/mo</span></td>
+                <td class="check">✓ 25× Free</td>
+                <td class="check">✓</td>
+                <td class="check">✓</td>
+                <td class="cross">✗</td>
+              </tr>
+              <tr>
+                <td><span class="plan-name">Max 20×</span></td>
+                <td><span class="plan-price">$200/mo</span></td>
+                <td class="check">✓ 100× Free</td>
+                <td class="check">✓</td>
+                <td class="check">✓ Priority</td>
+                <td class="cross">✗</td>
+              </tr>
+              <tr>
+                <td><span class="plan-name">Team (standard)</span></td>
+                <td><span class="plan-price">$20–$25/seat</span></td>
+                <td class="check">✓ &gt;Pro</td>
+                <td class="check">✓ Shared</td>
+                <td class="check">✓</td>
+                <td class="cross">✗</td>
+              </tr>
+              <tr>
+                <td><span class="plan-name">Team (premium)</span></td>
+                <td><span class="plan-price">$100–$125/seat</span></td>
+                <td class="check">✓ 5× standard</td>
+                <td class="check">✓ Shared</td>
+                <td class="check">✓ Full Code</td>
+                <td class="cross">✗</td>
+              </tr>
+              <tr>
+                <td><span class="plan-name">Enterprise</span></td>
+                <td><span class="plan-price">Custom</span></td>
+                <td class="check">✓ Extended ctx</td>
+                <td class="check">✓ Org-wide</td>
+                <td class="check">✓</td>
+                <td class="cross">✗</td>
+              </tr>
+              <tr>
+                <td><span class="plan-name">API</span></td>
+                <td><span class="plan-price">Per token</span></td>
+                <td class="cross">N/A</td>
+                <td class="cross">N/A</td>
+                <td class="cross">N/A</td>
+                <td class="check">✓ Full</td>
+              </tr>
+            </tbody>
+          </table>
 
-      <div class="callout tip">
-        <div class="callout-icon">💡</div>
-        <div class="callout-body">
-          <strong>Free tier tips for Chat</strong>
-          <p>Use the full 200K context window — you have room to paste long documents. Select Haiku 4.5 for simple tasks to stay within your usage limits; save Sonnet for complex work. Upload images instead of describing them to save tokens. And if you hit your daily limit, your session resets after five hours — waiting it out costs nothing.</p>
-        </div>
-      </div>
-
-      <h3>Model Selection in Chat</h3>
-      <p>Paid subscribers can switch between Haiku 4.5 (fastest, lightest), Sonnet 4.5 (default, best balance), and Opus 4.5/4.6 (most capable, highest cost against your usage quota). Free users are served Sonnet 4.5. The rule of thumb: use the least-capable model that gets the job done well. Haiku is excellent for extraction, reformatting, and routine writing. Opus is worth the quota spend for complex code, long reasoning chains, and nuanced analysis.</p>
-
-      <div class="quiz">
-        <h4>✍️ Quick Check</h4>
-        <p>A free user opens a brand-new chat session. Which Claude model powers it?</p>
-        <div class="quiz-options">
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">A. Claude Haiku 4.5 only</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, true)">B. Claude Sonnet 4.5</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">C. Claude Opus 4.5</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">D. A special free-tier model</button>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-    </section>
-
-    <!-- MODULE 3 -->
-    <section class="section" id="m3">
-      <div class="section-header">
-        <div class="section-num">3</div>
-        <h2>Claude Projects — Persistent Context, Zero Repetition</h2>
-      </div>
-      <div class="progress-bar"><div class="progress-fill" style="width:25%"></div></div>
-
-      <p>Projects solve the biggest practical frustration with Chat: the need to re-explain your situation every time you start a new conversation. A Project is a persistent workspace where you define the context once — through uploaded documents and custom instructions — and every chat inside that project automatically inherits it.</p>
-
-      <div class="free-highlight">
-        <h4>🟢 What Free users get with Projects</h4>
-        <ul>
-          <li>Up to five Projects</li>
-          <li>Shared knowledge base per project (uploaded documents, code, text)</li>
-          <li>Custom project instructions (your standing context, role, preferences)</li>
-          <li>Separate chat histories per project</li>
-          <li>Artifacts scoped to the project</li>
-        </ul>
-      </div>
-
-      <h3>How the Knowledge Base Works</h3>
-      <p>Each project has a knowledge base — a set of documents, files, and text you upload once. Claude references this knowledge automatically in every chat within the project. You don't need to re-upload your codebase, style guide, or research notes each session.</p>
-
-      <p>Paid users get an important upgrade here: when your knowledge base grows large enough to approach the context window limit, Claude automatically enables Retrieval Augmented Generation (RAG). This expands effective capacity by up to 10× while maintaining response quality. Free users are limited to the standard context window for knowledge storage.</p>
-
-      <div class="callout info">
-        <div class="callout-icon">ℹ️</div>
-        <div class="callout-body">
-          <strong>Context is shared across the project, not across chats.</strong>
-          <p>Knowledge you upload to the project's knowledge base is available in every chat. But the conversation history of one chat does not bleed into another chat within the same project. If you want Claude to remember something from a previous conversation, add it to the knowledge base or project instructions.</p>
-        </div>
-      </div>
-
-      <h3>Project Instructions — Your Persistent System Prompt</h3>
-      <p>Project instructions let you write a standing context that Claude reads at the start of every conversation in the project. Think of it as a permanent briefing. Good project instructions typically include who you are and what the project is for, how you want Claude to respond (tone, format, depth), any constraints or house rules, and pointers to the key documents in the knowledge base.</p>
-
-      <div class="callout tip">
-        <div class="callout-icon">💡</div>
-        <div class="callout-body">
-          <strong>Make your project instructions specific.</strong>
-          <p>"You are helping me manage a marketing campaign for a SaaS product targeting mid-market IT buyers. Always write copy in an active voice. The brand guide is in the knowledge base." is far more useful than "You are a marketing assistant." The more specific your instructions, the less you need to re-explain in every chat.</p>
-        </div>
-      </div>
-
-      <h3>When to Use a Project vs. Regular Chat</h3>
-      <table class="decision-table">
-        <thead>
-          <tr>
-            <th>Situation</th>
-            <th>Use</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>One-off question, no prior context needed</td><td>Regular chat</td></tr>
-          <tr><td>Ongoing work on a specific codebase, document, or topic</td><td>Project</td></tr>
-          <tr><td>You find yourself pasting the same intro paragraph every session</td><td>Project</td></tr>
-          <tr><td>Team needs a shared AI context for a client or internal initiative</td><td>Shared project (Team/Enterprise)</td></tr>
-          <tr><td>Quick creative exploration with no recurring structure</td><td>Regular chat</td></tr>
-          <tr><td>Research that accumulates over weeks with reference material</td><td>Project</td></tr>
-        </tbody>
-      </table>
-
-      <h3>Team and Enterprise Sharing</h3>
-      <p>On Team and Enterprise plans, Projects become a collaboration tool. You can share a project with specific teammates by email, share it org-wide, and set view or edit permissions. This turns Projects into a living knowledge base your whole team can query — effectively giving everyone on the team access to a shared AI assistant that knows your specific context.</p>
-
-      <div class="callout tip">
-        <div class="callout-icon">💡</div>
-        <div class="callout-body">
-          <strong>Free tier tip</strong>
-          <p>You get five projects — use them strategically. Create one project per major ongoing area of your life or work: e.g., "Job search", "Side project", "Learning Python", "Home renovation". Upload your relevant documents once. You'll save significant usage quota by not re-pasting context every session.</p>
-        </div>
-      </div>
-
-      <div class="quiz">
-        <h4>✍️ Quick Check</h4>
-        <p>What is the maximum number of Projects a free Claude user can create?</p>
-        <div class="quiz-options">
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">A. 1</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">B. 3</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, true)">C. 5</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">D. Unlimited</button>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-    </section>
-
-    <!-- MODULE 4 -->
-    <section class="section" id="m4">
-      <div class="section-header">
-        <div class="section-num">4</div>
-        <h2>Claude Code — The Developer's Agentic Environment</h2>
-      </div>
-      <div class="progress-bar"><div class="progress-fill" style="width:37.5%"></div></div>
-
-      <p>Claude Code is a command-line tool that gives Claude direct access to your development environment. It can read your codebase, write and edit files, run shell commands, install packages, and execute tests — all autonomously, with you reviewing its work in the terminal. It's available with Pro, Max, Team (premium seats), and Enterprise plans.</p>
-
-      <div class="callout info">
-        <div class="callout-icon">ℹ️</div>
-        <div class="callout-body">
-          <strong>Claude Code was released in February 2025.</strong>
-          <p>By May 2025 it was generally available alongside Claude 4. It's available via a dedicated CLI tool and also through a web interface and iOS app as of late 2025.</p>
-        </div>
-      </div>
-
-      <h3>What Makes Claude Code Different from Chat</h3>
-      <p>In Chat, everything Claude produces is text you copy out. In Claude Code, Claude acts directly in your environment. The difference is like explaining to someone how to fix a bug versus hiring someone who sits down at your keyboard and fixes it themselves. Claude Code reads your actual files, not a pasted summary of them. It writes changes directly to disk. It runs your test suite and reads the results. It operates with far more context about your actual project state.</p>
-
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-body">
-            <h4>Full codebase context</h4>
-            <p>Claude Code can read your entire repository at once rather than the fragments you remember to paste. This means it can understand how components relate, trace dependencies, and make changes that are coherent across files.</p>
+          <div class="callout warning">
+            <div class="callout-icon">⚠️</div>
+            <div class="callout-body">
+              <strong>Prices and limits change frequently.</strong>
+              <p>
+                The numbers above were verified against
+                <a
+                  href="https://claude.com/pricing"
+                  target="_blank"
+                  rel="noopener"
+                  >claude.com/pricing</a
+                >
+                in February 2026. Check the official pricing page before making
+                a purchasing decision. Annual billing saves ~15% on Pro.
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-body">
-            <h4>Agentic execution</h4>
-            <p>Give Claude Code a goal — "add authentication to this Express app" — and it will make a plan, implement it across multiple files, run the tests, fix the failures it introduced, and return with a working result.</p>
+
+          <div class="quiz">
+            <h4>✍️ Quick Check</h4>
+            <p>Which Claude surfaces require a paid subscription to access?</p>
+            <div class="quiz-options">
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                A. Chat and Projects
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, true)">
+                B. Claude Code and Cowork
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                C. The API only
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                D. All five surfaces
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <h4>Non-coding tasks too</h4>
-            <p>Developers quickly discovered Claude Code is excellent for non-coding work as well: organizing files, processing data in CSVs, batch-renaming assets, generating reports from logs. This ultimately led Anthropic to build Cowork.</p>
+        </section>
+
+        <!-- MODULE 2 -->
+        <section class="section" id="m2">
+          <div class="section-header">
+            <div class="section-num">2</div>
+            <h2>Claude.ai Chat — The Universal Starting Point</h2>
           </div>
-        </div>
-      </div>
 
-      <h3>Claude Code vs. API: When to Use Which</h3>
-      <p>Heavy coding via the API can cost thousands of dollars per month in token charges for power users. Analysis from real-world usage suggests that developers doing intensive coding via API tokens might spend $2,000–$4,000+ per month, while the Max plan at $200/month covers the same workload for a flat fee. The subscription wins decisively for sustained, high-volume coding work. Use the API when you're building a product that serves other users, and use Claude Code when you're doing your own development work.</p>
+          <p>
+            Claude.ai Chat is the conversational interface available on web,
+            iOS, Android, and desktop. It's the surface most people encounter
+            first and the one that handles the broadest range of everyday tasks.
+            Understanding its strengths — and its limits — tells you when to
+            stay here and when to reach for something else.
+          </p>
 
-      <div class="callout tip">
-        <div class="callout-icon">💡</div>
-        <div class="callout-body">
-          <strong>Cost control for Claude Code users</strong>
-          <p>Use the <code>--model</code> flag to pick a cheaper model for routine tasks (file organization, simple rewrites) and reserve Opus for complex architectural decisions. On Pro, monitor your usage under Settings → Usage. Batch related changes into single sessions rather than opening Claude Code for one file at a time.</p>
-        </div>
-      </div>
-
-      <h3>Getting Started</h3>
-      <p>Claude Code is installed via npm and requires Node.js. Once installed, run <code>claude</code> in any project directory to start a session. It reads a <code>CLAUDE.md</code> file in your repo root as standing instructions — use this to tell Claude Code about your project's architecture, conventions, and testing commands so you don't repeat them every session.</p>
-
-      <div class="callout warning">
-        <div class="callout-icon">⚠️</div>
-        <div class="callout-body">
-          <strong>Claude Code executes code on your machine.</strong>
-          <p>It can create, modify, and delete files, and run shell commands. Review its proposed actions before approving destructive operations. Use <code>--no-permissions</code> for read-only exploration sessions.</p>
-        </div>
-      </div>
-
-      <div class="quiz">
-        <h4>✍️ Quick Check</h4>
-        <p>Where does Claude Code write its output when it edits your code?</p>
-        <div class="quiz-options">
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">A. Into a chat window for you to copy</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">B. Into an Artifact that you download</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, true)">C. Directly to files on your disk</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">D. Into a cloud-hosted repository</button>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-    </section>
-
-    <!-- MODULE 5 -->
-    <section class="section" id="m5">
-      <div class="section-header">
-        <div class="section-num">5</div>
-        <h2>Claude Cowork — Agentic Tasks, No Terminal Required</h2>
-      </div>
-      <div class="progress-bar"><div class="progress-fill" style="width:50%"></div></div>
-
-      <div class="preview-banner">
-        <span class="preview-icon">🔬</span>
-        <div>
-          <strong>Research Preview — Verify Before Relying On This</strong>
-          <p>Cowork is an active research preview as of February 2026. Features, availability, and constraints described here reflect current documentation but may change at any time. Always check <a href="https://support.claude.com/en/articles/13345190-getting-started-with-cowork" target="_blank" rel="noopener">the official Cowork help article</a> before relying on specific behaviors for important work.</p>
-        </div>
-      </div>
-
-      <p>Cowork takes the autonomous, multi-step execution power of Claude Code and delivers it through a desktop interface — no terminal, no command line, no developer setup. You describe a task, Claude makes a plan, you review it, and Claude works through it autonomously on your file system while you do other things.</p>
-
-      <h3>Current Availability (February 2026)</h3>
-      <p>Cowork is available as a research preview for paid subscribers (Pro, Max, Team, and Enterprise) on Claude Desktop for macOS and Claude Desktop for Windows (x64 only — Windows arm64 is not currently supported). It is not available on the web or mobile. The Claude Desktop app must remain open while Claude is working — closing the app ends the session.</p>
-
-      <div class="callout warning">
-        <div class="callout-icon">⚠️</div>
-        <div class="callout-body">
-          <strong>Keep Claude Desktop open.</strong>
-          <p>Cowork tasks run locally and require an active internet connection throughout the session. If you close the desktop app, your session ends and in-progress work may be incomplete.</p>
-        </div>
-      </div>
-
-      <h3>What Cowork Does Well</h3>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-body">
-            <h4>File organization at scale</h4>
-            <p>Point Cowork at your Downloads folder and ask it to sort by type and date, rename files to consistent patterns, or deduplicate. It processes hundreds of files programmatically — tasks that would take you an afternoon take Claude minutes.</p>
+          <div class="free-highlight">
+            <h4>🟢 What Free users can do in Chat</h4>
+            <ul>
+              <li>
+                Full access to Claude Sonnet 4.5 (the same model as most paid
+                interactions)
+              </li>
+              <li>200K-token context window per conversation</li>
+              <li>Image analysis, file uploads, and web search</li>
+              <li>
+                Artifacts — create code, documents, and visualizations inline
+              </li>
+              <li>
+                Basic app connectors (Notion, Slack, Google Workspace, and more)
+              </li>
+              <li>Up to five Projects with shared knowledge bases</li>
+            </ul>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-body">
-            <h4>Document processing pipelines</h4>
-            <p>Drop receipts in a folder and ask for a formatted expense report. Scan a folder of meeting notes and produce an executive summary. Convert, merge, or restructure files in bulk without opening each one manually.</p>
+
+          <h3>What Chat Does Best</h3>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h4>One-off questions and quick tasks</h4>
+                <p>
+                  Chat is optimized for short-to-medium interactions where you
+                  want an immediate response. Drafting an email, explaining a
+                  concept, translating a paragraph, or debugging a single
+                  function — Chat handles all of these without any setup
+                  overhead.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h4>Exploratory and creative work</h4>
+                <p>
+                  When you don't know exactly what you need yet, Chat's
+                  conversational format lets you iterate freely. You can change
+                  direction mid-conversation, ask follow-up questions, and
+                  refine as you go.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h4>Long-document analysis</h4>
+                <p>
+                  Upload PDFs, code files, or large text documents and ask
+                  Claude to summarize, extract, critique, or transform them. The
+                  200K-token context window means you can work with very long
+                  source material in a single conversation.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <h4>Mobile and on-the-go use</h4>
+                <p>
+                  The iOS and Android apps bring Claude into your daily workflow
+                  without requiring a desktop. Voice input, quick lookups, and
+                  drafting content are all natural mobile use cases.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <h4>Research synthesis</h4>
-            <p>Combine web searches, saved articles, and local notes into coherent reports. Cowork can search the web, read pages, and write findings directly into a document — all in one unattended workflow.</p>
+
+          <h3>Where Chat Falls Short</h3>
+          <p>
+            Chat is stateless across conversations. Each new chat starts fresh —
+            Claude has no memory of your previous sessions unless you use
+            Projects, Memory (where available), or manually paste in prior
+            context. This is the biggest practical limitation for ongoing work.
+          </p>
+
+          <p>
+            Chat also can't act on your computer or file system. Everything
+            Claude produces lives inside the chat window as text or an artifact;
+            you copy it out. For work that requires editing real files, running
+            code, or managing a folder of documents, you need Claude Code or
+            Cowork.
+          </p>
+
+          <div class="callout tip">
+            <div class="callout-icon">💡</div>
+            <div class="callout-body">
+              <strong>Free tier tips for Chat</strong>
+              <p>
+                Use the full 200K context window — you have room to paste long
+                documents. Select Haiku 4.5 for simple tasks to stay within your
+                usage limits; save Sonnet for complex work. Upload images
+                instead of describing them to save tokens. And if you hit your
+                daily limit, your session resets after five hours — waiting it
+                out costs nothing.
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div class="step-body">
-            <h4>Parallel sub-agents</h4>
-            <p>Unlike a single chat thread, Cowork can spin up independent sub-agents that work in parallel on different parts of a large task. Each starts with fresh context, avoiding the context accumulation that slows down long conversations.</p>
+
+          <h3>Model Selection in Chat</h3>
+          <p>
+            Paid subscribers can switch between Haiku 4.5 (fastest, lightest),
+            Sonnet 4.5 (default, best balance), and Opus 4.5/4.6 (most capable,
+            highest cost against your usage quota). Free users are served Sonnet
+            4.5. The rule of thumb: use the least-capable model that gets the
+            job done well. Haiku is excellent for extraction, reformatting, and
+            routine writing. Opus is worth the quota spend for complex code,
+            long reasoning chains, and nuanced analysis.
+          </p>
+
+          <div class="quiz">
+            <h4>✍️ Quick Check</h4>
+            <p>
+              A free user opens a brand-new chat session. Which Claude model
+              powers it?
+            </p>
+            <div class="quiz-options">
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                A. Claude Haiku 4.5 only
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, true)">
+                B. Claude Sonnet 4.5
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                C. Claude Opus 4.5
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                D. A special free-tier model
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
           </div>
-        </div>
-      </div>
+        </section>
 
-      <h3>Cowork vs. Claude Code — When to Use Which</h3>
-      <table class="decision-table">
-        <thead>
-          <tr>
-            <th>Task</th>
-            <th>Cowork</th>
-            <th>Claude Code</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Organize and rename files</td><td><span class="tag green">Better</span></td><td>Also works</td></tr>
-          <tr><td>Process receipts into a spreadsheet</td><td><span class="tag green">Better</span></td><td>Also works</td></tr>
-          <tr><td>Build a web app from scratch</td><td>Possible</td><td><span class="tag green">Better</span></td></tr>
-          <tr><td>Refactor a multi-file codebase</td><td>Limited</td><td><span class="tag green">Better</span></td></tr>
-          <tr><td>Research synthesis with web access</td><td><span class="tag green">Better</span></td><td>Possible</td></tr>
-          <tr><td>Git operations and PR workflows</td><td>Limited</td><td><span class="tag green">Better</span></td></tr>
-          <tr><td>User without terminal comfort</td><td><span class="tag green">Right tool</span></td><td>Steep curve</td></tr>
-        </tbody>
-      </table>
-
-      <h3>Plugins and Connectors</h3>
-      <p>Cowork supports a library of plugins for common knowledge work: productivity (calendars, tasks), enterprise search, sales workflows, and finance. Anthropic has released these as open source on GitHub. You can also create custom plugins, and if you've configured Claude in Chrome, Cowork gains browser-based capabilities: reading web pages, filling forms, and extracting data from sites that don't offer an API.</p>
-
-      <div class="callout tip">
-        <div class="callout-icon">💡</div>
-        <div class="callout-body">
-          <strong>Prompt Cowork with specific end states.</strong>
-          <p>"Analyze these documents and create a slide deck with the three main themes" gives Claude much more to work with than "help me understand this research." Vague goals produce vague plans. Specific end states — with a named output file and format — produce reliable results.</p>
-        </div>
-      </div>
-
-      <div class="callout danger">
-        <div class="callout-icon">🚨</div>
-        <div class="callout-body">
-          <strong>Cowork can take destructive actions.</strong>
-          <p>It can delete, overwrite, and reorganize files. Point it at a sandboxed folder, not your entire Documents directory, when learning how it works. Review its plan before letting it run, and keep backups of anything you can't afford to lose during the research preview.</p>
-        </div>
-      </div>
-
-      <div class="quiz">
-        <h4>✍️ Quick Check</h4>
-        <p>Which of the following is a current limitation of Cowork as of February 2026?</p>
-        <div class="quiz-options">
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">A. It cannot access the internet during tasks</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, true)">B. Claude Desktop must remain open throughout the task</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">C. It can only work with one file at a time</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">D. It is only available to Max subscribers</button>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-    </section>
-
-    <!-- MODULE 6 -->
-    <section class="section" id="m6">
-      <div class="section-header">
-        <div class="section-num">6</div>
-        <h2>The Claude API — Build Claude Into Everything</h2>
-      </div>
-      <div class="progress-bar"><div class="progress-fill" style="width:62.5%"></div></div>
-
-      <p>The API is the developer's direct line to Claude's models. It's how you build products, automate workflows, and integrate Claude into your own applications. Unlike the subscription surfaces, the API charges per token — you pay for exactly what you use, at any scale, with no monthly seat fee.</p>
-
-      <h3>Current API Pricing (February 2026)</h3>
-      <p>The following prices are from <a href="https://claude.com/pricing" target="_blank" rel="noopener">claude.com/pricing</a> as of February 2026. Token pricing changes — always verify before building cost estimates.</p>
-
-      <table class="plan-table">
-        <thead>
-          <tr>
-            <th>Model</th>
-            <th>Input ≤200K</th>
-            <th>Input &gt;200K</th>
-            <th>Output ≤200K</th>
-            <th>Output &gt;200K</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="plan-name">Haiku 4.5</span></td>
-            <td>$1/MTok</td><td>$1/MTok</td><td>$5/MTok</td><td>$5/MTok</td>
-          </tr>
-          <tr>
-            <td><span class="plan-name">Sonnet 4.5</span></td>
-            <td>$3/MTok</td><td>$6/MTok</td><td>$15/MTok</td><td>$22.50/MTok</td>
-          </tr>
-          <tr>
-            <td><span class="plan-name">Opus 4.6</span></td>
-            <td>$5/MTok</td><td>$10/MTok</td><td>$25/MTok</td><td>$37.50/MTok</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="callout warning">
-        <div class="callout-icon">⚠️</div>
-        <div class="callout-body">
-          <strong>The 200K token threshold doubles costs.</strong>
-          <p>Prompts over 200K tokens are charged at 2× the per-token rate for both input and output on Sonnet and Opus. If you're working with very long documents or codebases, use prompt caching or split requests to stay under this threshold.</p>
-        </div>
-      </div>
-
-      <h3>Key API Cost Levers</h3>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-body">
-            <h4>Prompt caching: save 90% on repeated context</h4>
-            <p>If you send the same large system prompt or document with every request, prompt caching stores it server-side. Cache reads cost $0.30/MTok for Sonnet 4.5 — one-tenth of the uncached input price. Cache writes cost $3.75/MTok with a 5-minute TTL (extendable to 1 hour).</p>
+        <!-- MODULE 3 -->
+        <section class="section" id="m3">
+          <div class="section-header">
+            <div class="section-num">3</div>
+            <h2>Claude Projects — Persistent Context, Zero Repetition</h2>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-body">
-            <h4>Batch API: save 50% on async workloads</h4>
-            <p>The Batch API processes requests asynchronously and charges 50% less than standard pricing. Ideal for bulk document processing, overnight analysis, and content generation pipelines where a 12–24 hour turnaround is acceptable.</p>
+
+          <p>
+            Projects solve the biggest practical frustration with Chat: the need
+            to re-explain your situation every time you start a new
+            conversation. A Project is a persistent workspace where you define
+            the context once — through uploaded documents and custom
+            instructions — and every chat inside that project automatically
+            inherits it.
+          </p>
+
+          <div class="free-highlight">
+            <h4>🟢 What Free users get with Projects</h4>
+            <ul>
+              <li>Up to five Projects</li>
+              <li>
+                Shared knowledge base per project (uploaded documents, code,
+                text)
+              </li>
+              <li>
+                Custom project instructions (your standing context, role,
+                preferences)
+              </li>
+              <li>Separate chat histories per project</li>
+              <li>Artifacts scoped to the project</li>
+            </ul>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <h4>Model selection: Haiku is 5× cheaper than Sonnet</h4>
-            <p>Route simple classification, extraction, and formatting tasks to Haiku 4.5. Reserve Sonnet for nuanced writing and reasoning. Reserve Opus for the genuinely hard problems. The right model for each task is usually cheaper than defaulting to the most powerful one.</p>
+
+          <h3>How the Knowledge Base Works</h3>
+          <p>
+            Each project has a knowledge base — a set of documents, files, and
+            text you upload once. Claude references this knowledge automatically
+            in every chat within the project. You don't need to re-upload your
+            codebase, style guide, or research notes each session.
+          </p>
+
+          <p>
+            Paid users get an important upgrade here: when your knowledge base
+            grows large enough to approach the context window limit, Claude
+            automatically enables Retrieval Augmented Generation (RAG). This
+            expands effective capacity by up to 10× while maintaining response
+            quality. Free users are limited to the standard context window for
+            knowledge storage.
+          </p>
+
+          <div class="callout info">
+            <div class="callout-icon">ℹ️</div>
+            <div class="callout-body">
+              <strong
+                >Context is shared across the project, not across chats.</strong
+              >
+              <p>
+                Knowledge you upload to the project's knowledge base is
+                available in every chat. But the conversation history of one
+                chat does not bleed into another chat within the same project.
+                If you want Claude to remember something from a previous
+                conversation, add it to the knowledge base or project
+                instructions.
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div class="step-body">
-            <h4>Extended prompt caching (1-hour TTL)</h4>
-            <p>For long-running pipelines where the same context is reused repeatedly over an hour, extended caching reduces cache write frequency. Check <a href="https://docs.claude.com" target="_blank" rel="noopener">docs.claude.com</a> for current extended caching pricing.</p>
+
+          <h3>Project Instructions — Your Persistent System Prompt</h3>
+          <p>
+            Project instructions let you write a standing context that Claude
+            reads at the start of every conversation in the project. Think of it
+            as a permanent briefing. Good project instructions typically include
+            who you are and what the project is for, how you want Claude to
+            respond (tone, format, depth), any constraints or house rules, and
+            pointers to the key documents in the knowledge base.
+          </p>
+
+          <div class="callout tip">
+            <div class="callout-icon">💡</div>
+            <div class="callout-body">
+              <strong>Make your project instructions specific.</strong>
+              <p>
+                "You are helping me manage a marketing campaign for a SaaS
+                product targeting mid-market IT buyers. Always write copy in an
+                active voice. The brand guide is in the knowledge base." is far
+                more useful than "You are a marketing assistant." The more
+                specific your instructions, the less you need to re-explain in
+                every chat.
+              </p>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <h3>API vs. Subscription: When the Math Flips</h3>
-      <p>For individual developers doing intensive Claude Code work, the Max subscription at $200/month is dramatically cheaper than paying API token prices for the same volume of coding activity. The API wins when you're building a product that will serve many users — you pass the per-token cost through your business model rather than absorbing it as a flat subscription. The subscription wins when you are the primary user of Claude's output.</p>
+          <h3>When to Use a Project vs. Regular Chat</h3>
+          <table class="decision-table">
+            <thead>
+              <tr>
+                <th>Situation</th>
+                <th>Use</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>One-off question, no prior context needed</td>
+                <td>Regular chat</td>
+              </tr>
+              <tr>
+                <td>Ongoing work on a specific codebase, document, or topic</td>
+                <td>Project</td>
+              </tr>
+              <tr>
+                <td>
+                  You find yourself pasting the same intro paragraph every
+                  session
+                </td>
+                <td>Project</td>
+              </tr>
+              <tr>
+                <td>
+                  Team needs a shared AI context for a client or internal
+                  initiative
+                </td>
+                <td>Shared project (Team/Enterprise)</td>
+              </tr>
+              <tr>
+                <td>Quick creative exploration with no recurring structure</td>
+                <td>Regular chat</td>
+              </tr>
+              <tr>
+                <td>
+                  Research that accumulates over weeks with reference material
+                </td>
+                <td>Project</td>
+              </tr>
+            </tbody>
+          </table>
 
-      <div class="callout tip">
-        <div class="callout-icon">💡</div>
-        <div class="callout-body">
-          <strong>Build a cost estimate before committing.</strong>
-          <p>Count your expected daily requests, estimate average prompt + completion token length, multiply by the token price for your chosen model, and multiply by 30 days. If that number is under $200, the API is cheaper. If it's over $200, the Max subscription pays for itself in the first month.</p>
-        </div>
-      </div>
+          <h3>Team and Enterprise Sharing</h3>
+          <p>
+            On Team and Enterprise plans, Projects become a collaboration tool.
+            You can share a project with specific teammates by email, share it
+            org-wide, and set view or edit permissions. This turns Projects into
+            a living knowledge base your whole team can query — effectively
+            giving everyone on the team access to a shared AI assistant that
+            knows your specific context.
+          </p>
 
-      <div class="quiz">
-        <h4>✍️ Quick Check</h4>
-        <p>Which API feature cuts costs by 50% for requests that don't need an immediate response?</p>
-        <div class="quiz-options">
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">A. Prompt caching</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, true)">B. Batch API</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">C. Fast mode</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">D. Haiku model selection</button>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-    </section>
-
-    <!-- MODULE 7 -->
-    <section class="section" id="m7">
-      <div class="section-header">
-        <div class="section-num">7</div>
-        <h2>Choosing and Combining — Real Workflows</h2>
-      </div>
-      <div class="progress-bar"><div class="progress-fill" style="width:75%"></div></div>
-
-      <p>The surfaces are at their most powerful when used together. Most sophisticated Claude users aren't picking one tool and staying there — they're routing different parts of their workflow to the surface best suited for each part. This module shows what that looks like in practice.</p>
-
-      <h3>Decision Framework: Which Surface First?</h3>
-      <table class="decision-table">
-        <thead>
-          <tr>
-            <th>What you're trying to do</th>
-            <th>Start here</th>
-            <th>Consider adding</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Quick question or one-off task</td><td>Chat</td><td>—</td></tr>
-          <tr><td>Recurring work on the same topic or codebase</td><td>Project</td><td>Chat inside the project</td></tr>
-          <tr><td>Building software: coding, testing, refactoring</td><td>Claude Code</td><td>API for the product itself</td></tr>
-          <tr><td>Delegating a multi-step file or document task</td><td>Cowork</td><td>Claude in Chrome for web steps</td></tr>
-          <tr><td>Building a product powered by Claude</td><td>API</td><td>Claude Code to build it</td></tr>
-          <tr><td>Bulk processing thousands of documents overnight</td><td>API + Batch</td><td>Prompt caching for shared context</td></tr>
-          <tr><td>Team sharing a knowledge base and AI context</td><td>Shared Project (Team)</td><td>Premium seats for developers</td></tr>
-        </tbody>
-      </table>
-
-      <h3>Example Hybrid Workflows</h3>
-
-      <h4>The Researcher's Stack</h4>
-      <div class="workflow-row">
-        <div class="workflow-node">📁 Project</div>
-        <div class="workflow-arrow">→</div>
-        <div class="workflow-node">💬 Chat</div>
-        <div class="workflow-arrow">→</div>
-        <div class="workflow-node">🖥️ Cowork</div>
-        <div class="workflow-arrow">→</div>
-        <div class="workflow-node">📄 Final report</div>
-      </div>
-      <p>Create a Project with your research question, methodology notes, and key papers uploaded to the knowledge base. Use Chat conversations inside the project to explore ideas, ask questions, and draft sections. Use Cowork to collect and organize additional sources from the web and synthesize them into a structured document on your file system.</p>
-
-      <h4>The Developer's Stack</h4>
-      <div class="workflow-row">
-        <div class="workflow-node">⌨️ Claude Code</div>
-        <div class="workflow-arrow">→</div>
-        <div class="workflow-node">🔌 API</div>
-        <div class="workflow-arrow">→</div>
-        <div class="workflow-node">📁 Project</div>
-        <div class="workflow-arrow">→</div>
-        <div class="workflow-node">🚀 Deployed</div>
-      </div>
-      <p>Use Claude Code to build your application — it reads your codebase, writes features, and runs tests. Embed Claude via the API in your product for end-user features. Maintain a Project with architecture decisions, design docs, and context that you reference when planning new features or onboarding collaborators.</p>
-
-      <h4>The Knowledge Worker's Stack</h4>
-      <div class="workflow-row">
-        <div class="workflow-node">🖥️ Cowork</div>
-        <div class="workflow-arrow">→</div>
-        <div class="workflow-node">📁 Project</div>
-        <div class="workflow-arrow">→</div>
-        <div class="workflow-node">💬 Chat</div>
-      </div>
-      <p>Use Cowork for the heavy lifting: ingesting a folder of meeting notes, client emails, or source documents, and producing a structured brief. Store the brief and standing context in a Project. Use Chat inside the project for daily, ongoing work: drafting emails, answering questions, planning next steps.</p>
-
-      <h4>The Small Team's Stack</h4>
-      <div class="workflow-row">
-        <div class="workflow-node">📁 Shared Project</div>
-        <div class="workflow-arrow">→</div>
-        <div class="workflow-node">👥 Team seats</div>
-        <div class="workflow-arrow">→</div>
-        <div class="workflow-node">⌨️ Premium seats</div>
-      </div>
-      <p>On the Team plan, create shared projects for each client or initiative. All team members query the same knowledge base and operate under the same project instructions, ensuring consistent context. Assign standard seats to most users and premium seats (with full Claude Code access) to the developers on the team.</p>
-
-      <div class="callout tip">
-        <div class="callout-icon">💡</div>
-        <div class="callout-body">
-          <strong>Let each surface do what it's best at.</strong>
-          <p>The instinct to stay in one tool is natural — context-switching has a cost. But the cost of using Chat for tasks that Cowork would complete autonomously, or of paying API token prices for work that a Max subscription would cover, is often higher. A few minutes of surface selection pays for itself quickly.</p>
-        </div>
-      </div>
-
-      <div class="quiz">
-        <h4>✍️ Quick Check</h4>
-        <p>A developer wants Claude to build a feature in their existing codebase, then deploy the product with Claude embedded as an AI assistant for their users. Which surfaces does this workflow use?</p>
-        <div class="quiz-options">
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">A. Chat and Projects</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">B. Cowork and Projects</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, true)">C. Claude Code and the API</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">D. The API alone</button>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
-    </section>
-
-    <!-- MODULE 8 -->
-    <section class="section" id="m8">
-      <div class="section-header">
-        <div class="section-num">8</div>
-        <h2>Maximizing Every Tier — Tips by Subscription Level</h2>
-      </div>
-      <div class="progress-bar"><div class="progress-fill" style="width:87.5%"></div></div>
-
-      <p>The most cost-effective use of Claude isn't always the most expensive plan — it's the plan used intelligently. This module distills the highest-leverage tips for each subscription tier, from free to enterprise.</p>
-
-      <div class="free-highlight">
-        <h4>🟢 Free Tier — Maximize What You Have</h4>
-        <ul>
-          <li><strong>Use your five Projects strategically.</strong> Create one per major ongoing area of your life or work. Upload key context once. Stop re-pasting the same background every session.</li>
-          <li><strong>Front-load context in long conversations.</strong> Put your important instructions and documents at the start of the conversation, where they're most reliably attended to.</li>
-          <li><strong>Avoid unnecessary Sonnet usage for simple tasks.</strong> Haiku 4.5 isn't available to free users, so use Sonnet efficiently: be specific in your prompts so Claude produces a good result in one pass rather than multiple rounds of revision.</li>
-          <li><strong>Sessions reset every 5 hours.</strong> If you hit your limit, your reset isn't far away. Plan heavy work in sessions rather than spreading it across many short interactions.</li>
-          <li><strong>Leverage Artifacts for reusable outputs.</strong> Ask Claude to produce code, documents, and visualizations as Artifacts — they stay accessible and can be copied or iterated on without re-generating.</li>
-          <li><strong>Use web search to extend Claude's knowledge.</strong> Free users have web search. Use it to get Claude up to date on recent information rather than relying solely on its training data.</li>
-          <li><strong>Connectors are available on free.</strong> Basic integrations with Slack, Notion, Google Workspace and more are free. Connect the tools you use most to reduce copy-pasting.</li>
-        </ul>
-      </div>
-
-      <div class="callout info">
-        <div class="callout-icon">🔷</div>
-        <div class="callout-body">
-          <strong>Pro ($17–$20/month) — Five Times More, Used Well</strong>
-          <ul>
-            <li><strong>Upgrade to Opus for the right tasks.</strong> Pro gives you Opus access. Use it selectively for complex coding, long reasoning chains, and nuanced analysis. Switch back to Sonnet (or Haiku) for everything else to preserve quota.</li>
-            <li><strong>Enable Extra Usage if you hit limits.</strong> Pro subscribers can opt into extra usage to continue beyond included limits at a per-use cost. Useful for occasional overrun rather than upgrading to Max for one busy day.</li>
-            <li><strong>Create unlimited Projects.</strong> Pro removes the 5-project cap. Maintain a project for every client, codebase, or topic area. Your per-project instructions become your productivity compounding system.</li>
-            <li><strong>Use Claude Code for development.</strong> Claude Code is included at Pro. For most individual developers, the subscription is dramatically cheaper than equivalent API usage. Start using Claude Code and stop pasting code into chat.</li>
-            <li><strong>Use Research for deep dives.</strong> Pro includes the Research feature for multi-step web research tasks. Instead of doing a series of searches yourself, delegate an entire research question and get back a synthesized report.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="callout tip">
-        <div class="callout-icon">🔮</div>
-        <div class="callout-body">
-          <strong>Max ($100–$200/month) — For Full-Time, Intensive Use</strong>
-          <ul>
-            <li><strong>Know when Max pays for itself.</strong> If you're hitting Pro limits daily, Max 5× is the right upgrade. If you're doing intensive, all-day coding or analysis, Max 20× eliminates interruptions. The break-even vs. API is typically well under the API cost for heavy individual users.</li>
-            <li><strong>Priority access matters during peak hours.</strong> Max subscribers get first access when Anthropic's servers are busy. If your workflow depends on Claude being available during business hours, Max's priority access has real reliability value.</li>
-            <li><strong>Use higher output limits for large documents.</strong> Max includes higher output limits — relevant when generating long reports, full codebases, or comprehensive analysis that hits output caps on lower tiers.</li>
-            <li><strong>Early access to advanced features.</strong> Max subscribers typically get early access to new Anthropic features before they roll out more broadly. If you want to test cutting-edge capabilities, Max keeps you at the frontier.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="callout warning">
-        <div class="callout-icon">🏢</div>
-        <div class="callout-body">
-          <strong>Team ($20–$125/seat/month) — Compound Benefits Across People</strong>
-          <ul>
-            <li><strong>Mix seat types strategically.</strong> Standard seats ($20–$25/seat) cover most team members. Reserve premium seats ($100–$125/seat) for developers who need full Claude Code access or 5× more usage. Don't pay premium seat prices for users who don't need them.</li>
-            <li><strong>Build shared Projects for every client and initiative.</strong> A shared Project with uploaded context, documents, and custom instructions creates a consistent AI knowledge base for the whole team. Everyone stops spending time re-explaining context.</li>
-            <li><strong>Use admin controls to monitor usage.</strong> The Team plan's admin dashboard shows usage per user. Identify who's hitting limits and whether they need a seat upgrade, and identify low-usage seats that might not need renewal.</li>
-            <li><strong>No model training on your content by default.</strong> Team plan content is excluded from Anthropic's training data by default — an important compliance consideration for client work and proprietary information.</li>
-            <li><strong>Integrate Slack and Microsoft 365.</strong> The Team plan includes connectors for Slack and Microsoft 365. Team members can interact with Claude directly inside your existing communication tools rather than switching apps.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="callout danger">
-        <div class="callout-icon">🔒</div>
-        <div class="callout-body">
-          <strong>Enterprise — When Scale and Compliance Are the Requirement</strong>
-          <ul>
-            <li><strong>The enhanced context window is a real differentiator.</strong> Enterprise's extended context enables Claude to work with entire codebases, policy libraries, and legal documents in one session. This changes what's possible for document-intensive industries.</li>
-            <li><strong>Audit logs and compliance API are table-stakes for regulated industries.</strong> Healthcare, finance, and legal teams typically need observability into what AI is doing. Enterprise is the only plan that provides this.</li>
-            <li><strong>SCIM and SSO reduce admin overhead.</strong> Auto-provisioning users through your identity provider (Okta, Azure AD, etc.) means you don't manage individual Claude accounts — they're tied to your existing HR and IT systems.</li>
-            <li><strong>HIPAA-ready plans are available.</strong> Organizations processing protected health information (PHI) can get a HIPAA-ready Enterprise plan. Required for any clinical or healthcare application.</li>
-            <li><strong>Self-serve Enterprise is now available.</strong> As of early 2026, Enterprise plans can be purchased directly without going through Anthropic's sales team for straightforward deployments.</li>
-          </ul>
-        </div>
-      </div>
-
-      <h3>The Universal Rules That Apply at Every Tier</h3>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div class="step-body">
-            <h4>Use the right model for the task</h4>
-            <p>The cheapest model that produces good results is the correct model. Default to Sonnet. Upgrade to Opus for the hard things. Use Haiku for the simple things on paid tiers.</p>
+          <div class="callout tip">
+            <div class="callout-icon">💡</div>
+            <div class="callout-body">
+              <strong>Free tier tip</strong>
+              <p>
+                You get five projects — use them strategically. Create one
+                project per major ongoing area of your life or work: e.g., "Job
+                search", "Side project", "Learning Python", "Home renovation".
+                Upload your relevant documents once. You'll save significant
+                usage quota by not re-pasting context every session.
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div class="step-body">
-            <h4>Front-load your context</h4>
-            <p>Give Claude everything it needs in your first message rather than drip-feeding information across many turns. Fewer, richer messages produce better results and consume fewer session resources.</p>
+
+          <div class="quiz">
+            <h4>✍️ Quick Check</h4>
+            <p>
+              What is the maximum number of Projects a free Claude user can
+              create?
+            </p>
+            <div class="quiz-options">
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                A. 1
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                B. 3
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, true)">
+                C. 5
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                D. Unlimited
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div class="step-body">
-            <h4>Invest in project instructions</h4>
-            <p>Time spent writing clear, specific project instructions is time saved in every future conversation. Your project instructions are the highest-leverage prompt you'll ever write for a given context.</p>
+        </section>
+
+        <!-- MODULE 4 -->
+        <section class="section" id="m4">
+          <div class="section-header">
+            <div class="section-num">4</div>
+            <h2>Claude Code — The Developer's Agentic Environment</h2>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div class="step-body">
-            <h4>Match the surface to the task</h4>
-            <p>Don't use Chat for tasks that Cowork or Claude Code would handle autonomously. Don't pay API token prices for work you're doing yourself. Route each task to the surface designed for it.</p>
+
+          <p>
+            Claude Code is a command-line tool that gives Claude direct access
+            to your development environment. It can read your codebase, write
+            and edit files, run shell commands, install packages, and execute
+            tests — all autonomously, with you reviewing its work in the
+            terminal. It's available with Pro, Max, Team (premium seats), and
+            Enterprise plans.
+          </p>
+
+          <div class="callout info">
+            <div class="callout-icon">ℹ️</div>
+            <div class="callout-body">
+              <strong>Claude Code was released in February 2025.</strong>
+              <p>
+                By May 2025 it was generally available alongside Claude 4. It's
+                available via a dedicated CLI tool and also through a web
+                interface and iOS app as of late 2025.
+              </p>
+            </div>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">5</div>
-          <div class="step-body">
-            <h4>Verify pricing before committing</h4>
-            <p>Anthropic updates model prices, plan features, and availability frequently. Always check <a href="https://claude.com/pricing" target="_blank" rel="noopener">claude.com/pricing</a> and <a href="https://support.claude.com" target="_blank" rel="noopener">support.claude.com</a> before making purchasing decisions based on this or any other course.</p>
+
+          <h3>What Makes Claude Code Different from Chat</h3>
+          <p>
+            In Chat, everything Claude produces is text you copy out. In Claude
+            Code, Claude acts directly in your environment. The difference is
+            like explaining to someone how to fix a bug versus hiring someone
+            who sits down at your keyboard and fixes it themselves. Claude Code
+            reads your actual files, not a pasted summary of them. It writes
+            changes directly to disk. It runs your test suite and reads the
+            results. It operates with far more context about your actual project
+            state.
+          </p>
+
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h4>Full codebase context</h4>
+                <p>
+                  Claude Code can read your entire repository at once rather
+                  than the fragments you remember to paste. This means it can
+                  understand how components relate, trace dependencies, and make
+                  changes that are coherent across files.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h4>Agentic execution</h4>
+                <p>
+                  Give Claude Code a goal — "add authentication to this Express
+                  app" — and it will make a plan, implement it across multiple
+                  files, run the tests, fix the failures it introduced, and
+                  return with a working result.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h4>Non-coding tasks too</h4>
+                <p>
+                  Developers quickly discovered Claude Code is excellent for
+                  non-coding work as well: organizing files, processing data in
+                  CSVs, batch-renaming assets, generating reports from logs.
+                  This ultimately led Anthropic to build Cowork.
+                </p>
+              </div>
+            </div>
           </div>
-        </div>
-      </div>
 
-      <div class="quiz">
-        <h4>✍️ Quick Check</h4>
-        <p>A free user needs to analyze a 150-page research paper and wants Claude to remember the context across multiple sessions. What is the best approach?</p>
-        <div class="quiz-options">
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">A. Paste the document into every new chat session</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, true)">B. Create a Project, upload the paper to the knowledge base, and chat within the project</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">C. Upgrade to Pro before any analysis is possible</button>
-          <button class="quiz-opt" onclick="quizAnswer(this, false)">D. Use the API with prompt caching</button>
-        </div>
-        <div class="quiz-feedback"></div>
-      </div>
+          <h3>Claude Code vs. API: When to Use Which</h3>
+          <p>
+            Heavy coding via the API can cost thousands of dollars per month in
+            token charges for power users. Analysis from real-world usage
+            suggests that developers doing intensive coding via API tokens might
+            spend $2,000–$4,000+ per month, while the Max plan at $200/month
+            covers the same workload for a flat fee. The subscription wins
+            decisively for sustained, high-volume coding work. Use the API when
+            you're building a product that serves other users, and use Claude
+            Code when you're doing your own development work.
+          </p>
 
-      <div class="callout tip">
-        <div class="callout-icon">🎓</div>
-        <div class="callout-body">
-          <strong>Congratulations — Course Complete!</strong>
-          <p>You've covered all five Claude surfaces — Chat, Projects, Claude Code, Cowork (research preview), and the API — along with plan-by-plan tips for maximizing value at every subscription level. Each surface is optimized for a different mode of work; none is universally best. Hybrid workflows that combine surfaces for different parts of the same task unlock the highest productivity.</p>
-        </div>
-      </div>
+          <div class="callout tip">
+            <div class="callout-icon">💡</div>
+            <div class="callout-body">
+              <strong>Cost control for Claude Code users</strong>
+              <p>
+                Use the <code>--model</code> flag to pick a cheaper model for
+                routine tasks (file organization, simple rewrites) and reserve
+                Opus for complex architectural decisions. On Pro, monitor your
+                usage under Settings → Usage. Batch related changes into single
+                sessions rather than opening Claude Code for one file at a time.
+              </p>
+            </div>
+          </div>
 
-      <p class="section-footer-note">Your next steps: <a href="index.html">← Back to all courses</a> · <a href="claude-efficiency-course.html">Claude Efficiency Masterclass</a></p>
-    </section>
+          <h3>Getting Started</h3>
+          <p>
+            Claude Code is installed via npm and requires Node.js. Once
+            installed, run <code>claude</code> in any project directory to start
+            a session. It reads a <code>CLAUDE.md</code> file in your repo root
+            as standing instructions — use this to tell Claude Code about your
+            project's architecture, conventions, and testing commands so you
+            don't repeat them every session.
+          </p>
 
-  </main>
-</div>
+          <div class="callout warning">
+            <div class="callout-icon">⚠️</div>
+            <div class="callout-body">
+              <strong>Claude Code executes code on your machine.</strong>
+              <p>
+                It can create, modify, and delete files, and run shell commands.
+                Review its proposed actions before approving destructive
+                operations. Use <code>--no-permissions</code> for read-only
+                exploration sessions.
+              </p>
+            </div>
+          </div>
 
-<footer>
-  <p>Choosing Your Claude · Created February 2026 · Based on official Anthropic documentation</p>
-  <p class="footer-sub">Cowork is a research preview. Features and availability may change. Always consult <a href="https://support.claude.com">support.claude.com</a> for the latest information. · <a href="index.html">← Back to catalog</a></p>
-</footer>
+          <div class="quiz">
+            <h4>✍️ Quick Check</h4>
+            <p>
+              Where does Claude Code write its output when it edits your code?
+            </p>
+            <div class="quiz-options">
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                A. Into a chat window for you to copy
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                B. Into an Artifact that you download
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, true)">
+                C. Directly to files on your disk
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                D. Into a cloud-hosted repository
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+        </section>
 
-<script>
-/* quizAnswer is course-specific — theme management is in assets/theme.js */
-function quizAnswer(el, correct) {
-  const container = el.closest('.quiz-options');
-  const feedback  = el.closest('.quiz').querySelector('.quiz-feedback');
-  container.querySelectorAll('.quiz-opt').forEach(o => {
-    o.style.pointerEvents = 'none';
-    o.classList.remove('correct', 'wrong');
-  });
-  el.classList.add(correct ? 'correct' : 'wrong');
-  feedback.style.display = 'block';
-  feedback.style.color   = correct ? 'var(--green)' : 'var(--red)';
-  feedback.textContent   = correct
-    ? '✅ Correct! Great understanding.'
-    : '❌ Not quite — review the section above and try again next time.';
-  if (!correct) {
-    container.querySelectorAll('.quiz-opt').forEach(o => {
-      if (o.getAttribute('onclick').includes('true')) o.classList.add('correct');
-    });
-  }
-}
-</script>
+        <!-- MODULE 5 -->
+        <section class="section" id="m5">
+          <div class="section-header">
+            <div class="section-num">5</div>
+            <h2>Claude Cowork — Agentic Tasks, No Terminal Required</h2>
+          </div>
 
-</body>
+          <div class="preview-banner">
+            <span class="preview-icon">🔬</span>
+            <div>
+              <strong>Research Preview — Verify Before Relying On This</strong>
+              <p>
+                Cowork is an active research preview as of February 2026.
+                Features, availability, and constraints described here reflect
+                current documentation but may change at any time. Always check
+                <a
+                  href="https://support.claude.com/en/articles/13345190-getting-started-with-cowork"
+                  target="_blank"
+                  rel="noopener"
+                  >the official Cowork help article</a
+                >
+                before relying on specific behaviors for important work.
+              </p>
+            </div>
+          </div>
+
+          <p>
+            Cowork takes the autonomous, multi-step execution power of Claude
+            Code and delivers it through a desktop interface — no terminal, no
+            command line, no developer setup. You describe a task, Claude makes
+            a plan, you review it, and Claude works through it autonomously on
+            your file system while you do other things.
+          </p>
+
+          <h3>Current Availability (February 2026)</h3>
+          <p>
+            Cowork is available as a research preview for paid subscribers (Pro,
+            Max, Team, and Enterprise) on Claude Desktop for macOS and Claude
+            Desktop for Windows (x64 only — Windows arm64 is not currently
+            supported). It is not available on the web or mobile. The Claude
+            Desktop app must remain open while Claude is working — closing the
+            app ends the session.
+          </p>
+
+          <div class="callout warning">
+            <div class="callout-icon">⚠️</div>
+            <div class="callout-body">
+              <strong>Keep Claude Desktop open.</strong>
+              <p>
+                Cowork tasks run locally and require an active internet
+                connection throughout the session. If you close the desktop app,
+                your session ends and in-progress work may be incomplete.
+              </p>
+            </div>
+          </div>
+
+          <h3>What Cowork Does Well</h3>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h4>File organization at scale</h4>
+                <p>
+                  Point Cowork at your Downloads folder and ask it to sort by
+                  type and date, rename files to consistent patterns, or
+                  deduplicate. It processes hundreds of files programmatically —
+                  tasks that would take you an afternoon take Claude minutes.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h4>Document processing pipelines</h4>
+                <p>
+                  Drop receipts in a folder and ask for a formatted expense
+                  report. Scan a folder of meeting notes and produce an
+                  executive summary. Convert, merge, or restructure files in
+                  bulk without opening each one manually.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h4>Research synthesis</h4>
+                <p>
+                  Combine web searches, saved articles, and local notes into
+                  coherent reports. Cowork can search the web, read pages, and
+                  write findings directly into a document — all in one
+                  unattended workflow.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <h4>Parallel sub-agents</h4>
+                <p>
+                  Unlike a single chat thread, Cowork can spin up independent
+                  sub-agents that work in parallel on different parts of a large
+                  task. Each starts with fresh context, avoiding the context
+                  accumulation that slows down long conversations.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h3>Cowork vs. Claude Code — When to Use Which</h3>
+          <table class="decision-table">
+            <thead>
+              <tr>
+                <th>Task</th>
+                <th>Cowork</th>
+                <th>Claude Code</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Organize and rename files</td>
+                <td><span class="tag green">Better</span></td>
+                <td>Also works</td>
+              </tr>
+              <tr>
+                <td>Process receipts into a spreadsheet</td>
+                <td><span class="tag green">Better</span></td>
+                <td>Also works</td>
+              </tr>
+              <tr>
+                <td>Build a web app from scratch</td>
+                <td>Possible</td>
+                <td><span class="tag green">Better</span></td>
+              </tr>
+              <tr>
+                <td>Refactor a multi-file codebase</td>
+                <td>Limited</td>
+                <td><span class="tag green">Better</span></td>
+              </tr>
+              <tr>
+                <td>Research synthesis with web access</td>
+                <td><span class="tag green">Better</span></td>
+                <td>Possible</td>
+              </tr>
+              <tr>
+                <td>Git operations and PR workflows</td>
+                <td>Limited</td>
+                <td><span class="tag green">Better</span></td>
+              </tr>
+              <tr>
+                <td>User without terminal comfort</td>
+                <td><span class="tag green">Right tool</span></td>
+                <td>Steep curve</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Plugins and Connectors</h3>
+          <p>
+            Cowork supports a library of plugins for common knowledge work:
+            productivity (calendars, tasks), enterprise search, sales workflows,
+            and finance. Anthropic has released these as open source on GitHub.
+            You can also create custom plugins, and if you've configured Claude
+            in Chrome, Cowork gains browser-based capabilities: reading web
+            pages, filling forms, and extracting data from sites that don't
+            offer an API.
+          </p>
+
+          <div class="callout tip">
+            <div class="callout-icon">💡</div>
+            <div class="callout-body">
+              <strong>Prompt Cowork with specific end states.</strong>
+              <p>
+                "Analyze these documents and create a slide deck with the three
+                main themes" gives Claude much more to work with than "help me
+                understand this research." Vague goals produce vague plans.
+                Specific end states — with a named output file and format —
+                produce reliable results.
+              </p>
+            </div>
+          </div>
+
+          <div class="callout danger">
+            <div class="callout-icon">🚨</div>
+            <div class="callout-body">
+              <strong>Cowork can take destructive actions.</strong>
+              <p>
+                It can delete, overwrite, and reorganize files. Point it at a
+                sandboxed folder, not your entire Documents directory, when
+                learning how it works. Review its plan before letting it run,
+                and keep backups of anything you can't afford to lose during the
+                research preview.
+              </p>
+            </div>
+          </div>
+
+          <div class="quiz">
+            <h4>✍️ Quick Check</h4>
+            <p>
+              Which of the following is a current limitation of Cowork as of
+              February 2026?
+            </p>
+            <div class="quiz-options">
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                A. It cannot access the internet during tasks
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, true)">
+                B. Claude Desktop must remain open throughout the task
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                C. It can only work with one file at a time
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                D. It is only available to Max subscribers
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+        </section>
+
+        <!-- MODULE 6 -->
+        <section class="section" id="m6">
+          <div class="section-header">
+            <div class="section-num">6</div>
+            <h2>The Claude API — Build Claude Into Everything</h2>
+          </div>
+
+          <p>
+            The API is the developer's direct line to Claude's models. It's how
+            you build products, automate workflows, and integrate Claude into
+            your own applications. Unlike the subscription surfaces, the API
+            charges per token — you pay for exactly what you use, at any scale,
+            with no monthly seat fee.
+          </p>
+
+          <h3>Current API Pricing (February 2026)</h3>
+          <p>
+            The following prices are from
+            <a href="https://claude.com/pricing" target="_blank" rel="noopener"
+              >claude.com/pricing</a
+            >
+            as of February 2026. Token pricing changes — always verify before
+            building cost estimates.
+          </p>
+
+          <table class="plan-table">
+            <thead>
+              <tr>
+                <th>Model</th>
+                <th>Input ≤200K</th>
+                <th>Input &gt;200K</th>
+                <th>Output ≤200K</th>
+                <th>Output &gt;200K</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="plan-name">Haiku 4.5</span></td>
+                <td>$1/MTok</td>
+                <td>$1/MTok</td>
+                <td>$5/MTok</td>
+                <td>$5/MTok</td>
+              </tr>
+              <tr>
+                <td><span class="plan-name">Sonnet 4.5</span></td>
+                <td>$3/MTok</td>
+                <td>$6/MTok</td>
+                <td>$15/MTok</td>
+                <td>$22.50/MTok</td>
+              </tr>
+              <tr>
+                <td><span class="plan-name">Opus 4.6</span></td>
+                <td>$5/MTok</td>
+                <td>$10/MTok</td>
+                <td>$25/MTok</td>
+                <td>$37.50/MTok</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout warning">
+            <div class="callout-icon">⚠️</div>
+            <div class="callout-body">
+              <strong>The 200K token threshold doubles costs.</strong>
+              <p>
+                Prompts over 200K tokens are charged at 2× the per-token rate
+                for both input and output on Sonnet and Opus. If you're working
+                with very long documents or codebases, use prompt caching or
+                split requests to stay under this threshold.
+              </p>
+            </div>
+          </div>
+
+          <h3>Key API Cost Levers</h3>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h4>Prompt caching: save 90% on repeated context</h4>
+                <p>
+                  If you send the same large system prompt or document with
+                  every request, prompt caching stores it server-side. Cache
+                  reads cost $0.30/MTok for Sonnet 4.5 — one-tenth of the
+                  uncached input price. Cache writes cost $3.75/MTok with a
+                  5-minute TTL (extendable to 1 hour).
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h4>Batch API: save 50% on async workloads</h4>
+                <p>
+                  The Batch API processes requests asynchronously and charges
+                  50% less than standard pricing. Ideal for bulk document
+                  processing, overnight analysis, and content generation
+                  pipelines where a 12–24 hour turnaround is acceptable.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h4>Model selection: Haiku is 5× cheaper than Sonnet</h4>
+                <p>
+                  Route simple classification, extraction, and formatting tasks
+                  to Haiku 4.5. Reserve Sonnet for nuanced writing and
+                  reasoning. Reserve Opus for the genuinely hard problems. The
+                  right model for each task is usually cheaper than defaulting
+                  to the most powerful one.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <h4>Extended prompt caching (1-hour TTL)</h4>
+                <p>
+                  For long-running pipelines where the same context is reused
+                  repeatedly over an hour, extended caching reduces cache write
+                  frequency. Check
+                  <a
+                    href="https://docs.claude.com"
+                    target="_blank"
+                    rel="noopener"
+                    >docs.claude.com</a
+                  >
+                  for current extended caching pricing.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h3>API vs. Subscription: When the Math Flips</h3>
+          <p>
+            For individual developers doing intensive Claude Code work, the Max
+            subscription at $200/month is dramatically cheaper than paying API
+            token prices for the same volume of coding activity. The API wins
+            when you're building a product that will serve many users — you pass
+            the per-token cost through your business model rather than absorbing
+            it as a flat subscription. The subscription wins when you are the
+            primary user of Claude's output.
+          </p>
+
+          <div class="callout tip">
+            <div class="callout-icon">💡</div>
+            <div class="callout-body">
+              <strong>Build a cost estimate before committing.</strong>
+              <p>
+                Count your expected daily requests, estimate average prompt +
+                completion token length, multiply by the token price for your
+                chosen model, and multiply by 30 days. If that number is under
+                $200, the API is cheaper. If it's over $200, the Max
+                subscription pays for itself in the first month.
+              </p>
+            </div>
+          </div>
+
+          <div class="quiz">
+            <h4>✍️ Quick Check</h4>
+            <p>
+              Which API feature cuts costs by 50% for requests that don't need
+              an immediate response?
+            </p>
+            <div class="quiz-options">
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                A. Prompt caching
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, true)">
+                B. Batch API
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                C. Fast mode
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                D. Haiku model selection
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+        </section>
+
+        <!-- MODULE 7 -->
+        <section class="section" id="m7">
+          <div class="section-header">
+            <div class="section-num">7</div>
+            <h2>Choosing and Combining — Real Workflows</h2>
+          </div>
+
+          <p>
+            The surfaces are at their most powerful when used together. Most
+            sophisticated Claude users aren't picking one tool and staying there
+            — they're routing different parts of their workflow to the surface
+            best suited for each part. This module shows what that looks like in
+            practice.
+          </p>
+
+          <h3>Decision Framework: Which Surface First?</h3>
+          <table class="decision-table">
+            <thead>
+              <tr>
+                <th>What you're trying to do</th>
+                <th>Start here</th>
+                <th>Consider adding</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Quick question or one-off task</td>
+                <td>Chat</td>
+                <td>—</td>
+              </tr>
+              <tr>
+                <td>Recurring work on the same topic or codebase</td>
+                <td>Project</td>
+                <td>Chat inside the project</td>
+              </tr>
+              <tr>
+                <td>Building software: coding, testing, refactoring</td>
+                <td>Claude Code</td>
+                <td>API for the product itself</td>
+              </tr>
+              <tr>
+                <td>Delegating a multi-step file or document task</td>
+                <td>Cowork</td>
+                <td>Claude in Chrome for web steps</td>
+              </tr>
+              <tr>
+                <td>Building a product powered by Claude</td>
+                <td>API</td>
+                <td>Claude Code to build it</td>
+              </tr>
+              <tr>
+                <td>Bulk processing thousands of documents overnight</td>
+                <td>API + Batch</td>
+                <td>Prompt caching for shared context</td>
+              </tr>
+              <tr>
+                <td>Team sharing a knowledge base and AI context</td>
+                <td>Shared Project (Team)</td>
+                <td>Premium seats for developers</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <h3>Example Hybrid Workflows</h3>
+
+          <h4>The Researcher's Stack</h4>
+          <div class="workflow-row">
+            <div class="workflow-node">📁 Project</div>
+            <div class="workflow-arrow">→</div>
+            <div class="workflow-node">💬 Chat</div>
+            <div class="workflow-arrow">→</div>
+            <div class="workflow-node">🖥️ Cowork</div>
+            <div class="workflow-arrow">→</div>
+            <div class="workflow-node">📄 Final report</div>
+          </div>
+          <p>
+            Create a Project with your research question, methodology notes, and
+            key papers uploaded to the knowledge base. Use Chat conversations
+            inside the project to explore ideas, ask questions, and draft
+            sections. Use Cowork to collect and organize additional sources from
+            the web and synthesize them into a structured document on your file
+            system.
+          </p>
+
+          <h4>The Developer's Stack</h4>
+          <div class="workflow-row">
+            <div class="workflow-node">⌨️ Claude Code</div>
+            <div class="workflow-arrow">→</div>
+            <div class="workflow-node">🔌 API</div>
+            <div class="workflow-arrow">→</div>
+            <div class="workflow-node">📁 Project</div>
+            <div class="workflow-arrow">→</div>
+            <div class="workflow-node">🚀 Deployed</div>
+          </div>
+          <p>
+            Use Claude Code to build your application — it reads your codebase,
+            writes features, and runs tests. Embed Claude via the API in your
+            product for end-user features. Maintain a Project with architecture
+            decisions, design docs, and context that you reference when planning
+            new features or onboarding collaborators.
+          </p>
+
+          <h4>The Knowledge Worker's Stack</h4>
+          <div class="workflow-row">
+            <div class="workflow-node">🖥️ Cowork</div>
+            <div class="workflow-arrow">→</div>
+            <div class="workflow-node">📁 Project</div>
+            <div class="workflow-arrow">→</div>
+            <div class="workflow-node">💬 Chat</div>
+          </div>
+          <p>
+            Use Cowork for the heavy lifting: ingesting a folder of meeting
+            notes, client emails, or source documents, and producing a
+            structured brief. Store the brief and standing context in a Project.
+            Use Chat inside the project for daily, ongoing work: drafting
+            emails, answering questions, planning next steps.
+          </p>
+
+          <h4>The Small Team's Stack</h4>
+          <div class="workflow-row">
+            <div class="workflow-node">📁 Shared Project</div>
+            <div class="workflow-arrow">→</div>
+            <div class="workflow-node">👥 Team seats</div>
+            <div class="workflow-arrow">→</div>
+            <div class="workflow-node">⌨️ Premium seats</div>
+          </div>
+          <p>
+            On the Team plan, create shared projects for each client or
+            initiative. All team members query the same knowledge base and
+            operate under the same project instructions, ensuring consistent
+            context. Assign standard seats to most users and premium seats (with
+            full Claude Code access) to the developers on the team.
+          </p>
+
+          <div class="callout tip">
+            <div class="callout-icon">💡</div>
+            <div class="callout-body">
+              <strong>Let each surface do what it's best at.</strong>
+              <p>
+                The instinct to stay in one tool is natural — context-switching
+                has a cost. But the cost of using Chat for tasks that Cowork
+                would complete autonomously, or of paying API token prices for
+                work that a Max subscription would cover, is often higher. A few
+                minutes of surface selection pays for itself quickly.
+              </p>
+            </div>
+          </div>
+
+          <div class="quiz">
+            <h4>✍️ Quick Check</h4>
+            <p>
+              A developer wants Claude to build a feature in their existing
+              codebase, then deploy the product with Claude embedded as an AI
+              assistant for their users. Which surfaces does this workflow use?
+            </p>
+            <div class="quiz-options">
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                A. Chat and Projects
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                B. Cowork and Projects
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, true)">
+                C. Claude Code and the API
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                D. The API alone
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+        </section>
+
+        <!-- MODULE 8 -->
+        <section class="section" id="m8">
+          <div class="section-header">
+            <div class="section-num">8</div>
+            <h2>Maximizing Every Tier — Tips by Subscription Level</h2>
+          </div>
+
+          <p>
+            The most cost-effective use of Claude isn't always the most
+            expensive plan — it's the plan used intelligently. This module
+            distills the highest-leverage tips for each subscription tier, from
+            free to enterprise.
+          </p>
+
+          <div class="free-highlight">
+            <h4>🟢 Free Tier — Maximize What You Have</h4>
+            <ul>
+              <li>
+                <strong>Use your five Projects strategically.</strong> Create
+                one per major ongoing area of your life or work. Upload key
+                context once. Stop re-pasting the same background every session.
+              </li>
+              <li>
+                <strong>Front-load context in long conversations.</strong> Put
+                your important instructions and documents at the start of the
+                conversation, where they're most reliably attended to.
+              </li>
+              <li>
+                <strong
+                  >Avoid unnecessary Sonnet usage for simple tasks.</strong
+                >
+                Haiku 4.5 isn't available to free users, so use Sonnet
+                efficiently: be specific in your prompts so Claude produces a
+                good result in one pass rather than multiple rounds of revision.
+              </li>
+              <li>
+                <strong>Sessions reset every 5 hours.</strong> If you hit your
+                limit, your reset isn't far away. Plan heavy work in sessions
+                rather than spreading it across many short interactions.
+              </li>
+              <li>
+                <strong>Leverage Artifacts for reusable outputs.</strong> Ask
+                Claude to produce code, documents, and visualizations as
+                Artifacts — they stay accessible and can be copied or iterated
+                on without re-generating.
+              </li>
+              <li>
+                <strong>Use web search to extend Claude's knowledge.</strong>
+                Free users have web search. Use it to get Claude up to date on
+                recent information rather than relying solely on its training
+                data.
+              </li>
+              <li>
+                <strong>Connectors are available on free.</strong> Basic
+                integrations with Slack, Notion, Google Workspace and more are
+                free. Connect the tools you use most to reduce copy-pasting.
+              </li>
+            </ul>
+          </div>
+
+          <div class="callout info">
+            <div class="callout-icon">🔷</div>
+            <div class="callout-body">
+              <strong>Pro ($17–$20/month) — Five Times More, Used Well</strong>
+              <ul>
+                <li>
+                  <strong>Upgrade to Opus for the right tasks.</strong> Pro
+                  gives you Opus access. Use it selectively for complex coding,
+                  long reasoning chains, and nuanced analysis. Switch back to
+                  Sonnet (or Haiku) for everything else to preserve quota.
+                </li>
+                <li>
+                  <strong>Enable Extra Usage if you hit limits.</strong> Pro
+                  subscribers can opt into extra usage to continue beyond
+                  included limits at a per-use cost. Useful for occasional
+                  overrun rather than upgrading to Max for one busy day.
+                </li>
+                <li>
+                  <strong>Create unlimited Projects.</strong> Pro removes the
+                  5-project cap. Maintain a project for every client, codebase,
+                  or topic area. Your per-project instructions become your
+                  productivity compounding system.
+                </li>
+                <li>
+                  <strong>Use Claude Code for development.</strong> Claude Code
+                  is included at Pro. For most individual developers, the
+                  subscription is dramatically cheaper than equivalent API
+                  usage. Start using Claude Code and stop pasting code into
+                  chat.
+                </li>
+                <li>
+                  <strong>Use Research for deep dives.</strong> Pro includes the
+                  Research feature for multi-step web research tasks. Instead of
+                  doing a series of searches yourself, delegate an entire
+                  research question and get back a synthesized report.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout tip">
+            <div class="callout-icon">🔮</div>
+            <div class="callout-body">
+              <strong
+                >Max ($100–$200/month) — For Full-Time, Intensive Use</strong
+              >
+              <ul>
+                <li>
+                  <strong>Know when Max pays for itself.</strong> If you're
+                  hitting Pro limits daily, Max 5× is the right upgrade. If
+                  you're doing intensive, all-day coding or analysis, Max 20×
+                  eliminates interruptions. The break-even vs. API is typically
+                  well under the API cost for heavy individual users.
+                </li>
+                <li>
+                  <strong>Priority access matters during peak hours.</strong>
+                  Max subscribers get first access when Anthropic's servers are
+                  busy. If your workflow depends on Claude being available
+                  during business hours, Max's priority access has real
+                  reliability value.
+                </li>
+                <li>
+                  <strong>Use higher output limits for large documents.</strong>
+                  Max includes higher output limits — relevant when generating
+                  long reports, full codebases, or comprehensive analysis that
+                  hits output caps on lower tiers.
+                </li>
+                <li>
+                  <strong>Early access to advanced features.</strong> Max
+                  subscribers typically get early access to new Anthropic
+                  features before they roll out more broadly. If you want to
+                  test cutting-edge capabilities, Max keeps you at the frontier.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout warning">
+            <div class="callout-icon">🏢</div>
+            <div class="callout-body">
+              <strong
+                >Team ($20–$125/seat/month) — Compound Benefits Across
+                People</strong
+              >
+              <ul>
+                <li>
+                  <strong>Mix seat types strategically.</strong> Standard seats
+                  ($20–$25/seat) cover most team members. Reserve premium seats
+                  ($100–$125/seat) for developers who need full Claude Code
+                  access or 5× more usage. Don't pay premium seat prices for
+                  users who don't need them.
+                </li>
+                <li>
+                  <strong
+                    >Build shared Projects for every client and
+                    initiative.</strong
+                  >
+                  A shared Project with uploaded context, documents, and custom
+                  instructions creates a consistent AI knowledge base for the
+                  whole team. Everyone stops spending time re-explaining
+                  context.
+                </li>
+                <li>
+                  <strong>Use admin controls to monitor usage.</strong> The Team
+                  plan's admin dashboard shows usage per user. Identify who's
+                  hitting limits and whether they need a seat upgrade, and
+                  identify low-usage seats that might not need renewal.
+                </li>
+                <li>
+                  <strong>No model training on your content by default.</strong>
+                  Team plan content is excluded from Anthropic's training data
+                  by default — an important compliance consideration for client
+                  work and proprietary information.
+                </li>
+                <li>
+                  <strong>Integrate Slack and Microsoft 365.</strong> The Team
+                  plan includes connectors for Slack and Microsoft 365. Team
+                  members can interact with Claude directly inside your existing
+                  communication tools rather than switching apps.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout danger">
+            <div class="callout-icon">🔒</div>
+            <div class="callout-body">
+              <strong
+                >Enterprise — When Scale and Compliance Are the
+                Requirement</strong
+              >
+              <ul>
+                <li>
+                  <strong
+                    >The enhanced context window is a real
+                    differentiator.</strong
+                  >
+                  Enterprise's extended context enables Claude to work with
+                  entire codebases, policy libraries, and legal documents in one
+                  session. This changes what's possible for document-intensive
+                  industries.
+                </li>
+                <li>
+                  <strong
+                    >Audit logs and compliance API are table-stakes for
+                    regulated industries.</strong
+                  >
+                  Healthcare, finance, and legal teams typically need
+                  observability into what AI is doing. Enterprise is the only
+                  plan that provides this.
+                </li>
+                <li>
+                  <strong>SCIM and SSO reduce admin overhead.</strong>
+                  Auto-provisioning users through your identity provider (Okta,
+                  Azure AD, etc.) means you don't manage individual Claude
+                  accounts — they're tied to your existing HR and IT systems.
+                </li>
+                <li>
+                  <strong>HIPAA-ready plans are available.</strong>
+                  Organizations processing protected health information (PHI)
+                  can get a HIPAA-ready Enterprise plan. Required for any
+                  clinical or healthcare application.
+                </li>
+                <li>
+                  <strong>Self-serve Enterprise is now available.</strong> As of
+                  early 2026, Enterprise plans can be purchased directly without
+                  going through Anthropic's sales team for straightforward
+                  deployments.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>The Universal Rules That Apply at Every Tier</h3>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h4>Use the right model for the task</h4>
+                <p>
+                  The cheapest model that produces good results is the correct
+                  model. Default to Sonnet. Upgrade to Opus for the hard things.
+                  Use Haiku for the simple things on paid tiers.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h4>Front-load your context</h4>
+                <p>
+                  Give Claude everything it needs in your first message rather
+                  than drip-feeding information across many turns. Fewer, richer
+                  messages produce better results and consume fewer session
+                  resources.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h4>Invest in project instructions</h4>
+                <p>
+                  Time spent writing clear, specific project instructions is
+                  time saved in every future conversation. Your project
+                  instructions are the highest-leverage prompt you'll ever write
+                  for a given context.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <h4>Match the surface to the task</h4>
+                <p>
+                  Don't use Chat for tasks that Cowork or Claude Code would
+                  handle autonomously. Don't pay API token prices for work
+                  you're doing yourself. Route each task to the surface designed
+                  for it.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">5</div>
+              <div class="step-body">
+                <h4>Verify pricing before committing</h4>
+                <p>
+                  Anthropic updates model prices, plan features, and
+                  availability frequently. Always check
+                  <a
+                    href="https://claude.com/pricing"
+                    target="_blank"
+                    rel="noopener"
+                    >claude.com/pricing</a
+                  >
+                  and
+                  <a
+                    href="https://support.claude.com"
+                    target="_blank"
+                    rel="noopener"
+                    >support.claude.com</a
+                  >
+                  before making purchasing decisions based on this or any other
+                  course.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="quiz">
+            <h4>✍️ Quick Check</h4>
+            <p>
+              A free user needs to analyze a 150-page research paper and wants
+              Claude to remember the context across multiple sessions. What is
+              the best approach?
+            </p>
+            <div class="quiz-options">
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                A. Paste the document into every new chat session
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, true)">
+                B. Create a Project, upload the paper to the knowledge base, and
+                chat within the project
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                C. Upgrade to Pro before any analysis is possible
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                D. Use the API with prompt caching
+              </button>
+            </div>
+            <div class="quiz-feedback"></div>
+          </div>
+
+          <div class="callout tip">
+            <div class="callout-icon">🎓</div>
+            <div class="callout-body">
+              <strong>Congratulations — Course Complete!</strong>
+              <p>
+                You've covered all five Claude surfaces — Chat, Projects, Claude
+                Code, Cowork (research preview), and the API — along with
+                plan-by-plan tips for maximizing value at every subscription
+                level. Each surface is optimized for a different mode of work;
+                none is universally best. Hybrid workflows that combine surfaces
+                for different parts of the same task unlock the highest
+                productivity.
+              </p>
+            </div>
+          </div>
+
+          <p class="section-footer-note">
+            Your next steps: <a href="index.html">← Back to all courses</a> ·
+            <a href="claude-efficiency-course.html"
+              >Claude Efficiency Masterclass</a
+            >
+          </p>
+        </section>
+      </main>
+    </div>
+
+    <footer>
+      <p>
+        Choosing Your Claude · Created February 2026 · Based on official
+        Anthropic documentation
+      </p>
+      <p class="footer-sub">
+        Cowork is a research preview. Features and availability may change.
+        Always consult
+        <a href="https://support.claude.com">support.claude.com</a> for the
+        latest information. · <a href="index.html">← Back to catalog</a>
+      </p>
+    </footer>
+
+    <script>
+      /* quizAnswer is course-specific — theme management is in assets/theme.js */
+      function quizAnswer(el, correct) {
+        const container = el.closest(".quiz-options");
+        const feedback = el.closest(".quiz").querySelector(".quiz-feedback");
+        container.querySelectorAll(".quiz-opt").forEach((o) => {
+          o.style.pointerEvents = "none";
+          o.classList.remove("correct", "wrong");
+        });
+        el.classList.add(correct ? "correct" : "wrong");
+        feedback.style.display = "block";
+        feedback.style.color = correct ? "var(--green)" : "var(--red)";
+        feedback.textContent = correct
+          ? "✅ Correct! Great understanding."
+          : "❌ Not quite — review the section above and try again next time.";
+        if (!correct) {
+          container.querySelectorAll(".quiz-opt").forEach((o) => {
+            if (o.getAttribute("onclick").includes("true"))
+              o.classList.add("correct");
+          });
+        }
+      }
+    </script>
+  </body>
 </html>

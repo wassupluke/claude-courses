@@ -31,41 +31,77 @@
  *   .roi-bar, .roi-fill
  *
  * CHOOSING YOUR CLAUDE (COURSE 3) COMPONENTS:
- *   .surface-grid, .surface-card, .plan-table, .decision-table,
+ *   .plan-table, .decision-table,
  *   .badge, .badge-free/pro/max/team/enterprise/api/preview,
  *   .workflow-row, .workflow-node, .workflow-arrow,
  *   .preview-banner, .free-highlight
  */
 
+/* ── SCROLL PROGRESS BAR ──────────────────────────────────── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  z-index: 9999;
+  pointer-events: none;
+  width: 0;
+  background: linear-gradient(90deg, var(--accent), var(--green));
+  transition: width 0.15s linear;
+}
+
 /* ── RESET & BASE ──────────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   background: var(--bg);
   color: var(--text);
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family:
+    "Segoe UI",
+    system-ui,
+    -apple-system,
+    sans-serif;
   line-height: 1.7;
   /* Smooth theme transitions on the main container */
-  transition: background 0.25s ease, color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
 }
 
 /* ── HERO ──────────────────────────────────────────────────── */
 .hero {
-  background: linear-gradient(135deg, var(--hero-g1) 0%, var(--hero-g2) 40%, var(--hero-g3) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--hero-g1) 0%,
+    var(--hero-g2) 40%,
+    var(--hero-g3) 100%
+  );
   border-bottom: 1px solid var(--border);
   padding: 80px 40px 60px;
   text-align: center;
   position: relative;
   overflow: hidden;
-  transition: background 0.25s ease, border-color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
 }
 
 /* Subtle radial glow behind the hero text */
 .hero::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 60% 50% at 50% 0%, rgba(232, 98, 42, 0.12) 0%, transparent 70%);
+  background: radial-gradient(
+    ellipse 60% 50% at 50% 0%,
+    rgba(232, 98, 42, 0.12) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -89,7 +125,11 @@ body {
   font-weight: 800;
   line-height: 1.15;
   margin-bottom: 16px;
-  background: linear-gradient(135deg, var(--hero-h1-start) 30%, var(--accent2) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--hero-h1-start) 30%,
+    var(--accent2) 100%
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -110,7 +150,11 @@ body {
   font-size: 0.85rem;
   color: var(--muted);
 }
-.hero-meta span { display: flex; align-items: center; gap: 6px; }
+.hero-meta span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
 
 /* ── TWO-COLUMN COURSE LAYOUT ──────────────────────────────── */
 /* Sidebar TOC on the left, scrollable content on the right */
@@ -132,7 +176,9 @@ body {
   height: 100vh;
   overflow-y: auto;
   background: var(--surface);
-  transition: background 0.25s ease, border-color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .toc h3 {
@@ -212,13 +258,31 @@ body {
   flex-shrink: 0;
 }
 
-.section h2 { font-size: 1.75rem; font-weight: 700; color: var(--text); }
-.section h3 { font-size: 1.15rem; font-weight: 700; margin: 32px 0 12px; color: var(--text); }
+.section h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text);
+}
+.section h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 32px 0 12px;
+  color: var(--text);
+}
 
-.section p   { margin-bottom: 16px; color: var(--text-body); }
+.section p {
+  margin-bottom: 16px;
+  color: var(--text-body);
+}
 .section ul,
-.section ol  { padding-left: 24px; margin-bottom: 16px; color: var(--text-body); }
-.section li  { margin-bottom: 8px; }
+.section ol {
+  padding-left: 24px;
+  margin-bottom: 16px;
+  color: var(--text-body);
+}
+.section li {
+  margin-bottom: 8px;
+}
 
 /* ── CALLOUT BOXES ─────────────────────────────────────────── */
 /*
@@ -241,15 +305,40 @@ body {
   gap: 14px;
   transition: background 0.25s ease;
 }
-.callout-icon { font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
-.callout-body { flex: 1; }
-.callout-body strong { display: block; margin-bottom: 4px; font-size: 0.9rem; }
-.callout-body p      { margin: 0; font-size: 0.9rem; }
+.callout-icon {
+  font-size: 1.2rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.callout-body {
+  flex: 1;
+}
+.callout-body strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.9rem;
+}
+.callout-body p {
+  margin: 0;
+  font-size: 0.9rem;
+}
 
-.callout.info    { background: rgba(96,  165, 250, 0.08); border-color: var(--blue); }
-.callout.warning { background: rgba(251, 191,  36, 0.08); border-color: var(--yellow); }
-.callout.danger  { background: rgba(248, 113, 113, 0.08); border-color: var(--red); }
-.callout.tip     { background: rgba( 74, 222, 128, 0.08); border-color: var(--green); }
+.callout.info {
+  background: rgba(96, 165, 250, 0.08);
+  border-color: var(--blue);
+}
+.callout.warning {
+  background: rgba(251, 191, 36, 0.08);
+  border-color: var(--yellow);
+}
+.callout.danger {
+  background: rgba(248, 113, 113, 0.08);
+  border-color: var(--red);
+}
+.callout.tip {
+  background: rgba(74, 222, 128, 0.08);
+  border-color: var(--green);
+}
 
 /* ── CODE BLOCKS ───────────────────────────────────────────── */
 pre {
@@ -261,16 +350,19 @@ pre {
   margin: 20px 0;
   font-size: 0.875rem;
   line-height: 1.65;
-  transition: background 0.25s ease, border-color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
 }
 
 code {
-  font-family: 'Cascadia Code', 'Fira Code', 'Courier New', monospace;
+  font-family: "Cascadia Code", "Fira Code", "Courier New", monospace;
   color: var(--code-text);
 }
 
 /* Inline code (inside paragraphs and list items) */
-p code, li code {
+p code,
+li code {
   background: var(--inline-code-bg);
   padding: 2px 7px;
   border-radius: 5px;
@@ -291,15 +383,52 @@ p code, li code {
   border: 1px solid var(--border);
   border-radius: 12px;
   padding: 20px;
-  transition: border-color 0.2s, background 0.25s ease;
+  transition:
+    border-color 0.2s,
+    background 0.25s ease;
 }
-.card:hover { border-color: var(--accent); }
-.card-icon  { font-size: 1.6rem; margin-bottom: 10px; }
-.card h4    { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; color: var(--text); }
-.card p     { font-size: 0.85rem; color: var(--muted); margin: 0; line-height: 1.5; }
+.card:hover {
+  border-color: var(--accent);
+}
+.card-icon {
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+}
+.card h4,
+.card h3 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+.card p {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+}
+.card .surface-icon {
+  font-size: 2rem;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+.card .surface-tier {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border-radius: 20px;
+  padding: 0.2rem 0.6rem;
+  margin-top: 0.75rem;
+  background: var(--accent-subtle);
+  color: var(--accent);
+}
 
 /* ── NUMBERED STEPS ────────────────────────────────────────── */
-.steps { margin: 24px 0; }
+.steps {
+  margin: 24px 0;
+}
 
 .step {
   display: flex;
@@ -323,8 +452,16 @@ p code, li code {
   margin-top: 2px;
 }
 
-.step-body h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
-.step-body p  { font-size: 0.9rem; color: var(--muted); margin: 0; }
+.step-body h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.step-body p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0;
+}
 
 /* ── TABLES ────────────────────────────────────────────────── */
 table {
@@ -352,8 +489,12 @@ td {
   border-bottom: 1px solid var(--border);
   color: var(--text-body);
 }
-tr:last-child td { border-bottom: none; }
-tr:hover td      { background: var(--row-hover-bg); }
+tr:last-child td {
+  border-bottom: none;
+}
+tr:hover td {
+  background: var(--row-hover-bg);
+}
 
 /* ── TAGS / BADGES ─────────────────────────────────────────── */
 .tag {
@@ -363,12 +504,30 @@ tr:hover td      { background: var(--row-hover-bg); }
   font-size: 0.75rem;
   font-weight: 600;
 }
-.tag.green  { background: rgba( 74, 222, 128, 0.12); color: var(--green); }
-.tag.yellow { background: rgba(251, 191,  36, 0.12); color: var(--yellow); }
-.tag.blue   { background: rgba( 96, 165, 250, 0.12); color: var(--blue); }
-.tag.red    { background: rgba(248, 113, 113, 0.12); color: var(--red); }
-.tag.purple { background: rgba(167, 139, 250, 0.12); color: var(--purple); }
-.tag.orange { background: rgba(232,  98,  42, 0.12); color: var(--accent); }
+.tag.green {
+  background: rgba(74, 222, 128, 0.12);
+  color: var(--green);
+}
+.tag.yellow {
+  background: rgba(251, 191, 36, 0.12);
+  color: var(--yellow);
+}
+.tag.blue {
+  background: rgba(96, 165, 250, 0.12);
+  color: var(--blue);
+}
+.tag.red {
+  background: rgba(248, 113, 113, 0.12);
+  color: var(--red);
+}
+.tag.purple {
+  background: rgba(167, 139, 250, 0.12);
+  color: var(--purple);
+}
+.tag.orange {
+  background: rgba(232, 98, 42, 0.12);
+  color: var(--accent);
+}
 
 /* ── QUIZ ──────────────────────────────────────────────────── */
 /*
@@ -390,7 +549,9 @@ tr:hover td      { background: var(--row-hover-bg); }
   border-radius: 12px;
   padding: 24px;
   margin: 32px 0;
-  transition: background 0.25s ease, border-color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
 }
 .quiz h4 {
   color: var(--accent2);
@@ -399,8 +560,16 @@ tr:hover td      { background: var(--row-hover-bg); }
   letter-spacing: 0.1em;
   margin-bottom: 12px;
 }
-.quiz p { font-size: 1rem; font-weight: 600; margin-bottom: 16px; }
-.quiz-options { display: flex; flex-direction: column; gap: 8px; }
+.quiz p {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.quiz-options {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 
 /* quiz-opt is a <button> — reset browser button defaults first */
 .quiz-opt {
@@ -422,11 +591,29 @@ tr:hover td      { background: var(--row-hover-bg); }
   color: var(--text-body);
   display: block;
 }
-.quiz-opt:hover            { border-color: var(--accent); color: var(--text); }
-.quiz-opt:focus-visible    { outline: 2px solid var(--accent); outline-offset: 2px; }
-.quiz-opt.correct          { border-color: var(--green);  background: rgba( 74, 222, 128, 0.08); color: var(--green); }
-.quiz-opt.wrong            { border-color: var(--red);    background: rgba(248, 113, 113, 0.08); color: var(--red); }
-.quiz-feedback             { margin-top: 12px; font-size: 0.9rem; display: none; }
+.quiz-opt:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+.quiz-opt:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.quiz-opt.correct {
+  border-color: var(--green);
+  background: rgba(74, 222, 128, 0.08);
+  color: var(--green);
+}
+.quiz-opt.wrong {
+  border-color: var(--red);
+  background: rgba(248, 113, 113, 0.08);
+  color: var(--red);
+}
+.quiz-feedback {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  display: none;
+}
 
 /* ── PROMPT EXAMPLES ───────────────────────────────────────── */
 .prompt-example {
@@ -435,7 +622,9 @@ tr:hover td      { background: var(--row-hover-bg); }
   border-radius: 10px;
   margin: 16px 0;
   overflow: hidden;
-  transition: background 0.25s ease, border-color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
 }
 .prompt-label {
   background: var(--surface2);
@@ -461,7 +650,11 @@ tr:hover td      { background: var(--row-hover-bg); }
   border-radius: 2px;
   margin: 12px 0 24px;
 }
-.progress-fill { height: 100%; border-radius: 2px; background: var(--accent); }
+.progress-fill {
+  height: 100%;
+  border-radius: 2px;
+  background: var(--accent);
+}
 
 /* ── THEME TOGGLE BUTTON ───────────────────────────────────── */
 /* Fixed floating pill in the top-right corner of every page */
@@ -490,8 +683,12 @@ tr:hover td      { background: var(--row-hover-bg); }
   color: var(--text);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
 }
-.theme-toggle .toggle-icon  { font-size: 1rem; }
-.theme-toggle .toggle-label { letter-spacing: 0.04em; }
+.theme-toggle .toggle-icon {
+  font-size: 1rem;
+}
+.theme-toggle .toggle-label {
+  letter-spacing: 0.04em;
+}
 
 /* ── FOOTER ────────────────────────────────────────────────── */
 footer {
@@ -500,7 +697,9 @@ footer {
   text-align: center;
   color: var(--muted);
   font-size: 0.85rem;
-  transition: background 0.25s ease, border-color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
 }
 
 /* Second line of footer (disclaimer / back-link row) */
@@ -510,10 +709,12 @@ footer {
 }
 
 /* Inline hyperlinks inside the footer — covers all three courses */
-footer a, .footer-sub a {
+footer a,
+.footer-sub a {
   color: var(--accent2);
 }
-footer a:hover, .footer-sub a:hover {
+footer a:hover,
+.footer-sub a:hover {
   text-decoration: underline;
 }
 
@@ -565,7 +766,10 @@ footer a:hover, .footer-sub a:hover {
   border: 1px solid var(--border);
   border-radius: 16px;
   padding: 28px;
-  transition: border-color 0.2s, transform 0.2s, background 0.25s ease;
+  transition:
+    border-color 0.2s,
+    transform 0.2s,
+    background 0.25s ease;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -575,9 +779,21 @@ footer a:hover, .footer-sub a:hover {
   transform: translateY(-2px);
 }
 
-.course-card-icon { font-size: 2.2rem; }
-.course-card h3   { font-size: 1.15rem; font-weight: 700; color: var(--text); margin: 0; }
-.course-card p    { font-size: 0.9rem; color: var(--text-body); margin: 0; flex: 1; }
+.course-card-icon {
+  font-size: 2.2rem;
+}
+.course-card h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text);
+  margin: 0;
+}
+.course-card p {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  margin: 0;
+  flex: 1;
+}
 
 .course-card-badge {
   display: inline-flex;
@@ -623,27 +839,43 @@ footer a:hover, .footer-sub a:hover {
   color: #fff;
   border: 1px solid transparent;
 }
-.btn-primary:hover { background: var(--accent2); }
+.btn-primary:hover {
+  background: var(--accent2);
+}
 .btn-secondary {
   background: transparent;
   color: var(--muted);
   border: 1px solid var(--border);
 }
-.btn-secondary:hover { border-color: var(--accent); color: var(--text); }
+.btn-secondary:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
 
 /* Stats row below the catalog grid */
 .stat-row {
   display: flex;
   gap: 40px;
   flex-wrap: wrap;
+  justify-content: center;
   padding: 32px 0;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
   margin-bottom: 48px;
 }
-.stat { text-align: center; }
-.stat .stat-num  { font-size: 2rem; font-weight: 800; color: var(--accent); display: block; }
-.stat .stat-label { font-size: 0.8rem; color: var(--muted); }
+.stat {
+  text-align: center;
+}
+.stat .stat-num {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+  display: block;
+}
+.stat .stat-label {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
 
 /* Contributing / footer section of the index page */
 .contribute-section {
@@ -652,30 +884,48 @@ footer a:hover, .footer-sub a:hover {
   border-radius: 16px;
   padding: 36px;
   margin-top: 48px;
-  transition: background 0.25s ease, border-color 0.25s ease;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
 }
-.contribute-section h2  { font-size: 1.2rem; font-weight: 700; margin-bottom: 12px; color: var(--text); }
-.contribute-section p   { font-size: 0.9rem; color: var(--text-body); margin-bottom: 12px; }
-.contribute-section pre { margin: 16px 0; }
+.contribute-section h2 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: var(--text);
+}
+.contribute-section p {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  margin-bottom: 12px;
+}
+.contribute-section pre {
+  margin: 16px 0;
+}
 
 /* ── RESPONSIVE ────────────────────────────────────────────── */
 
 /* Prevent any element from blowing out the viewport width globally */
-html, body {
+html,
+body {
   overflow-x: hidden;
   max-width: 100%;
 }
 
 /* Tables and pre blocks scroll horizontally inside their container
    rather than pushing the page wider */
-table, pre {
+table,
+pre {
   display: block;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
 
 /* Restore table layout semantics after display:block */
-table { width: max-content; min-width: 100%; }
+table {
+  width: max-content;
+  min-width: 100%;
+}
 
 @media (max-width: 900px) {
   /* Collapse the sidebar on narrow screens */
@@ -685,7 +935,9 @@ table { width: max-content; min-width: 100%; }
     width: 100%;
     overflow-x: hidden;
   }
-  .toc     { display: none; }
+  .toc {
+    display: none;
+  }
   .content {
     padding: 24px 16px;
     /* Content area must never exceed the viewport */
@@ -696,8 +948,12 @@ table { width: max-content; min-width: 100%; }
   }
 
   /* Stack catalog cards */
-  .catalog-grid    { grid-template-columns: 1fr; }
-  .catalog-section { padding: 32px 16px; }
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+  .catalog-section {
+    padding: 32px 16px;
+  }
 
   /* Tighten hero on mobile */
   .hero {
@@ -711,11 +967,19 @@ table { width: max-content; min-width: 100%; }
   }
 
   /* Stat row wraps */
-  .stat-row { gap: 20px; justify-content: center; }
+  .stat-row {
+    gap: 20px;
+    justify-content: center;
+  }
 
   /* Course section headings: let long h2 wrap instead of overflow */
-  .section h2  { font-size: 1.35rem; word-break: break-word; }
-  .section h3  { font-size: 1rem; }
+  .section h2 {
+    font-size: 1.35rem;
+    word-break: break-word;
+  }
+  .section h3 {
+    font-size: 1rem;
+  }
 
   /* Section header flex row: don't let the number chip force overflow */
   .section-header {
@@ -724,19 +988,30 @@ table { width: max-content; min-width: 100%; }
   }
 
   /* Card grids defined per-course: force single column */
-  .card-grid { grid-template-columns: 1fr; }
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
 
   /* Steps: keep the circle + content from overflowing narrow screens */
-  .step { gap: 12px; }
+  .step {
+    gap: 12px;
+  }
 
   /* Callout boxes: reduce padding so they fit on small screens */
-  .callout { padding: 14px 14px; gap: 10px; }
+  .callout {
+    padding: 14px 14px;
+    gap: 10px;
+  }
 
   /* Contribute section: reduce padding */
-  .contribute-section { padding: 24px 16px; }
+  .contribute-section {
+    padding: 24px 16px;
+  }
 
   /* Course cards: don't let badge text overflow */
-  .course-card-badge { white-space: normal; }
+  .course-card-badge {
+    white-space: normal;
+  }
 
   /* Theme toggle: make it smaller on mobile so it doesn't overlap content */
   .theme-toggle {
@@ -745,10 +1020,14 @@ table { width: max-content; min-width: 100%; }
     top: 12px;
     right: 12px;
   }
-  .theme-toggle .toggle-label { display: none; }
+  .theme-toggle .toggle-label {
+    display: none;
+  }
 
   /* Quiz options: full width, readable on small screens */
-  .quiz { padding: 16px; }
+  .quiz {
+    padding: 16px;
+  }
 }
 
 /* ── INDEX PAGE — OVERRIDES & UNIQUE COMPONENTS ───────────────
@@ -758,10 +1037,14 @@ table { width: max-content; min-width: 100%; }
 ────────────────────────────────────────────────────────────── */
 
 /* Slightly tighter hero padding on the catalog/index page */
-.index-page .hero { padding: 70px 40px 50px; }
+.index-page .hero {
+  padding: 70px 40px 50px;
+}
 
 /* Wider subtitle on the index hero */
-.index-page .hero .subtitle { max-width: 700px; }
+.index-page .hero .subtitle {
+  max-width: 700px;
+}
 
 /* Resource link pills at the bottom of the contribute section */
 .resource-links {
@@ -783,7 +1066,10 @@ table { width: max-content; min-width: 100%; }
   border: 1px solid var(--border);
   transition: all 0.15s;
 }
-.resource-link:hover { border-color: var(--accent); color: var(--text); }
+.resource-link:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
 
 /* ── EFFICIENCY COURSE COMPONENTS ─────────────────────────────
    Previously in claude-efficiency-course.html <style> block.
@@ -805,75 +1091,47 @@ table { width: max-content; min-width: 100%; }
   gap: 16px;
   margin: 20px 0;
 }
-.compare-bad  .prompt-label { color: var(--red); }
-.compare-good .prompt-label { color: var(--green); }
+.compare-bad .prompt-label {
+  color: var(--red);
+}
+.compare-good .prompt-label {
+  color: var(--green);
+}
 
 /* Token cost table column accents */
-.savings-col { color: var(--green); font-weight: 700; }
-.cost-col    { color: var(--yellow); }
+.savings-col {
+  color: var(--green);
+  font-weight: 700;
+}
+.cost-col {
+  color: var(--yellow);
+}
 
 /* ROI tier indicator bar */
 .roi-bar {
   height: 8px;
   border-radius: 4px;
-  background: var(--border);
+  background: linear-gradient(90deg, var(--accent) 0%, var(--green) 100%);
   margin: 6px 0 4px;
   overflow: hidden;
+  position: relative;
+}
+.roi-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: var(--w, 100%);
+  width: calc(100% - var(--w, 100%));
+  height: 100%;
+  background: var(--border);
 }
 .roi-fill {
-  height: 100%;
-  border-radius: 4px;
-  background: linear-gradient(90deg, var(--accent) 0%, var(--green) 100%);
+  display: none;
 }
 
 /* ── CHOOSING YOUR CLAUDE — COURSE 3 COMPONENTS ───────────────
    Previously in claude-choosing-course.html <style> block.
 ────────────────────────────────────────────────────────────── */
-
-/* Five-surface overview grid */
-.surface-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.25rem;
-  margin: 1.5rem 0;
-}
-
-.surface-card {
-  background: var(--card-bg);
-  border: 1.5px solid var(--border);
-  border-radius: 12px;
-  padding: 1.25rem 1.4rem;
-  position: relative;
-}
-.surface-card .surface-icon {
-  font-size: 2rem;
-  margin-bottom: 0.6rem;
-  display: block;
-}
-.surface-card h3 {
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin: 0 0 0.35rem 0;
-  color: var(--heading);
-}
-.surface-card p {
-  font-size: 0.88rem;
-  color: var(--text-muted);
-  margin: 0;
-  line-height: 1.55;
-}
-.surface-card .surface-tier {
-  display: inline-block;
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  border-radius: 20px;
-  padding: 0.2rem 0.6rem;
-  margin-top: 0.75rem;
-  background: var(--accent-subtle);
-  color: var(--accent);
-}
 
 /* Plan comparison table (course 3 pricing grid) */
 .plan-table {
@@ -896,13 +1154,31 @@ table { width: max-content; min-width: 100%; }
   vertical-align: top;
   color: var(--text);
 }
-.plan-table tr:last-child td { border-bottom: none; }
-.plan-table tr:hover td      { background: var(--hover-bg); }
-.plan-table .check   { color: var(--green);  font-weight: 700; }
-.plan-table .cross   { color: var(--text-muted); }
-.plan-table .partial { color: var(--yellow); font-weight: 700; }
-.plan-name  { font-weight: 700; color: var(--heading); }
-.plan-price { font-weight: 700; color: var(--accent); }
+.plan-table tr:last-child td {
+  border-bottom: none;
+}
+.plan-table tr:hover td {
+  background: var(--hover-bg);
+}
+.plan-table .check {
+  color: var(--green);
+  font-weight: 700;
+}
+.plan-table .cross {
+  color: var(--text-muted);
+}
+.plan-table .partial {
+  color: var(--yellow);
+  font-weight: 700;
+}
+.plan-name {
+  font-weight: 700;
+  color: var(--heading);
+}
+.plan-price {
+  font-weight: 700;
+  color: var(--accent);
+}
 
 /* Decision / when-to-use matrix */
 .decision-table {
@@ -925,8 +1201,12 @@ table { width: max-content; min-width: 100%; }
   color: var(--text);
   vertical-align: top;
 }
-.decision-table tr:last-child td { border-bottom: none; }
-.decision-table tr:hover td      { background: var(--hover-bg); }
+.decision-table tr:last-child td {
+  border-bottom: none;
+}
+.decision-table tr:hover td {
+  background: var(--hover-bg);
+}
 
 /* Tier / plan badges (inline inline pill labels) */
 .badge {
@@ -939,13 +1219,34 @@ table { width: max-content; min-width: 100%; }
   padding: 0.15rem 0.55rem;
   vertical-align: middle;
 }
-.badge-free       { background: var(--badge-free-bg);       color: var(--badge-free-text); }
-.badge-pro        { background: var(--badge-pro-bg);        color: var(--badge-pro-text); }
-.badge-max        { background: var(--badge-max-bg);        color: var(--badge-max-text); }
-.badge-team       { background: var(--badge-team-bg);       color: var(--badge-team-text); }
-.badge-enterprise { background: var(--badge-enterprise-bg); color: var(--badge-enterprise-text); }
-.badge-api        { background: var(--badge-api-bg);        color: var(--badge-api-text); }
-.badge-preview    { background: var(--badge-preview-bg);    color: var(--badge-preview-text); }
+.badge-free {
+  background: var(--badge-free-bg);
+  color: var(--badge-free-text);
+}
+.badge-pro {
+  background: var(--badge-pro-bg);
+  color: var(--badge-pro-text);
+}
+.badge-max {
+  background: var(--badge-max-bg);
+  color: var(--badge-max-text);
+}
+.badge-team {
+  background: var(--badge-team-bg);
+  color: var(--badge-team-text);
+}
+.badge-enterprise {
+  background: var(--badge-enterprise-bg);
+  color: var(--badge-enterprise-text);
+}
+.badge-api {
+  background: var(--badge-api-bg);
+  color: var(--badge-api-text);
+}
+.badge-preview {
+  background: var(--badge-preview-bg);
+  color: var(--badge-preview-text);
+}
 
 /* Hybrid workflow diagram row */
 .workflow-row {
@@ -1018,7 +1319,9 @@ table { width: max-content; min-width: 100%; }
   color: var(--text);
   font-size: 0.9rem;
 }
-.free-highlight ul li { margin-bottom: 0.3rem; }
+.free-highlight ul li {
+  margin-bottom: 0.3rem;
+}
 
 /* ── COURSE 3 — MOBILE OVERRIDES ──────────────────────────────
    Breakpoints for course-3-specific components.
@@ -1026,10 +1329,9 @@ table { width: max-content; min-width: 100%; }
 ────────────────────────────────────────────────────────────── */
 @media (max-width: 900px) {
   /* Efficiency course: stack comparison grid */
-  .compare-grid { grid-template-columns: 1fr; }
-
-  /* Course 3: collapse surface overview grid */
-  .surface-grid { grid-template-columns: 1fr; }
+  .compare-grid {
+    grid-template-columns: 1fr;
+  }
 
   /* Course 3: scrollable wide tables */
   .plan-table,
@@ -1042,17 +1344,35 @@ table { width: max-content; min-width: 100%; }
   }
 
   /* Course 3: tighten workflow diagrams */
-  .workflow-row  { gap: 0.3rem; }
-  .workflow-node { font-size: 0.78rem; padding: 0.35rem 0.6rem; white-space: normal; }
-  .workflow-arrow { font-size: 0.9rem; }
+  .workflow-row {
+    gap: 0.3rem;
+  }
+  .workflow-node {
+    font-size: 0.78rem;
+    padding: 0.35rem 0.6rem;
+    white-space: normal;
+  }
+  .workflow-arrow {
+    font-size: 0.9rem;
+  }
 
   /* Course 3: stack preview banner */
-  .preview-banner { flex-direction: column; gap: 0.5rem; }
+  .preview-banner {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 
   /* Course 3: tighter free-highlight on mobile */
-  .free-highlight         { padding: 0.85rem 1rem; }
-  .free-highlight ul      { padding-left: 1rem; }
+  .free-highlight {
+    padding: 0.85rem 1rem;
+  }
+  .free-highlight ul {
+    padding-left: 1rem;
+  }
 
   /* Course 3: badges wrap instead of overflow */
-  .badge { white-space: normal; line-height: 1.4; }
+  .badge {
+    white-space: normal;
+    line-height: 1.4;
+  }
 }

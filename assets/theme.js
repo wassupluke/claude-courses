@@ -24,17 +24,19 @@
  */
 
 (function () {
-  'use strict';
+  "use strict";
 
   /** localStorage key used to persist the user's manual choice */
-  const STORAGE_KEY = 'claude-courses-theme';
+  const STORAGE_KEY = "claude-courses-theme";
 
   /**
    * Read the current OS/browser color scheme preference.
    * Returns 'light' or 'dark'.
    */
   function getSystemTheme() {
-    return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    return window.matchMedia("(prefers-color-scheme: light)").matches
+      ? "light"
+      : "dark";
   }
 
   /**
@@ -48,18 +50,18 @@
    * @param {'light'|'dark'} theme
    */
   function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
+    document.documentElement.setAttribute("data-theme", theme);
 
     // Update button to show what clicking it will switch TO
-    var icon  = document.getElementById('toggle-icon');
-    var label = document.getElementById('toggle-label');
+    var icon = document.getElementById("toggle-icon");
+    var label = document.getElementById("toggle-label");
 
-    if (theme === 'light') {
-      if (icon)  icon.textContent  = '🌙';
-      if (label) label.textContent = 'Dark';
+    if (theme === "light") {
+      if (icon) icon.textContent = "🌙";
+      if (label) label.textContent = "Dark";
     } else {
-      if (icon)  icon.textContent  = '☀️';
-      if (label) label.textContent = 'Light';
+      if (icon) icon.textContent = "☀️";
+      if (label) label.textContent = "Light";
     }
   }
 
@@ -69,8 +71,9 @@
    * Called by the onclick on .theme-toggle buttons.
    */
   window.toggleTheme = function () {
-    var current = document.documentElement.getAttribute('data-theme') || getSystemTheme();
-    var next    = current === 'dark' ? 'light' : 'dark';
+    var current =
+      document.documentElement.getAttribute("data-theme") || getSystemTheme();
+    var next = current === "dark" ? "light" : "dark";
     try {
       localStorage.setItem(STORAGE_KEY, next);
     } catch (e) {
@@ -102,12 +105,32 @@
    * a manual choice, automatically follow the new OS preference.
    * If they have made a manual choice, their choice is respected.
    */
-  window.matchMedia('(prefers-color-scheme: light)').addEventListener('change', function (e) {
-    var saved = null;
-    try { saved = localStorage.getItem(STORAGE_KEY); } catch (e) {}
-    if (!saved) {
-      applyTheme(e.matches ? 'light' : 'dark');
-    }
-  });
-
+  window
+    .matchMedia("(prefers-color-scheme: light)")
+    .addEventListener("change", function (e) {
+      var saved = null;
+      try {
+        saved = localStorage.getItem(STORAGE_KEY);
+      } catch (e) {}
+      if (!saved) {
+        applyTheme(e.matches ? "light" : "dark");
+      }
+    });
 })();
+
+/* ── Scroll progress bar (course pages only) ── */
+document.addEventListener("DOMContentLoaded", function () {
+  if (!document.querySelector(".layout")) return;
+  var bar = document.createElement("div");
+  bar.className = "scroll-progress";
+  document.body.prepend(bar);
+  window.addEventListener(
+    "scroll",
+    function () {
+      var h = document.documentElement;
+      bar.style.width =
+        (h.scrollTop / (h.scrollHeight - h.clientHeight)) * 100 + "%";
+    },
+    { passive: true },
+  );
+});
