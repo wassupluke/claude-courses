@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Claude Efficiency Masterclass</title>
+    <title>Claude Code Efficiency Masterclass</title>
     <meta
       name="description"
-      content="Learn how to get dramatically more out of every Claude session while spending less — prompt caching, model selection, context management, and more."
+      content="Get dramatically more out of every Claude Code session — context management, model selection, CLAUDE.md, subagents, and the waste patterns that quietly burn your context window."
     />
     <!-- Theme system must load before first paint to avoid flash of wrong theme -->
     <script src="assets/theme.js"></script>
@@ -27,17 +27,17 @@
     <!-- HERO -->
     <div class="hero">
       <div class="badge">Efficiency Masterclass · February 2026</div>
-      <h1>Get More From Every Claude Session</h1>
+      <h1>Get More From Every Claude Code Session</h1>
       <p class="subtitle">
-        Master the token economy, context management, and session architecture
-        that separates power users from everyone else — and pay dramatically
-        less for dramatically better results.
+        Master the context window, session architecture, and delegation
+        patterns that separate Claude Code power users from everyone else —
+        finish more work per session with sharper, more reliable results.
       </p>
       <div class="hero-meta">
         <span>⚡ 8 Modules</span>
         <span>⏱ ~2 hours</span>
-        <span>💰 API · Projects · Code · Cowork</span>
-        <span>📉 Up to 95% cost reduction</span>
+        <span>💻 Terminal · IDE · SDK</span>
+        <span>🧠 Context-first workflow</span>
       </div>
     </div>
 
@@ -45,15 +45,15 @@
       <!-- SIDEBAR TOC -->
       <nav class="toc">
         <h3>Course Modules</h3>
-        <a href="#m0"><span class="toc-num">00</span> The Token Economy</a>
-        <a href="#m1"><span class="toc-num">01</span> What Costs Tokens</a>
+        <a href="#m0"><span class="toc-num">00</span> The Context Economy</a>
+        <a href="#m1"><span class="toc-num">01</span> What Fills Context</a>
         <a href="#m2"><span class="toc-num">02</span> Prompt Caching</a>
         <a href="#m3"><span class="toc-num">03</span> Model Selection</a>
         <a href="#m4"><span class="toc-num">04</span> Context Management</a>
         <a href="#m5"><span class="toc-num">05</span> Session Setup</a>
         <a href="#m6"><span class="toc-num">06</span> Waste Patterns</a>
-        <a href="#m7"><span class="toc-num">07</span> Advanced Stacking</a>
-        <a href="#m8"><span class="toc-num">08</span> Platform Playbooks</a>
+        <a href="#m7"><span class="toc-num">07</span> Subagents & Skills</a>
+        <a href="#m8"><span class="toc-num">08</span> The Playbook</a>
       </nav>
 
       <!-- MAIN CONTENT -->
@@ -62,24 +62,27 @@
         <section class="section" id="m0">
           <div class="section-header">
             <div class="section-num">0</div>
-            <h2>The Token Economy</h2>
+            <h2>The Context Economy</h2>
           </div>
 
           <p>
-            Every interaction with Claude — whether in the API, Claude.ai,
-            Claude Code, or Cowork — is billed in <strong>tokens</strong>. One
-            token is roughly 4 characters or 0.75 English words. You pay for
-            tokens going <em>in</em> (input) and tokens coming
-            <em>out</em> (output). Output tokens cost more than input tokens on
-            every model.
+            Claude Code is an agent that lives in your terminal, reads your
+            files, runs commands, and edits code on your behalf. Everything it
+            does flows through one finite resource: the
+            <strong>context window</strong> — the working memory that holds your
+            instructions, the conversation, every file it has read, and every
+            command output it has seen.
           </p>
 
           <p>
-            This sounds simple, but the surface area of what counts as a token
-            is vast: your messages, Claude's replies, system prompts, tool
-            definitions, document contents, images, and even conversation
-            history all contribute. The good news is that the optimization
-            levers are equally numerous — and they stack.
+            Most current Claude models give Claude Code a
+            <strong>200,000-token</strong> context window (Sonnet offers a
+            1M-token beta). That sounds enormous — until you realize a single
+            agentic session can read dozens of files, run test suites, and grep
+            through a codebase, each result staying in context and re-sent on
+            every turn. Efficiency in Claude Code isn't about spending less
+            money; it's about keeping that window
+            <em>full of signal and empty of noise</em>.
           </p>
 
           <div class="callout info">
@@ -87,30 +90,55 @@
             <div class="callout-body">
               <strong>The core insight</strong>
               <p>
-                Efficiency isn't about being stingy — it's about maximizing
-                <em>signal density</em>. Every token you send should earn its
-                place. Every token Claude generates should be purposeful. The
-                techniques in this course aren't tricks; they're a systematic
-                approach to that principle.
+                A Claude Code session is only as good as its context. Every
+                token in the window either helps Claude solve your task or
+                distracts from it. The techniques in this course are one idea
+                applied eight ways: keep the working set small, relevant, and
+                purposeful — and let Claude do more before the window fills.
               </p>
             </div>
           </div>
 
-          <h3>The optimization stack</h3>
+          <h3>The efficiency stack</h3>
           <p>
-            The techniques in this course stack multiplicatively. Here are the
+            These levers compound. A well-set-up session with the right model,
+            disciplined context hygiene, and delegation to subagents does far
+            more useful work than a single sprawling conversation. Here are the
             five highest-ROI levers, in rough order of impact:
           </p>
 
           <div class="card-grid">
             <div class="card">
-              <div class="card-icon">🗄️</div>
-              <h4>Prompt Caching</h4>
+              <div class="card-icon">🧹</div>
+              <h4>Context Hygiene</h4>
               <p>
-                90% off repeated input tokens. The single biggest cost lever
-                available. <strong>Module 2.</strong>
+                <code>/clear</code> between tasks and <code>/compact</code>
+                before the window fills. The single biggest lever for quality
+                and speed. <strong>Module 4.</strong>
               </p>
               <div class="roi-bar" style="--w: 95%">
+                <div class="roi-fill"></div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-icon">📋</div>
+              <h4>CLAUDE.md</h4>
+              <p>
+                Encode conventions once; load them free every session. No
+                re-explaining, no drift. <strong>Module 5.</strong>
+              </p>
+              <div class="roi-bar" style="--w: 88%">
+                <div class="roi-fill"></div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-icon">🧩</div>
+              <h4>Subagents</h4>
+              <p>
+                Isolate exploration in a fresh context; only a summary returns
+                to the main thread. <strong>Module 7.</strong>
+              </p>
+              <div class="roi-bar" style="--w: 80%">
                 <div class="roi-fill"></div>
               </div>
             </div>
@@ -118,41 +146,19 @@
               <div class="card-icon">🔀</div>
               <h4>Model Selection</h4>
               <p>
-                60× cost range from Haiku 3 to Opus 4.1. Match model to task
-                complexity. <strong>Module 3.</strong>
+                Match the model to the task with <code>/model</code>; cheaper,
+                faster models for routine work. <strong>Module 3.</strong>
               </p>
-              <div class="roi-bar" style="--w: 85%">
+              <div class="roi-bar" style="--w: 72%">
                 <div class="roi-fill"></div>
               </div>
             </div>
             <div class="card">
-              <div class="card-icon">📦</div>
-              <h4>Batch API</h4>
+              <div class="card-icon">🎯</div>
+              <h4>Specific Prompts</h4>
               <p>
-                Flat 50% discount on non-urgent work. Stacks with caching for
-                55–95% combined savings. <strong>Module 7.</strong>
-              </p>
-              <div class="roi-bar" style="--w: 75%">
-                <div class="roi-fill"></div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-icon">⚙️</div>
-              <h4>Tool Efficiency</h4>
-              <p>
-                Token-efficient tool use cuts tool-call output by up to 70%.
-                Built into Claude 4 models. <strong>Module 7.</strong>
-              </p>
-              <div class="roi-bar" style="--w: 70%">
-                <div class="roi-fill"></div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-icon">🧠</div>
-              <h4>Context Engineering</h4>
-              <p>
-                Structure sessions to avoid context bloat, redundant re-sends,
-                and wasted attention. <strong>Modules 4–5.</strong>
+                Precise asks prevent broad file scanning and scattered tool
+                calls. <strong>Module 6.</strong>
               </p>
               <div class="roi-bar" style="--w: 65%">
                 <div class="roi-fill"></div>
@@ -162,19 +168,22 @@
 
           <div class="quiz">
             <h4>✍️ Knowledge Check</h4>
-            <p>What does one token roughly correspond to in English text?</p>
+            <p>
+              In Claude Code, what is the single most important resource to
+              manage for good results?
+            </p>
             <div class="quiz-options">
               <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                One word
+                The number of files in the repo
               </button>
               <button class="quiz-opt" onclick="quizAnswer(this, true)">
-                About 4 characters or 0.75 words
+                The context window — its working memory
               </button>
               <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                One sentence
+                Your terminal's scrollback buffer
               </button>
               <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                One paragraph
+                The size of your CLAUDE.md file
               </button>
             </div>
             <div class="quiz-feedback"></div>
@@ -185,70 +194,60 @@
         <section class="section" id="m1">
           <div class="section-header">
             <div class="section-num">1</div>
-            <h2>What Actually Costs Tokens</h2>
+            <h2>What Actually Fills Your Context</h2>
           </div>
 
           <p>
-            Before you can optimize, you need to know exactly where tokens are
-            going. Every API request sends more than you might expect, and in
-            agentic workflows the real costs are often hidden inside tool
-            definitions and conversation history that grows with every turn.
+            Before you can manage context, you need to know where it goes. In an
+            agentic session the biggest consumers are rarely your messages —
+            they're the tool results and accumulated history that grow with
+            every turn.
           </p>
 
-          <h3>The anatomy of an API request</h3>
+          <h3>The anatomy of a Claude Code session</h3>
           <table>
             <thead>
               <tr>
-                <th>Input source</th>
-                <th>Typical cost</th>
+                <th>What's in context</th>
+                <th>Typical weight</th>
                 <th>Notes</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>System prompt</td>
-                <td>500–5,000 tokens</td>
-                <td>Sent on every request in a session</td>
+                <td>System prompt &amp; tool definitions</td>
+                <td>Fixed overhead</td>
+                <td>Built in; loaded once, cached across the session</td>
+              </tr>
+              <tr>
+                <td>CLAUDE.md files</td>
+                <td>Loaded at session start</td>
+                <td>Every relevant CLAUDE.md in the hierarchy, in full</td>
+              </tr>
+              <tr>
+                <td>File reads</td>
+                <td>Grows fast</td>
+                <td>Every file Claude reads stays in history</td>
+              </tr>
+              <tr>
+                <td>Command &amp; tool output</td>
+                <td>Grows fast</td>
+                <td>Test runs, greps, builds, logs — all retained</td>
               </tr>
               <tr>
                 <td>Conversation history</td>
-                <td>Grows linearly per turn</td>
-                <td>All prior messages re-sent each turn</td>
+                <td>Grows linearly</td>
+                <td>All prior turns are part of every new request</td>
               </tr>
               <tr>
-                <td>User message</td>
-                <td>50–500 tokens</td>
-                <td>Your actual query</td>
+                <td>MCP server tool definitions</td>
+                <td>Fixed per server</td>
+                <td>Added to every request whether used or not</td>
               </tr>
               <tr>
-                <td>Tool definitions</td>
-                <td>200–700 tokens each</td>
-                <td>Bash: 245, text editor: 700, computer use: 735</td>
-              </tr>
-              <tr>
-                <td>Auto tool-use system prompt</td>
-                <td>313–346 tokens</td>
-                <td>Added automatically when tools are present</td>
-              </tr>
-              <tr>
-                <td>Image (typical, after resize)</td>
-                <td>~1,600 tokens</td>
-                <td>Formula: (width × height) / 750</td>
-              </tr>
-              <tr>
-                <td>PDF (per page)</td>
-                <td>1,500–3,000 tokens</td>
-                <td>Text + image rendering; billed at standard rates</td>
-              </tr>
-              <tr>
-                <td>MCP tool result (Cowork)</td>
-                <td>Up to 25,000 tokens</td>
-                <td>Hard limit per MCP response</td>
-              </tr>
-              <tr>
-                <td>Web search (API)</td>
-                <td>$10 / 1,000 searches</td>
-                <td>Plus tokens for the search results content</td>
+                <td>Extended thinking</td>
+                <td>Per-turn, not accumulated</td>
+                <td>Billed as output; stripped from later turns</td>
               </tr>
             </tbody>
           </table>
@@ -256,74 +255,67 @@
           <div class="callout warning">
             <div class="callout-icon">⚠️</div>
             <div class="callout-body">
-              <strong
-                >The stateless API is your biggest hidden cost driver</strong
-              >
+              <strong>Tool output is the silent context killer</strong>
               <p>
-                The Messages API has no server-side memory. Every single turn in
-                a multi-turn conversation re-sends <em>all</em> previous
-                messages as input tokens. A 20-turn conversation where each turn
-                averages 500 tokens means Turn 20 sends 10,000 tokens of history
-                alone — before you've typed a word of your actual question.
+                A single <code>cat</code> of a large file, a verbose test run,
+                or a broad <code>grep</code> can drop tens of thousands of
+                tokens into the window in one turn — and it stays there for the
+                rest of the session. The most common cause of a session going
+                sideways isn't a bad model; it's a window stuffed with output
+                Claude no longer needs.
               </p>
             </div>
           </div>
 
-          <h3>Extended thinking tokens</h3>
+          <h3>See it for yourself: <code>/context</code></h3>
           <p>
-            Extended thinking is billed as output tokens at standard rates. The
-            thinking content itself is visible to you but it's automatically
-            stripped from subsequent turns — meaning thinking does
-            <em>not</em> accumulate in your conversation history. However,
-            you're still paying for the full thinking process, not just the
-            summarized response.
+            Claude Code ships with a <code>/context</code> command that
+            visualizes exactly how your window is currently allocated — system
+            prompt, tools, MCP servers, memory files, and conversation. Run it
+            when a session feels sluggish or confused; you'll almost always find
+            a bloated category you can trim.
           </p>
 
-          <p>
-            The minimum thinking budget is <strong>1,024 tokens</strong>. For
-            newer models (Opus 4.6, Sonnet 4.6), the
-            <code>effort</code> parameter replaces manual budget tuning. Setting
-            <code>effort: "low"</code> may skip thinking entirely for simple
-            queries, which is often the right call.
-          </p>
+          <div class="prompt-example">
+            <div class="prompt-label">✅ Habit worth building</div>
+            <div class="prompt-text">
+              Run <code>/context</code> before starting a big task and again
+              when responses start to feel unfocused. If MCP tools or old file
+              reads dominate the window, that's your signal to clear, compact,
+              or disconnect a server.
+            </div>
+          </div>
 
-          <h3>Using the Token Counting API</h3>
+          <h3>Extended thinking doesn't accumulate</h3>
           <p>
-            Before sending a large or expensive request, use the free
-            <code>/v1/messages/count_tokens</code> endpoint to measure it first.
-            It accepts the exact same payload format as
-            <code>/v1/messages</code> — just point it at the counting endpoint
-            instead.
+            When Claude Code "thinks" (triggered by phrases like
+            <code>think</code>, <code>think hard</code>, or
+            <code>ultrathink</code>, or configured via
+            <code>MAX_THINKING_TOKENS</code>), that reasoning is visible to you
+            but automatically stripped from subsequent turns. Thinking is a
+            per-turn cost, not a permanent context tax — so use it freely on
+            hard problems, and dial it down for routine edits where deep
+            reasoning just adds latency.
           </p>
-
-          <pre><code>POST /v1/messages/count_tokens
-{
-  "model": "claude-sonnet-4-6",
-  "system": "Your system prompt here...",
-  "tools": [ /* your tool definitions */ ],
-  "messages": [
-    {"role": "user", "content": "What is the weather like?"}
-  ]
-}
-// Returns: {"input_tokens": 843}</code></pre>
 
           <div class="quiz">
             <h4>✍️ Knowledge Check</h4>
             <p>
-              In a multi-turn API conversation, how are prior messages handled?
+              During a long agentic session, what typically consumes the most
+              context?
             </p>
             <div class="quiz-options">
               <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                Anthropic's servers store them and inject them automatically
+                Your typed prompts
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                Extended thinking, which accumulates every turn
               </button>
               <button class="quiz-opt" onclick="quizAnswer(this, true)">
-                Your client must re-send the full history on every request
+                Accumulated file reads and command output
               </button>
               <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                Only the last 5 messages are kept in context
-              </button>
-              <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                Messages are summarized server-side after each turn
+                The theme and terminal colors
               </button>
             </div>
             <div class="quiz-feedback"></div>
@@ -334,164 +326,107 @@
         <section class="section" id="m2">
           <div class="section-header">
             <div class="section-num">2</div>
-            <h2>Prompt Caching: The Biggest Lever</h2>
+            <h2>Prompt Caching: Working For You Already</h2>
           </div>
 
           <p>
-            Prompt caching is the highest-impact optimization available to API
-            users. When Claude processes the same content repeatedly — your
-            system prompt, tool definitions, a large reference document — it can
-            store a representation of that content and reuse it. Cache reads
-            cost <strong class="savings-highlight">10%</strong> of the normal
-            input token price. That's a 90% discount.
+            Prompt caching lets Claude reuse a stored representation of content
+            it has already processed — your system prompt, tool definitions,
+            CLAUDE.md, and the growing conversation prefix. A cache read costs a
+            small fraction of processing that content fresh. The good news for
+            Claude Code users:
+            <strong>this is handled automatically.</strong> You don't set cache
+            breakpoints or write any config.
           </p>
 
-          <h3>How caching works</h3>
+          <h3>Why it matters to you anyway</h3>
           <p>
-            You mark content for caching with
-            <code>"cache_control": {"type": "ephemeral"}</code> on specific
-            content blocks. Claude checks whether it has already processed that
-            content in a recent request. If yes — a cache hit — you pay 10% of
-            the normal rate. If no — a cache miss — you pay a cache write
-            premium (1.25× or 2.0× depending on TTL), but subsequent requests
-            that hit will be cheap.
+            Caching is a prefix match: Claude caches content from the
+            <em>beginning</em> of the request up to a breakpoint, and any change
+            in that prefix invalidates everything after it. Understanding this
+            explains a lot of Claude Code behavior — and points at habits that
+            keep the cache warm.
           </p>
 
           <table>
             <thead>
               <tr>
-                <th>Operation</th>
-                <th>Cost vs. normal input</th>
-                <th>When it applies</th>
+                <th>Action</th>
+                <th>Effect on the cache</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>Cache write (5 min TTL)</td>
-                <td class="cost-col">1.25× (25% premium)</td>
-                <td>First request; cache miss</td>
+                <td>Continuing the same conversation</td>
+                <td class="savings-col">
+                  Reuses the whole prior prefix — cheap and fast
+                </td>
               </tr>
               <tr>
-                <td>Cache write (1 hr TTL, beta)</td>
-                <td class="cost-col">2.0× (100% premium)</td>
-                <td>Optional extended TTL</td>
+                <td>Editing CLAUDE.md mid-session</td>
+                <td class="cost-col">
+                  Changes an early part of the prefix — invalidates below it
+                </td>
               </tr>
               <tr>
-                <td>Cache read (hit)</td>
-                <td class="savings-col">0.1× (90% savings)</td>
-                <td>Subsequent requests within TTL</td>
+                <td>Adding or removing an MCP server</td>
+                <td class="cost-col">
+                  Changes tool definitions at the top — full re-process
+                </td>
+              </tr>
+              <tr>
+                <td>Switching models mid-task</td>
+                <td class="cost-col">
+                  Caches are per-model — the new model starts cold
+                </td>
               </tr>
             </tbody>
           </table>
-
-          <p>
-            The TTL refreshes on every cache hit at no additional cost. A
-            5-minute cache that gets hit every 3 minutes effectively stays alive
-            indefinitely. Break-even occurs at approximately 2 cache hits for
-            the 5-minute TTL.
-          </p>
-
-          <h3>What can be cached</h3>
-          <p>
-            The cache applies in a strict top-down order:
-            <strong>tools → system → messages</strong>. You can place up to 4
-            cache breakpoints per request. Content that can be cached includes
-            tool definitions, system messages, text messages (both user and
-            assistant turns), images, documents, and tool results.
-          </p>
 
           <div class="callout tip">
             <div class="callout-icon">💡</div>
             <div class="callout-body">
-              <strong
-                >Always cache your system prompt and tool definitions
-                first</strong
-              >
+              <strong>Keep the front of the window stable</strong>
               <p>
-                These are the most stable content across requests and the
-                easiest win. If your system prompt is 2,000 tokens and you make
-                100 API calls per day, caching it saves roughly 180,000 tokens
-                per day at Sonnet pricing — about $0.54/day saved for
-                essentially zero implementation effort.
+                The practical takeaway: don't churn your CLAUDE.md, tool set, or
+                model in the middle of a task. Set them up front and let the
+                cache do its job. Each of those changes forces Claude to
+                re-read the whole prefix — slower turns for no benefit. Save the
+                CLAUDE.md edits and MCP tweaks for between tasks, right after a
+                <code>/clear</code>.
               </p>
             </div>
           </div>
 
-          <h3>Minimum token thresholds</h3>
+          <h3>What this means in practice</h3>
           <p>
-            Content must meet a minimum token count before it qualifies for
-            caching. Short content cannot be cached.
-          </p>
-          <table>
-            <thead>
-              <tr>
-                <th>Model family</th>
-                <th>Minimum cacheable tokens</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Claude Opus 4, Opus 4.1, Sonnet 4, 4.5, 3.7, Haiku 3.5</td>
-                <td>1,024 tokens</td>
-              </tr>
-              <tr>
-                <td>Claude Haiku 3</td>
-                <td>2,048 tokens</td>
-              </tr>
-              <tr>
-                <td>Claude Opus 4.5, Haiku 4.5</td>
-                <td>4,096 tokens</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <h3>Caching a system prompt — example</h3>
-          <pre><code>{
-  "model": "claude-sonnet-4-6",
-  "system": [
-    {
-      "type": "text",
-      "text": "You are an expert clinical research assistant...\n[2,000+ tokens of detailed instructions]",
-      "cache_control": {"type": "ephemeral"}
-    }
-  ],
-  "messages": [{"role": "user", "content": "Summarize this adverse event report..."}]
-}</code></pre>
-
-          <h3>Cache invalidation rules</h3>
-          <p>
-            The cache is position-sensitive.
-            <strong
-              >Modifying content at any level invalidates that level and
-              everything below it.</strong
-            >
-            Toggling web search or citations invalidates the system + messages
-            cache. Changing tool definitions invalidates the entire chain. This
-            is why you should keep your most volatile content at the
-            <em>bottom</em> of the prompt — put stable content (tool defs,
-            system prompt) at the top where it won't be invalidated by
-            message-level changes.
+            You mostly get caching for free — but you can help it along.
+            Long-lived sessions on a stable configuration are the cheapest and
+            fastest, because the shared prefix keeps getting reused. Sessions
+            where you constantly reconfigure tools or rewrite memory files pay
+            the cold-cache penalty over and over. Efficiency here is a
+            byproduct of the discipline you're learning everywhere else in this
+            course.
           </p>
 
           <div class="quiz">
             <h4>✍️ Knowledge Check</h4>
             <p>
-              You have a 2,000-token system prompt. You make 50 API requests per
-              session. Roughly how much do you save on input tokens with caching
-              vs. without?
+              Which action is most likely to invalidate Claude Code's prompt
+              cache mid-session?
             </p>
             <div class="quiz-options">
               <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                About 25% — just the cache write premium savings
-              </button>
-              <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                About 50% — halfway between full and no savings
+                Asking a follow-up question in the same thread
               </button>
               <button class="quiz-opt" onclick="quizAnswer(this, true)">
-                About 88%+ — one write at 1.25× then 49 reads at 0.1×
+                Connecting a new MCP server, changing tool definitions
               </button>
               <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                Nothing — caching only helps output tokens
+                Reading one more small file
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                Toggling your terminal theme
               </button>
             </div>
             <div class="quiz-feedback"></div>
@@ -502,70 +437,47 @@
         <section class="section" id="m3">
           <div class="section-header">
             <div class="section-num">3</div>
-            <h2>Model Selection: Matching Cost to Complexity</h2>
+            <h2>Model Selection: Matching Power to Task</h2>
           </div>
 
           <p>
-            Claude models span a <strong>60× cost range</strong> from Haiku 3 to
-            Opus 4.1. The right model for a task isn't the smartest one — it's
-            the least expensive one that reliably produces the quality you need.
-            Using Opus for email classification is like hiring a neurosurgeon to
-            take your blood pressure.
+            Claude Code lets you choose which model drives your session with the
+            <code>/model</code> command, and you can pick a different model for
+            subagents. The right model isn't always the most capable one — it's
+            the one that reliably does the job at the speed and cost you want.
+            Reaching for the top-tier model on a trivial rename is like hiring a
+            neurosurgeon to take your blood pressure.
           </p>
 
-          <h3>Current model pricing</h3>
+          <h3>The Claude Code lineup</h3>
           <table>
             <thead>
               <tr>
                 <th>Model</th>
-                <th>Input ($/MTok)</th>
-                <th>Output ($/MTok)</th>
-                <th>Context</th>
-                <th>Best for</th>
+                <th>Best for in Claude Code</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>Opus 4.1 / 4</strong></td>
-                <td class="cost-col">$15</td>
-                <td class="cost-col">$75</td>
-                <td>200K</td>
-                <td>Complex reasoning, large refactors, highest stakes</td>
+                <td><strong>Opus</strong></td>
+                <td>
+                  Complex multi-file refactors, deep debugging, long-horizon
+                  autonomous work, architecture decisions
+                </td>
               </tr>
               <tr>
-                <td><strong>Opus 4.6 / 4.5</strong></td>
-                <td class="cost-col">$5</td>
-                <td class="cost-col">$25</td>
-                <td>200K / 1M beta</td>
-                <td>Agentic workflows, long-horizon tasks</td>
+                <td><strong>Sonnet</strong></td>
+                <td>
+                  The default workhorse — best intelligence-per-dollar for most
+                  day-to-day coding and agentic tasks
+                </td>
               </tr>
               <tr>
-                <td><strong>Sonnet 4.6 / 4.5 / 4</strong></td>
-                <td class="cost-col">$3</td>
-                <td class="cost-col">$15</td>
-                <td>200K / 1M beta</td>
-                <td>Default choice — best intelligence-per-dollar</td>
-              </tr>
-              <tr>
-                <td><strong>Haiku 4.5</strong></td>
-                <td class="cost-col">$1</td>
-                <td class="cost-col">$5</td>
-                <td>200K</td>
-                <td>High-volume tasks, sub-agents, latency-sensitive</td>
-              </tr>
-              <tr>
-                <td><strong>Haiku 3.5</strong></td>
-                <td class="cost-col">$0.80</td>
-                <td class="cost-col">$4</td>
-                <td>200K</td>
-                <td>Classification, routing, simple extraction</td>
-              </tr>
-              <tr>
-                <td><strong>Haiku 3</strong></td>
-                <td class="cost-col">$0.25</td>
-                <td class="cost-col">$1.25</td>
-                <td>200K</td>
-                <td>Cheapest option, bulk classification</td>
+                <td><strong>Haiku</strong></td>
+                <td>
+                  Fast, cheap, latency-sensitive work — simple edits, quick
+                  lookups, and subagents doing bounded tasks
+                </td>
               </tr>
             </tbody>
           </table>
@@ -573,111 +485,93 @@
           <div class="callout info">
             <div class="callout-icon">ℹ️</div>
             <div class="callout-body">
-              <strong>Anthropic's official guidance: start with Sonnet</strong>
+              <strong>Start with the default, adjust deliberately</strong>
               <p>
-                When unsure which model to use, Anthropic recommends starting
-                with Sonnet. It delivers the best balance of intelligence and
-                cost for most tasks. Upgrade to Opus only when you've confirmed
-                Sonnet isn't meeting your quality bar. Downgrade to Haiku for
-                high-volume tasks where Sonnet is consistently over-qualified.
+                For most work, the default model gives the best balance of
+                capability and speed. Reach for Opus when you've confirmed the
+                task genuinely needs deeper reasoning — a gnarly bug, a
+                large-scale refactor, a design you can't fully specify. Drop to
+                Haiku for high-volume, well-scoped operations where a bigger
+                model is over-qualified.
               </p>
             </div>
           </div>
 
-          <h3>The tiered architecture pattern</h3>
+          <h3>The tiered pattern in one session</h3>
           <p>
-            Production teams with high-volume workflows often run a three-tier
-            system rather than using one model for everything. This is the most
-            impactful model selection strategy for applications:
+            You don't have to run the whole session on one model. A powerful
+            pattern: drive the main thread with a capable model for planning and
+            coordination, and delegate bounded, parallel work to
+            <strong>subagents running a cheaper, faster model</strong>. The
+            main agent stays sharp; the grunt work runs cheap.
           </p>
           <div class="steps">
             <div class="step">
               <div class="step-num">1</div>
               <div class="step-body">
-                <h4>Haiku — routing, classification, sub-agents</h4>
+                <h4>Haiku — scoped, high-volume subtasks</h4>
                 <p>
-                  Handle intent detection, content classification, ticket
-                  triage, and simple extraction. Haiku 3 delivers ~90% of
-                  Sonnet's accuracy on these tasks at 12× lower input cost.
+                  Searching for usages, summarizing a directory, running and
+                  reporting a bounded check. Fast turnaround where deep
+                  reasoning isn't required.
                 </p>
               </div>
             </div>
             <div class="step">
               <div class="step-num">2</div>
               <div class="step-body">
-                <h4>Sonnet — standard generation and analysis</h4>
+                <h4>Sonnet — standard implementation</h4>
                 <p>
-                  Your default for drafting, summarization, code generation,
-                  question answering, and most user-facing interactions. The
-                  best intelligence-per-dollar across the Claude lineup.
+                  Writing and editing code, following conventions, most
+                  interactive coding. The default for a reason.
                 </p>
               </div>
             </div>
             <div class="step">
               <div class="step-num">3</div>
               <div class="step-body">
-                <h4>Opus — complex multi-step reasoning and highest stakes</h4>
+                <h4>Opus — the hard 10%</h4>
                 <p>
-                  Reserve for tasks where model errors are costly: large-scale
-                  code refactoring, complex multi-document synthesis, agentic
-                  workflows requiring deep reasoning, and cases where Sonnet's
-                  output quality isn't sufficient.
+                  Reserve for tasks where errors are expensive: sprawling
+                  refactors, subtle concurrency bugs, decisions that shape the
+                  codebase for months.
                 </p>
               </div>
             </div>
           </div>
 
-          <h3>Thinking: effort vs. budget</h3>
-          <p>
-            For Opus 4.6 and Sonnet 4.6, the <code>effort</code> parameter
-            replaces manual budget tuning. Sonnet 4.6 defaults to
-            <code>high</code> effort — set it explicitly if you want a different
-            level to avoid unexpected latency and costs:
-          </p>
-          <ul>
-            <li>
-              <strong>effort: "low"</strong> — May skip thinking entirely. Best
-              for simple queries, formatting, lookup tasks. Big cost saver.
-            </li>
-            <li>
-              <strong>effort: "medium"</strong> — Balanced reasoning. Good
-              default for mixed workloads where you want thinking without high
-              cost.
-            </li>
-            <li>
-              <strong>effort: "high"</strong> — Deep reasoning. Sonnet 4.6's
-              actual default if not set explicitly.
-            </li>
-            <li>
-              <strong>effort: "max"</strong> — Maximum thinking. Reserve for
-              hardest, longest-horizon problems.
-            </li>
-          </ul>
-          <p>
-            For older models, if you're using a manual budget, the minimum is
-            1,024 tokens and the practical sweet spot for complex tasks starts
-            at 16K. Above 32K, you risk system timeouts — use the Batch API for
-            those cases.
-          </p>
+          <div class="callout tip">
+            <div class="callout-icon">💡</div>
+            <div class="callout-body">
+              <strong>Don't switch models mid-task</strong>
+              <p>
+                Because caches are per-model, flipping models in the middle of a
+                task discards the cached prefix and starts cold. Choose your
+                model at the start of a task (or per subagent), then leave it.
+                If you need a different tier, that's usually a signal to
+                <code>/clear</code> and start a fresh, well-scoped session.
+              </p>
+            </div>
+          </div>
 
           <div class="quiz">
             <h4>✍️ Knowledge Check</h4>
             <p>
-              You're building a system that classifies 10,000 customer support
-              tickets per day into 8 categories. Which model should you use?
+              You need to fan out and search for every usage of a deprecated
+              function across a large repo. What's the efficient setup?
             </p>
             <div class="quiz-options">
               <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                Opus — this is critical business data
-              </button>
-              <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                Sonnet — it's the safe default
+                Run the whole session on Opus for maximum accuracy
               </button>
               <button class="quiz-opt" onclick="quizAnswer(this, true)">
-                Haiku — classification is exactly what Haiku is optimized for
+                Delegate to subagents on a cheaper, faster model
               </button>
               <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                Rotate between all models to balance load
+                Switch models back and forth as you go
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                Paste every file into the prompt manually
               </button>
             </div>
             <div class="quiz-feedback"></div>
@@ -692,142 +586,127 @@
           </div>
 
           <p>
-            All current Claude models share a 200,000-token context window. A
-            1M-token extended context is available in beta for Sonnet 4, 4.5,
-            4.6 and Opus 4.5, 4.6. But bigger isn't always better —
-            understanding how context <em>degrades</em> performance is as
-            important as knowing how large it is.
+            This is the module that changes how you use Claude Code. Managing
+            the window actively — clearing it, compacting it, and steering what
+            goes into it — is the highest-leverage skill you can build.
           </p>
 
-          <h3>Context window ≠ effective working memory</h3>
+          <h3>Bigger context ≠ better performance</h3>
           <p>
-            Transformers compute pairwise attention between every token and
-            every other token. As context grows, each additional token dilutes
-            the attention budget for existing tokens. Anthropic's own research
-            shows a <strong>U-shaped performance curve</strong>: information at
-            the beginning and end of the context is recalled most accurately,
-            while content in the <em>middle</em> suffers most. In studies on
-            earlier models, mid-context accuracy dropped to roughly 27%.
+            A large context window is capacity, not attention. As context grows,
+            the model has more tokens competing for a finite attention budget,
+            and precision on any single detail can degrade. Anthropic
+            engineering describes this as <strong>"context rot"</strong>: a
+            window stuffed with stale file reads and old command output makes
+            Claude <em>worse</em> at the task in front of it, not better. The
+            goal is the smallest set of high-signal tokens that gets the job
+            done.
           </p>
 
           <div class="callout danger">
             <div class="callout-icon">🚨</div>
             <div class="callout-body">
-              <strong>Context rot is real</strong>
+              <strong>A confused session usually has a bloated window</strong>
               <p>
-                More tokens in context doesn't mean Claude pays more attention
-                to all of them. Anthropic engineering calls this "context rot" —
-                the model has a finite attention budget, and stuffing the
-                context window degrades precision on everything. The optimal
-                strategy is the
-                <em>smallest possible set of high-signal tokens</em>, not the
-                largest.
+                When Claude Code starts making odd choices, repeating itself, or
+                losing the thread, the reflex shouldn't be to explain harder —
+                it should be to check the window. Nine times out of ten the fix
+                is <code>/clear</code> or <code>/compact</code>, not a longer
+                prompt.
               </p>
             </div>
           </div>
 
-          <h3>What fills context fastest in agentic sessions</h3>
-          <p>
-            In long agentic sessions (Claude Code, Cowork, API tool-use),
-            context fills much faster than in simple chat. The culprits in order
-            of severity:
-          </p>
+          <h3>The two commands that matter most</h3>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h4><code>/clear</code> — wipe context between tasks</h4>
+                <p>
+                  Resets the conversation to a clean slate while keeping your
+                  CLAUDE.md and configuration. Use it every time you switch to
+                  unrelated work. The context from fixing the login bug is pure
+                  noise when you move on to the billing report.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h4>
+                  <code>/compact</code> — summarize when you need continuity
+                </h4>
+                <p>
+                  Condenses the conversation into a summary that preserves the
+                  thread while shedding the accumulated bulk. Use it mid-task
+                  when the window is filling but you still need what came
+                  before. Add focus to keep what matters:
+                  <code>/compact focus on the auth refactor</code>.
+                </p>
+              </div>
+            </div>
+          </div>
 
-          <div class="card-grid">
-            <div class="card">
-              <div class="card-icon">🔧</div>
-              <h4>Tool results</h4>
+          <div class="callout info">
+            <div class="callout-icon">ℹ️</div>
+            <div class="callout-body">
+              <strong>Auto-compact is a safety net, not a strategy</strong>
               <p>
-                Every file read, search result, and command output stays in
-                history. A single web fetch: 2,500–125,000 tokens. They
-                accumulate on every turn.
-              </p>
-            </div>
-            <div class="card">
-              <div class="card-icon">📜</div>
-              <h4>Conversation history</h4>
-              <p>
-                Re-sent in full on every API call. A 20-turn conversation sends
-                all 20 turns as input on Turn 21.
-              </p>
-            </div>
-            <div class="card">
-              <div class="card-icon">🖼️</div>
-              <h4>Images</h4>
-              <p>
-                ~1,600 tokens each. Multiple images compound quickly. Only send
-                images when visual analysis is actually needed.
-              </p>
-            </div>
-            <div class="card">
-              <div class="card-icon">📄</div>
-              <h4>PDFs</h4>
-              <p>
-                1,500–3,000 tokens per page (text + image rendering). A 20-page
-                document is 30,000–60,000 tokens before you've asked a question.
+                Claude Code will automatically compact as the window approaches
+                its limit, but auto-compaction is a last resort — it summarizes
+                on the model's terms, not yours, and can lose detail you cared
+                about. Compacting <em>deliberately</em>, with a focus
+                instruction, keeps the thread you actually need. Better still:
+                <code>/clear</code> often enough that you rarely hit the limit.
               </p>
             </div>
           </div>
 
-          <h3>Placement matters: put queries last</h3>
+          <h3><code>/rewind</code> — undo a wrong turn</h3>
           <p>
-            For long-context requests with multiple documents,
-            <strong>place the query at the very end of the prompt</strong>. This
-            positioning improvement alone can boost response quality by up to
-            30% on complex multi-document inputs. Structure documents with XML
-            tags and metadata:
+            When Claude heads down the wrong path, you don't have to unwind it
+            conversationally (which just adds more tokens). <code>/rewind</code>
+            lets you roll the conversation — and optionally the code changes —
+            back to an earlier checkpoint, so you can retry from a clean state
+            instead of arguing your way out of a mess.
           </p>
 
-          <pre><code>&lt;documents&gt;
-  &lt;document index="1"&gt;
-    &lt;source&gt;protocol-v3.pdf&lt;/source&gt;
-    &lt;document_content&gt;...&lt;/document_content&gt;
-  &lt;/document&gt;
-  &lt;document index="2"&gt;
-    ...
-  &lt;/document&gt;
-&lt;/documents&gt;
-
-Based on the documents above, what are the primary eligibility criteria?</code></pre>
-
-          <h3>Ask Claude to quote before answering</h3>
+          <h3>Steer what enters the window</h3>
           <p>
-            On long-context tasks, instruct Claude to locate and quote the
-            relevant passage before answering. This acts as a forced attention
-            mechanism — the quoting step "cuts through the noise" of a large
-            context and anchors the response to the actually-relevant content
-            rather than relying on imprecise mid-context recall.
+            The cheapest context to manage is the context you never let in. Be
+            specific about scope so Claude reads the two files it needs instead
+            of scanning twenty. Ask for targeted searches over broad ones. When
+            a command produces mountains of output, ask Claude to pipe it
+            through a filter rather than reading the whole thing.
           </p>
 
           <div class="prompt-example">
-            <div class="prompt-label">
-              ✅ Effective long-context instruction
-            </div>
+            <div class="prompt-label">✅ Scope-aware request</div>
             <div class="prompt-text">
-              Before answering, quote the specific section from the documents
-              that is most relevant to the question. Then answer based on that
-              quoted section.
+              Add input validation to the <code>login()</code> function in
+              <code>src/auth/session.ts</code>. Don't touch other files.
             </div>
           </div>
 
           <div class="quiz">
             <h4>✍️ Knowledge Check</h4>
             <p>
-              In a prompt with multiple long documents, where should you place
-              your question for best results?
+              You just finished a database migration task and want to start on
+              an unrelated UI bug in the same session. What should you do first?
             </p>
             <div class="quiz-options">
               <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                At the very beginning, before the documents
-              </button>
-              <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                In the middle, between the documents
+                Keep going — more context is always better
               </button>
               <button class="quiz-opt" onclick="quizAnswer(this, true)">
-                At the very end, after all documents
+                Run <code>/clear</code> to drop the now-irrelevant context
               </button>
               <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                It doesn't matter — Claude reads everything equally
+                Explain the migration again so Claude remembers
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                Switch to a bigger model to hold everything
               </button>
             </div>
             <div class="quiz-feedback"></div>
@@ -842,70 +721,18 @@ Based on the documents above, what are the primary eligibility criteria?</code><
           </div>
 
           <p>
-            How you <em>set up</em> a session before the first message
-            determines a large part of its efficiency. Good architecture
-            eliminates the per-session overhead of re-explaining context,
-            re-establishing conventions, and recovering from misaligned
-            assumptions.
+            How you set up a project before the first prompt determines how much
+            per-session overhead you pay forever after. Good setup eliminates
+            the endless re-explaining of conventions, tools, and architecture
+            that otherwise eats the start of every conversation.
           </p>
 
-          <h3>Claude Projects: persistent context done right</h3>
-          <p>
-            Projects provide a persistent knowledge base that Claude references
-            across all chats in the project. The critical design question is
-            knowing what goes where:
-          </p>
-
-          <table>
-            <thead>
-              <tr>
-                <th>Location</th>
-                <th>What belongs here</th>
-                <th>Loaded how</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Project instructions</strong></td>
-                <td>
-                  Role, tone, standing rules, persistent behavioral context
-                </td>
-                <td>Every conversation, in full</td>
-              </tr>
-              <tr>
-                <td><strong>Knowledge base files</strong></td>
-                <td>Reference docs, specs, codebases, data files</td>
-                <td>On-demand via RAG when approaching context limits</td>
-              </tr>
-              <tr>
-                <td><strong>Per-message context</strong></td>
-                <td>Task-specific data, current documents, one-off queries</td>
-                <td>Only in that message</td>
-              </tr>
-            </tbody>
-          </table>
-
-          <div class="callout tip">
-            <div class="callout-icon">💡</div>
-            <div class="callout-body">
-              <strong>RAG activates automatically in Projects</strong>
-              <p>
-                When your project knowledge base approaches the context window
-                limit, Claude automatically switches to RAG (retrieval-augmented
-                generation) — fetching only the relevant portions of knowledge
-                files rather than loading everything. This effectively
-                multiplies your usable knowledge base by up to 10×. Use
-                descriptive filenames; they directly improve retrieval accuracy.
-              </p>
-            </div>
-          </div>
-
-          <h3>Claude Code: CLAUDE.md and the memory system</h3>
+          <h3>CLAUDE.md: the memory hierarchy</h3>
           <p>
             Claude Code loads context from a hierarchy of CLAUDE.md files at
-            session start. This means you can encode project conventions, coding
-            standards, and architectural decisions once — and they're available
-            in every session without any conversation overhead.
+            session start. Encode your conventions, standards, and architectural
+            decisions once, and they're available in every session with zero
+            conversation overhead. Knowing what goes where is the whole game:
           </p>
 
           <div class="steps">
@@ -913,23 +740,23 @@ Based on the documents above, what are the primary eligibility criteria?</code><
               <div class="step-num">1</div>
               <div class="step-body">
                 <h4>
-                  <code>~/.claude/CLAUDE.md</code> — Global user preferences
+                  <code>~/.claude/CLAUDE.md</code> — global user preferences
                 </h4>
                 <p>
-                  Your personal coding style, preferred tools, global
-                  conventions. Loaded into every Claude Code session regardless
-                  of project.
+                  Your personal style, preferred tools, and standing rules.
+                  Loaded into every Claude Code session on your machine,
+                  regardless of project.
                 </p>
               </div>
             </div>
             <div class="step">
               <div class="step-num">2</div>
               <div class="step-body">
-                <h4><code>CLAUDE.md</code> in project root — Project rules</h4>
+                <h4><code>CLAUDE.md</code> in the project root — team rules</h4>
                 <p>
-                  Architecture decisions, dependency choices, test conventions,
-                  naming patterns. Loaded automatically on every session in this
-                  repo.
+                  Architecture, dependency choices, test conventions, naming
+                  patterns. Checked into the repo so the whole team (and their
+                  Claude sessions) share the same context.
                 </p>
               </div>
             </div>
@@ -937,87 +764,81 @@ Based on the documents above, what are the primary eligibility criteria?</code><
               <div class="step-num">3</div>
               <div class="step-body">
                 <h4>
-                  Child directory <code>CLAUDE.md</code> files — Module-specific
-                  context
+                  Subdirectory <code>CLAUDE.md</code> — module-specific context
                 </h4>
                 <p>
-                  Documentation for specific subsystems. Loaded on demand when
-                  Claude navigates into that directory.
+                  Documentation for a specific subsystem, pulled in on demand
+                  when Claude works in that directory. Keeps niche detail out of
+                  the root file.
                 </p>
               </div>
             </div>
             <div class="step">
               <div class="step-num">4</div>
               <div class="step-body">
-                <h4>
-                  <code>CLAUDE.local.md</code> — Private per-project preferences
-                </h4>
+                <h4><code>CLAUDE.local.md</code> — private overrides</h4>
                 <p>
-                  Personal overrides not for the team (auto-gitignored). Your
-                  preferred debug flags, local paths, etc.
+                  Personal, gitignored notes that aren't for the team — local
+                  paths, debug flags, scratch reminders. (The
+                  <code>@path</code> import syntax is the modern way to pull in
+                  external files; see below.)
                 </p>
               </div>
             </div>
           </div>
 
+          <div class="callout tip">
+            <div class="callout-icon">💡</div>
+            <div class="callout-body">
+              <strong>Keep CLAUDE.md tight — it's loaded every session</strong>
+              <p>
+                CLAUDE.md is not a wiki. Every token in it is loaded into every
+                session's context, so bloat here is a permanent tax.
+                "Use 2-space indentation" beats a paragraph on formatting
+                philosophy. Prefer specific, high-signal rules over prose, and
+                use the <code>@path/to/file</code> import syntax to pull in
+                longer reference docs only when they're relevant.
+              </p>
+            </div>
+          </div>
+
+          <h3>The <code>/init</code> shortcut</h3>
           <p>
-            CLAUDE.md supports an <code>@path/to/file</code> import syntax for
-            pulling in external documentation. Keep CLAUDE.md files specific and
-            brief — "Use 2-space indentation" beats "Format code properly."
+            Not sure what to put in a project's CLAUDE.md? Run
+            <code>/init</code> in a repo and Claude Code will explore the
+            codebase and draft one for you — build commands, structure,
+            conventions. Treat the output as a starting point to trim and
+            sharpen, not a finished artifact.
           </p>
 
-          <h3>API system prompts: structure for cacheability</h3>
+          <h3>Custom slash commands and tools</h3>
           <p>
-            Organize your system prompt so stable content is at the top and
-            volatile content is at the bottom. Cache breakpoints partition the
-            content — any change invalidates the breakpoint it touches and
-            everything below it. The hierarchy: tool definitions → static system
-            context → dynamic user-specific data → per-request instructions.
-          </p>
-
-          <pre><code>system: [
-  // Block 1: Tool definitions (most stable — cache this)
-  {"type": "tool_definitions", "cache_control": {"type": "ephemeral"}},
-
-  // Block 2: Static system context (stable — cache this)
-  {"type": "text", "text": "You are a...[long stable instructions]",
-   "cache_control": {"type": "ephemeral"}},
-
-  // Block 3: Dynamic user context (changes per user — don't cache)
-  {"type": "text", "text": "Current user: " + user.name + "..."}
-]</code></pre>
-
-          <h3>Cowork: global and folder instructions</h3>
-          <p>
-            Cowork's two-level instruction system mirrors the Projects +
-            per-message structure. Global instructions (Settings → Cowork →
-            Edit) apply to every session. Folder instructions activate when
-            Claude is working in a specific directory and encode
-            project-specific context, naming conventions, and compliance rules.
-            Think of it as:
-            <strong>global = who you are, folder = what this project is</strong
-            >.
+            Repeated multi-step prompts belong in reusable
+            <strong>slash commands</strong> (Markdown files in
+            <code>.claude/commands/</code>). Instead of re-typing "run the
+            tests, then fix any failures, then update the changelog" every time,
+            you save it once and invoke <code>/fix-and-log</code>. Less typing,
+            consistent behavior, and a shared prefix that caches well.
           </p>
 
           <div class="quiz">
             <h4>✍️ Knowledge Check</h4>
             <p>
-              In a Claude Project, when does RAG activate for knowledge base
-              files?
+              Where should a team's shared coding conventions and test commands
+              live so every developer's Claude Code session picks them up?
             </p>
             <div class="quiz-options">
               <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                Always — every file is retrieved on every message
+                Pasted at the top of every prompt
               </button>
               <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                Never — files are always loaded in full
+                In <code>~/.claude/CLAUDE.md</code> on one person's machine
               </button>
               <button class="quiz-opt" onclick="quizAnswer(this, true)">
-                Automatically when the knowledge base approaches the context
-                window limit
+                In a <code>CLAUDE.md</code> in the project root, checked into git
               </button>
               <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                Only when you explicitly ask Claude to search files
+                Only in the team wiki
               </button>
             </div>
             <div class="quiz-feedback"></div>
@@ -1032,141 +853,114 @@ Based on the documents above, what are the primary eligibility criteria?</code><
           </div>
 
           <p>
-            Most token waste falls into a handful of repeatable anti-patterns.
-            Identifying them in your own workflow is the fastest path to
-            efficiency gains that don't require any API changes.
+            Most wasted context in Claude Code follows a handful of repeatable
+            anti-patterns. Spotting them in your own workflow is the fastest way
+            to sessions that stay sharp and finish more work.
           </p>
 
-          <h3>Anti-pattern 1: Explaining things Claude already knows</h3>
+          <h3>Anti-pattern 1: The never-ending session</h3>
           <p>
-            Claude has deep knowledge of XML, JSON, Markdown, common programming
-            languages, standard frameworks, and widespread conventions — baked
-            into its training. You don't need to explain these formats; you just
-            use them. What you <em>do</em> need to provide is your specific
-            context: your norms, your codebase's conventions, your task-specific
-            requirements.
+            Running task after unrelated task in one long conversation is the
+            most common mistake. Each task leaves its file reads and command
+            output behind, and by task four Claude is wading through the wreckage
+            of tasks one through three. <code>/clear</code> between unrelated
+            tasks isn't housekeeping — it's how you keep quality high.
+          </p>
+
+          <h3>Anti-pattern 2: Vague, sprawling prompts</h3>
+          <p>
+            "Improve this codebase" invites Claude to read everything and touch
+            anything, flooding the window and producing scattered changes.
+            Specificity is efficiency.
           </p>
 
           <div class="compare-grid">
             <div class="prompt-example compare-bad">
-              <div class="prompt-label">
-                ❌ Wasteful — explaining the obvious
-              </div>
+              <div class="prompt-label">❌ Vague — triggers broad scanning</div>
               <div class="prompt-text">
-                JSON is a data format that uses key-value pairs. Keys must be
-                strings. Values can be strings, numbers, booleans, arrays, or
-                objects. Please return your response as a JSON object with the
-                following keys: "name" (string), "age" (number), "active"
-                (boolean).
+                Look through the project and improve the error handling
+                everywhere it needs it.
               </div>
             </div>
             <div class="prompt-example compare-good">
-              <div class="prompt-label">✅ Efficient — just use the format</div>
+              <div class="prompt-label">✅ Scoped — one file, one goal</div>
               <div class="prompt-text">
-                Return JSON with keys: "name" (string), "age" (number), "active"
-                (boolean).
+                Wrap the network calls in <code>api/client.ts</code> with retry
+                and a typed error result. Leave the rest of the file alone.
               </div>
             </div>
           </div>
 
-          <h3>Anti-pattern 2: Anti-laziness prompts on Claude 4.x</h3>
+          <h3>Anti-pattern 3: Anti-laziness prompting</h3>
           <p>
-            On Claude 3.x, prompts like "be thorough," "think carefully," and
-            "don't be lazy" were useful workarounds for a less proactive model.
-            On Claude 4.x models, Anthropic explicitly warns that these phrases
-            <strong
-              >"amplify already-proactive behavior and can cause runaway
-              thinking or write-then-rewrite loops."</strong
-            >
-            They don't add quality — they add tokens.
+            Aggressive instructions like "be thorough," "think carefully about
+            everything," or "you MUST check every file" were once workarounds
+            for less proactive models. On current Claude models they
+            <strong>amplify already-proactive behavior</strong>, causing runaway
+            exploration and over-editing. State the goal and the scope; let the
+            model do the rest.
           </p>
 
           <div class="callout danger">
             <div class="callout-icon">🚨</div>
             <div class="callout-body">
-              <strong>Remove these from Claude 4.x prompts</strong>
+              <strong>Retire these from your prompts</strong>
               <p>
-                "Be thorough" · "Think carefully" · "Do not be lazy" · "You MUST
-                use this tool" · "CRITICAL: Always..." · Aggressive all-caps
-                instructions. These were Claude 3.x workarounds. They cause
-                over-generation and excessive tool calling on Claude 4.x.
+                "Be thorough" · "Check everything" · "Do not be lazy" ·
+                "CRITICAL: you MUST..." · aggressive all-caps demands. They push
+                current models toward over-exploration and over-editing —
+                exactly the behavior that fills your context and produces
+                sprawling diffs.
               </p>
             </div>
           </div>
 
-          <h3>Anti-pattern 3: Monolithic prompts</h3>
+          <h3>Anti-pattern 4: Loading MCP servers you don't need</h3>
           <p>
-            A single 5,000-token prompt for a complex multi-step task is often
-            worse than three focused 500-token prompts chained together. Each
-            subtask gets Claude's full attention. Errors are isolated and easier
-            to trace. Independent subtasks can be parallelized. The "chain of
-            prompts" pattern scales far better than the "one mega-prompt"
-            approach.
+            Every connected MCP server injects its tool definitions into every
+            request, whether or not you use them — fixed overhead that also sits
+            at the front of the cache prefix. Connect the servers a task
+            actually needs, and disconnect ones you're not using. A pile of
+            idle MCP tools is pure context tax.
           </p>
 
-          <h3>Anti-pattern 4: Images when text suffices</h3>
+          <h3>Anti-pattern 5: Reading whole files when you need a slice</h3>
           <p>
-            Image processing costs ~1,600 tokens per image at typical
-            resolutions. Don't send images when a text description of the
-            relevant content would work equally well. And never send oversized
-            images — anything over 1,568 pixels on the long edge or ~1.15
-            megapixels gets resized automatically, but the preprocessing still
-            adds latency. Very small images (under 200px on any edge) actually
-            degrade quality.
+            Asking Claude to read an entire 2,000-line file to change one
+            function drops the whole thing into context. Point it at the
+            relevant section, or let it search for the symbol first. The
+            targeted read leaves room for the actual work.
           </p>
 
-          <h3>Anti-pattern 5: Loading all tool definitions upfront</h3>
+          <h3>Anti-pattern 6: Explaining what the model already knows</h3>
           <p>
-            Every tool definition you load adds fixed overhead to every request,
-            whether or not that tool is used. Anthropic's internal "Tool Search"
-            feature reduces average token usage by <strong>37%</strong> on
-            complex tasks by discovering tools on-demand rather than loading all
-            definitions upfront. Apply the same principle to your own systems:
-            load tool definitions lazily when the task calls for them rather
-            than in every system prompt.
-          </p>
-
-          <h3>Anti-pattern 6: Verbosity in prompts and outputs</h3>
-          <p>
-            Ask for paragraph or sentence count limits rather than word counts —
-            LLMs count tokens, not words, making word-count instructions
-            unreliable. Set <code>max_tokens</code> as a hard ceiling. Ask for
-            what you want in terms of format: "Write in flowing prose" rather
-            than "Don't use bullet points." Claude 4.5+ models are naturally
-            more concise and will skip detailed summaries for efficiency unless
-            you ask for them.
-          </p>
-
-          <h3>Anti-pattern 7: Stale context in agentic sessions</h3>
-          <p>
-            In Claude Code, an open session accumulates context from every file
-            read, command output, and tool call. When you switch to a completely
-            different task within the same session, that accumulated context is
-            irrelevant noise that still consumes tokens on every subsequent
-            turn. Use <code>/clear</code> when switching to unrelated work. Use
-            <code>/compact</code> to summarize context when it's getting large
-            but you need to preserve thread.
+            Claude knows your languages, frameworks, and standard tools. You
+            don't need to explain what a Git rebase is or how JSON works — you
+            need to provide <em>your</em> context: your conventions, your
+            architecture, your constraints. Spend your tokens on what's specific
+            to you.
           </p>
 
           <div class="quiz">
             <h4>✍️ Knowledge Check</h4>
             <p>
-              You have a complex task that requires: web research, data
-              analysis, and writing a report. What's the most efficient prompt
-              architecture?
+              Your session has drifted and Claude keeps making unfocused edits.
+              You've connected five MCP servers "just in case." What's the most
+              likely efficiency fix?
             </p>
             <div class="quiz-options">
               <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                One mega-prompt that describes all three steps upfront
+                Add "be more careful" to every prompt
               </button>
               <button class="quiz-opt" onclick="quizAnswer(this, true)">
-                Three separate prompts chained together, one per step
+                <code>/clear</code>, disconnect unused MCP servers, and re-scope
+                the ask
               </button>
               <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                Add "be thorough with all steps" to ensure quality
+                Switch to the biggest model and continue
               </button>
               <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                Use the largest model with maximum thinking budget
+                Ask Claude to read the whole repo for full context
               </button>
             </div>
             <div class="quiz-feedback"></div>
@@ -1177,164 +971,109 @@ Based on the documents above, what are the primary eligibility criteria?</code><
         <section class="section" id="m7">
           <div class="section-header">
             <div class="section-num">7</div>
-            <h2>Advanced Stacking: Combining Optimizations</h2>
+            <h2>Subagents, Skills &amp; Plan Mode</h2>
           </div>
 
           <p>
-            Individual optimizations are useful. Combined, they're
-            transformative. The techniques in this module are how production
-            teams achieve 55–95% cost reductions while maintaining or improving
-            output quality.
-          </p>
-
-          <h3>The Batch API: 50% off non-urgent work</h3>
-          <p>
-            The Message Batches API processes up to 10,000 requests per batch
-            within 24 hours (typically under 1 hour) at a flat 50% discount on
-            both input and output tokens. This discount stacks with prompt
-            caching — a cached read on a batched request costs 0.1× of the
-            already-halved batch price.
-          </p>
-
-          <table>
-            <thead>
-              <tr>
-                <th>Optimization</th>
-                <th>Combined effect</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>Prompt caching only</td>
-                <td class="savings-col">90% off cached input tokens</td>
-              </tr>
-              <tr>
-                <td>Batch API only</td>
-                <td class="savings-col">50% off all tokens</td>
-              </tr>
-              <tr>
-                <td>Caching + Batching (cache hit)</td>
-                <td class="savings-col">95% off cached input tokens</td>
-              </tr>
-              <tr>
-                <td>Haiku instead of Sonnet + Caching + Batching</td>
-                <td class="savings-col">
-                  ~98% vs. Sonnet without optimizations
-                </td>
-              </tr>
-            </tbody>
-          </table>
-
-          <p>
-            Ideal batch use cases: content generation pipelines, data extraction
-            from document corpora, evaluation suites and evals, synthetic
-            training data generation, overnight report generation. Not suitable
-            for: real-time user-facing interactions, tasks requiring immediate
-            results.
-          </p>
-
-          <h3>Token-efficient tool use</h3>
-          <p>
-            Token-efficient tool use is built into all Claude 4 models and
-            reduces output token consumption for tool calls by
-            <strong>up to 70%</strong>, with average real-world reductions of
-            around 14%. Early adopters report significant cost savings on
-            agentic workflows where tool calling is frequent. For Claude 3.7
-            Sonnet, enable it with the beta header
-            <code>token-efficient-tool-use-2025-02-19</code>.
-          </p>
-
-          <h3>Structured outputs: eliminate retry waste</h3>
-          <p>
-            Native structured outputs (generally available on Claude 4.x models)
-            guarantee valid JSON conforming to your schema, eliminating the most
-            common cause of agentic workflow failures: parsing errors that
-            require costly retry loops. Two mechanisms:
-          </p>
-          <ul>
-            <li>
-              <strong>JSON output format</strong> — Set
-              <code>output_config: {"format": "json"}</code> to guarantee valid
-              JSON in the response.
-            </li>
-            <li>
-              <strong>Strict tool use</strong> — Set
-              <code>"strict": true</code> on a tool definition for guaranteed
-              type-safe parameters matching your schema.
-            </li>
-          </ul>
-          <p>
-            Note: prefilling (injecting content into the last assistant turn) is
-            deprecated on Claude 4.6 models (Opus 4.6, and future 4.6+
-            releases). Use structured outputs or system prompt instructions
-            instead.
+            The techniques so far keep a single session lean. These take it
+            further — letting Claude Code do more work before the window fills,
+            and structuring hard tasks so they stay on track.
           </p>
 
           <h3>Subagents: context isolation at scale</h3>
           <p>
-            Subagents are the key to long-horizon tasks that would otherwise
-            exhaust the context window. Each subagent gets its own fresh context
-            window, explores as extensively as needed, and returns only a
-            condensed 1,000–2,000 token summary to the parent agent. This
-            prevents context bloat in the main conversation.
+            Subagents are the key to long-horizon work that would otherwise
+            exhaust the window. Each subagent gets its own
+            <strong>fresh context window</strong>, explores as much as it needs
+            — reading files, running searches, digging through output — and
+            returns only a condensed summary to the main thread. All that
+            exploration never touches your main conversation.
           </p>
 
           <div class="callout info">
             <div class="callout-icon">ℹ️</div>
             <div class="callout-body">
-              <strong>Subagent token economics</strong>
+              <strong>The economics of delegation</strong>
               <p>
-                Agent teams using subagents in plan mode consume approximately
-                7× more tokens than standard sessions because each teammate
-                maintains its own context window. This sounds expensive — but
-                the alternative for truly complex tasks is a single overfull
-                context window where quality degrades. For the right tasks, 7×
-                the tokens delivers 10× the quality.
+                A subagent that reads thirty files to answer one question would
+                have dumped all thirty into your main window. Instead, it burns
+                its own context and hands back a paragraph. You trade some extra
+                total work for a main thread that stays clean and focused — a
+                great deal on genuinely complex tasks, and often the only way to
+                finish them at all.
               </p>
             </div>
           </div>
 
           <p>
-            In Claude Code, subagents are defined as Markdown files in
-            <code>.claude/agents/</code> with YAML frontmatter specifying name,
-            tools, and system prompt. The built-in Task tool provides a
-            general-purpose subagent without any configuration. Use subagents
-            when tasks can run in parallel, require isolated context, or involve
-            independent workstreams. Work directly when tasks are simple,
-            sequential, or require shared context between steps.
+            The built-in <strong>Task tool</strong> gives you a general-purpose
+            subagent with no configuration. For repeatable roles, define custom
+            subagents as Markdown files in <code>.claude/agents/</code> with
+            YAML frontmatter specifying the name, allowed tools, and even a
+            different model. Use subagents when work can run in parallel,
+            requires isolated exploration, or is an independent workstream. Work
+            directly when tasks are simple, sequential, or need shared context.
           </p>
 
-          <h3>Few-shot prompting: quality per token</h3>
+          <h3>Skills: expertise loaded on demand</h3>
           <p>
-            The optimal number of examples in a few-shot prompt is
-            <strong>3–5</strong> for most tasks. More examples improve
-            performance on complex tasks, but Anthropic warns against "stuffing
-            a laundry list of edge cases." Instead, curate diverse, canonical
-            examples that cover the behavioral space you care about. Wrap
-            examples in <code>&lt;example&gt;</code> tags. Quality and diversity
-            matter more than quantity.
+            Skills package task-specific instructions and helper files that
+            Claude loads only when relevant. A short description sits in context
+            by default; the full skill loads when the task calls for it — so you
+            get deep, specialized guidance without paying for it on every
+            unrelated turn. It's progressive disclosure applied to your own
+            know-how.
+          </p>
+
+          <h3>Plan mode: think before you touch</h3>
+          <p>
+            Plan mode lets Claude research and propose an approach
+            <em>without making any edits</em> until you approve. For a
+            multi-step change, this is efficiency in two ways: you catch a wrong
+            approach before it produces a sprawling diff you have to unwind, and
+            the plan itself becomes a compact, high-signal anchor for the
+            execution phase. Cheap planning up front beats expensive rework
+            later.
+          </p>
+
+          <div class="prompt-example">
+            <div class="prompt-label">✅ Plan-first for complex changes</div>
+            <div class="prompt-text">
+              For a large refactor, enter plan mode, review the proposed steps,
+              and only then let Claude execute. A five-minute plan review saves
+              a fifty-file cleanup.
+            </div>
+          </div>
+
+          <h3>Hooks: automate the routine</h3>
+          <p>
+            Hooks let you run deterministic shell commands at defined points —
+            for example, auto-formatting after every edit, or running a linter
+            before a change is accepted. Moving routine checks into hooks means
+            Claude doesn't have to spend a conversational turn (and the context)
+            deciding to run them. The work still happens; it just stops costing
+            window.
           </p>
 
           <div class="quiz">
             <h4>✍️ Knowledge Check</h4>
             <p>
-              You're running 500 batch document summaries overnight. You've also
-              set up prompt caching for your 3,000-token system prompt. What's
-              your effective cost reduction on the cached input tokens?
+              Why does delegating deep exploration to a subagent help your main
+              session stay efficient?
             </p>
             <div class="quiz-options">
               <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                50% — only the batch discount applies to cached content
-              </button>
-              <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                90% — only caching applies
+                Subagents are always free to run
               </button>
               <button class="quiz-opt" onclick="quizAnswer(this, true)">
-                95% — 50% batch discount × 90% cache discount stack
-                multiplicatively
+                The exploration burns the subagent's context; only a summary
+                returns
               </button>
               <button class="quiz-opt" onclick="quizAnswer(this, false)">
-                100% — cached content is always free
+                Subagents disable the context window entirely
+              </button>
+              <button class="quiz-opt" onclick="quizAnswer(this, false)">
+                They let you skip writing a CLAUDE.md
               </button>
             </div>
             <div class="quiz-feedback"></div>
@@ -1345,242 +1084,135 @@ Based on the documents above, what are the primary eligibility criteria?</code><
         <section class="section" id="m8">
           <div class="section-header">
             <div class="section-num">8</div>
-            <h2>Platform Playbooks</h2>
+            <h2>The Claude Code Playbook</h2>
           </div>
 
           <p>
-            The principles are consistent across Claude surfaces, but the
-            implementation looks different depending on where you're working.
-            These playbooks distill the course into concrete actions for each
-            platform.
+            The principles are consistent; this playbook distills the course
+            into concrete habits you can adopt today. Work through them in
+            order — each builds on the last.
           </p>
 
-          <h3>🔌 API Playbook</h3>
+          <h3>💻 Everyday session hygiene</h3>
           <div class="steps">
             <div class="step">
               <div class="step-num">1</div>
               <div class="step-body">
-                <h4>Cache system prompts and tool definitions immediately</h4>
+                <h4><code>/clear</code> between unrelated tasks</h4>
                 <p>
-                  Mark them with <code>cache_control: ephemeral</code>. This is
-                  the highest-ROI single change you can make to an existing API
-                  integration.
+                  The single highest-ROI habit. Stale context degrades quality
+                  and slows every turn. Start fresh when the topic changes.
                 </p>
               </div>
             </div>
             <div class="step">
               <div class="step-num">2</div>
               <div class="step-body">
-                <h4>
-                  Start with Sonnet; downgrade to Haiku for proven-simple tasks
-                </h4>
+                <h4><code>/compact</code> with a focus before the window fills</h4>
                 <p>
-                  Run A/B evals. For classification, routing, and extraction,
-                  Haiku often matches Sonnet quality at a fraction of the cost.
+                  When you need continuity but context is growing,
+                  <code>/compact focus on X</code> keeps the thread and sheds
+                  the noise. Don't wait for auto-compaction to decide for you.
                 </p>
               </div>
             </div>
             <div class="step">
               <div class="step-num">3</div>
               <div class="step-body">
-                <h4>Move async workloads to the Batch API</h4>
+                <h4>Watch the window with <code>/context</code></h4>
                 <p>
-                  Any pipeline that doesn't require real-time results should be
-                  batched. 50% off, zero quality impact.
+                  Check allocation when a session feels off. A bloated category
+                  is your cue to clear, compact, or disconnect a server.
                 </p>
               </div>
             </div>
             <div class="step">
               <div class="step-num">4</div>
               <div class="step-body">
-                <h4>Use structured outputs to eliminate retries</h4>
+                <h4><code>/rewind</code> instead of arguing</h4>
                 <p>
-                  Every parse failure is wasted tokens and latency. Structured
-                  outputs pay for themselves in reliability.
-                </p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">5</div>
-              <div class="step-body">
-                <h4>Set max_tokens and use the Token Counting API</h4>
-                <p>
-                  Hard ceilings prevent runaway output costs. Count before you
-                  send on expensive requests to catch bloat before it's billed.
+                  When Claude takes a wrong turn, roll back to a checkpoint and
+                  retry — cheaper and cleaner than talking your way out of it.
                 </p>
               </div>
             </div>
           </div>
 
-          <h3>💻 Claude Code Playbook</h3>
+          <h3>📋 Project setup</h3>
           <div class="steps">
             <div class="step">
               <div class="step-num">1</div>
               <div class="step-body">
-                <h4>Write a CLAUDE.md in every project root</h4>
+                <h4>Write a tight CLAUDE.md in every project root</h4>
                 <p>
-                  Architecture, conventions, preferred patterns. Encode once,
-                  available every session. No per-session overhead.
+                  Architecture, conventions, build and test commands. Run
+                  <code>/init</code> to draft it, then trim to high-signal rules.
+                  Keep it small — it loads every session.
                 </p>
               </div>
             </div>
             <div class="step">
               <div class="step-num">2</div>
               <div class="step-body">
-                <h4>Use /clear between unrelated tasks</h4>
+                <h4>Encode repeated workflows as slash commands</h4>
                 <p>
-                  Stale context is expensive and degrades quality. Start fresh
-                  when the topic changes.
+                  Multi-step prompts you type often belong in
+                  <code>.claude/commands/</code>. Consistent behavior, less
+                  typing, better caching.
                 </p>
               </div>
             </div>
             <div class="step">
               <div class="step-num">3</div>
               <div class="step-body">
-                <h4>
-                  Use /compact with a focus parameter before context fills
-                </h4>
+                <h4>Connect only the MCP servers a task needs</h4>
                 <p>
-                  <code>/compact focus on the authentication changes</code>
-                  keeps the relevant thread without the accumulated noise.
+                  Idle servers are fixed context overhead on every request.
+                  Add them for the job, remove them after.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <h3>🎯 Prompting &amp; delegation</h3>
+          <div class="steps">
+            <div class="step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h4>Be specific about scope</h4>
+                <p>
+                  Name the file and the function. Precise asks prevent broad
+                  scanning and keep the diff focused.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h4>Plan before large changes</h4>
+                <p>
+                  Use plan mode for anything multi-step. A reviewed plan beats
+                  an unwound mess.
+                </p>
+              </div>
+            </div>
+            <div class="step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h4>Delegate exploration to subagents</h4>
+                <p>
+                  Push wide, independent research into subagents — ideally on a
+                  cheaper model — so your main thread stays clean.
                 </p>
               </div>
             </div>
             <div class="step">
               <div class="step-num">4</div>
               <div class="step-body">
-                <h4>Be specific in requests</h4>
+                <h4>Drop the anti-laziness language</h4>
                 <p>
-                  "Add input validation to the login function in auth.ts" beats
-                  "improve this codebase" — specificity prevents broad file
-                  scanning and scattered tool calls.
-                </p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">5</div>
-              <div class="step-body">
-                <h4>Reduce thinking budget for routine tasks</h4>
-                <p>
-                  The default Claude Code thinking budget is 31,999 tokens. For
-                  simple tasks, set <code>MAX_THINKING_TOKENS=8000</code> or
-                  less. Use <code>/config</code> to adjust per session.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <h3>📁 Claude Projects Playbook</h3>
-          <div class="steps">
-            <div class="step">
-              <div class="step-num">1</div>
-              <div class="step-body">
-                <h4>Write tight project instructions</h4>
-                <p>
-                  Role, tone, standing rules. These load every conversation.
-                  Keep them focused — not a novel.
-                </p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">2</div>
-              <div class="step-body">
-                <h4>Name knowledge files descriptively</h4>
-                <p>
-                  Filenames directly improve RAG retrieval.
-                  "2024-Q3-safety-monitoring-report.pdf" beats "report.pdf".
-                </p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">3</div>
-              <div class="step-body">
-                <h4>Reference specific files in queries</h4>
-                <p>
-                  "Based on the protocol document, what are the inclusion
-                  criteria?" helps Claude retrieve the right file rather than
-                  guessing.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <h3>🤖 Cowork Playbook</h3>
-          <div class="steps">
-            <div class="step">
-              <div class="step-num">1</div>
-              <div class="step-body">
-                <h4>Use global instructions for persistent identity</h4>
-                <p>
-                  Your role, preferred formats, safety rules. Set once, active
-                  every session.
-                </p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">2</div>
-              <div class="step-body">
-                <h4>Use folder instructions for project context</h4>
-                <p>
-                  Protocol names, naming conventions, compliance rules. Scope
-                  them to the specific project folder.
-                </p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">3</div>
-              <div class="step-body">
-                <h4>Write GOAL-framework prompts</h4>
-                <p>
-                  Goal, Output format, Approach constraints, Location.
-                  Specificity eliminates mid-task check-ins and re-runs.
-                </p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">4</div>
-              <div class="step-body">
-                <h4>Queue tasks and step away</h4>
-                <p>
-                  Cowork is designed for async execution. Queue multiple tasks
-                  upfront rather than babysitting each one interactively.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <h3>💬 Claude.ai Chat Playbook</h3>
-          <div class="steps">
-            <div class="step">
-              <div class="step-num">1</div>
-              <div class="step-body">
-                <h4>Use Projects for repeated context</h4>
-                <p>
-                  If you find yourself re-explaining your role, project, or
-                  conventions at the start of every chat — those belong in a
-                  Project's instructions.
-                </p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">2</div>
-              <div class="step-body">
-                <h4>Start new chats for genuinely new topics</h4>
-                <p>
-                  Long conversation history in an existing chat adds input token
-                  overhead for every new message. A fresh chat for a fresh topic
-                  is often the efficient choice.
-                </p>
-              </div>
-            </div>
-            <div class="step">
-              <div class="step-num">3</div>
-              <div class="step-body">
-                <h4>Put your actual question at the end</h4>
-                <p>
-                  Especially for long-context requests: context first, question
-                  last. Up to 30% quality improvement on complex multi-document
-                  prompts.
+                  Skip "be thorough" and all-caps demands. State the goal and
+                  the boundaries; let a proactive model work.
                 </p>
               </div>
             </div>
@@ -1592,11 +1224,12 @@ Based on the documents above, what are the primary eligibility criteria?</code><
               <strong>Course complete — the meta-principle</strong>
               <p>
                 Anthropic frames the overarching goal as
-                <em>context engineering</em>: finding "the smallest possible set
+                <em>context engineering</em>: finding the smallest possible set
                 of high-signal tokens that maximize the likelihood of the
-                desired outcome." Every technique in this course is a different
-                implementation of that principle. More tokens don't guarantee
-                better results. Signal density does.
+                outcome you want. Every technique in this course — clearing,
+                compacting, scoping, CLAUDE.md, subagents, the right model — is
+                a different way to serve that one principle. In Claude Code,
+                more context doesn't mean better results. Signal density does.
               </p>
             </div>
           </div>
@@ -1606,12 +1239,12 @@ Based on the documents above, what are the primary eligibility criteria?</code><
 
     <footer>
       <p>
-        Claude Efficiency Masterclass · Created February 2026 · Based on
+        Claude Code Efficiency Masterclass · Updated February 2026 · Based on
         official Anthropic documentation
       </p>
       <p class="footer-sub">
-        Pricing and features may change. Always consult
-        <a href="https://docs.anthropic.com">docs.anthropic.com</a> for current
+        Features may change. Always consult
+        <a href="https://docs.claude.com">docs.claude.com</a> for current
         information. · <a href="index.html">← Back to catalog</a>
       </p>
     </footer>
