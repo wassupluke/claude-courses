@@ -160,8 +160,8 @@ body {
 /* Sidebar TOC on the left, scrollable content on the right */
 .layout {
   display: grid;
-  grid-template-columns: 260px 1fr;
-  max-width: 1280px;
+  grid-template-columns: 232px minmax(0, 1fr);
+  max-width: 1360px;
   margin: 0 auto;
   gap: 0;
   min-height: calc(100vh - 200px);
@@ -182,7 +182,7 @@ body {
 }
 
 .toc h3 {
-  padding: 0 24px 12px;
+  padding: 0 20px 12px;
   font-size: 0.7rem;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -196,7 +196,7 @@ body {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 8px 24px;
+  padding: 8px 20px;
   text-decoration: none;
   color: var(--muted);
   font-size: 0.875rem;
@@ -225,7 +225,8 @@ body {
 /* ── MAIN CONTENT AREA ─────────────────────────────────────── */
 .content {
   padding: 48px 56px;
-  max-width: 900px;
+  max-width: 1000px;
+  min-width: 0; /* allow the grid item to shrink so wide children (pre/table) scroll instead of overflowing */
 }
 
 /* ── COURSE SECTIONS ───────────────────────────────────────── */
@@ -913,30 +914,59 @@ body {
 }
 
 /* Tables and pre blocks scroll horizontally inside their container
-   rather than pushing the page wider */
+   rather than pushing the page wider. display:block turns the element
+   into its own scroll box; max-width:100% keeps that box within the
+   content column, so wide content wraps/scrolls instead of overflowing. */
 table,
 pre {
   display: block;
+  max-width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
 
-/* Restore table layout semantics after display:block */
-table {
-  width: max-content;
-  min-width: 100%;
+/* Below this width (narrow windows, half-tiled panes, phones) the sidebar
+   would crowd the content, so the TOC moves above the modules as a compact
+   two-column list. The nav is the first grid child, so collapsing to one
+   column already places it between the hero and the first module. */
+@media (max-width: 1024px) {
+  .layout {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  /* Multi-column flows the links down the first column, then the second —
+     ascending order top-to-bottom — and balances the two columns (5 + 4
+     for nine modules). column-span lets the heading span the full width. */
+  .toc {
+    height: auto;
+    /* Background and border span the full width; the auto side padding
+       keeps the two columns centered at ~620px within it. */
+    padding: 20px max(24px, calc((100% - 620px) / 2));
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    column-count: 2;
+    column-gap: 32px;
+  }
+  .toc h3 {
+    column-span: all;
+    padding: 0 0 16px;
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-transform: none;
+    color: var(--text);
+  }
+  .toc a {
+    break-inside: avoid;
+  }
 }
 
 @media (max-width: 900px) {
-  /* Collapse the sidebar on narrow screens */
   .layout {
-    grid-template-columns: 1fr;
     /* Prevent the grid itself from overflowing */
-    width: 100%;
     overflow-x: hidden;
-  }
-  .toc {
-    display: none;
   }
   .content {
     padding: 24px 16px;
